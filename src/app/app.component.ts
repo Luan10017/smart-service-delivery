@@ -1,33 +1,21 @@
-import { Component } from '@angular/core';
-
-import * as jQuery from 'jquery'
+import { Component, AfterViewInit  } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   title = 'smart-service';
 
   ngAfterViewInit(){
-    (function($) {
-        "use strict";
+    const el = document.getElementById("sidebar-wrapper");
+    const toggleButton = document.getElementById("menu-toggle");
 
-        // Add active state to sidbar nav links
-        var path = window.location.href; // because the 'href' property of the DOM element is the absolute path
-            $("#layoutSidenav_nav .sb-sidenav a.nav-link").each(function() {
-                /*if (this.href === path) {
-                    $(this).addClass("active");
-                }*/
-            });
+    toggleButton?.addEventListener("click", ()=> {
+      el?.classList.toggle("toggled")
+    })
 
-        // Toggle the side navigation
-        $("#sidebarToggle").on("click", function(e) {
-            e.preventDefault();
-            $("body").toggleClass("sb-sidenav-toggled");
-        });
-    })(jQuery);
   }
 
 }
