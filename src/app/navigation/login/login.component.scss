@@ -1,0 +1,34 @@
+.card {
+    margin-top: 4em;
+  }
+
+  .p-grid{
+    margin-top: 5%;
+  }
+
+  .input-login{
+     margin: 1rem;
+  }
+
+  .button-login{
+    background-color: #d91e18;
+    margin: 2rem;
+    border-color: red;
+  }
+
+  .button-login{
+    background-color: #d91e18;
+    margin: 2rem;
+   
+  }
+
+  .button-login:focus{
+    border-color: red;
+    border-radius: red;
+    box-shadow: #d91e18;
+  }
+
+  .btn-check:focus+.btn-primary, .btn-primary:focus {
+
+    box-shadow: none;
+}

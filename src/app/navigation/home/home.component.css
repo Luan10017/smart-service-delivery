@@ -1,5 +1,25 @@
+
 .img-cooker{
 
     text-align: center;
   
   }
+
+.item-img{
+  height: 185px;
+}
+
+
+.category{
+  color: #2e3131!important;
+  text-decoration: none;
+}
+
+.category:hover{
+  color: #d91e18 !important;
+  text-decoration: none;
+}
+
+.price{
+  color: #50a773 !important;
+}
