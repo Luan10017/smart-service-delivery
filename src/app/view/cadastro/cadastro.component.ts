@@ -11,7 +11,5 @@ export class CadastroComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
-  singleModel = '1';
 
 }
