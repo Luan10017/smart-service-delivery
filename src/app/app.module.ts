@@ -6,16 +6,35 @@ import { AppComponent } from './app.component';
 
 import { TemplateModule } from './template/template.module';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { ProductCardComponent } from './components/product-card/product-card.component';
+import { HomeComponent } from './view/home/home.component';
+import { LoginComponent } from './view/login/login.component';
+import { CadastroComponent } from './view/cadastro/cadastro.component';
+
+import { HttpClientModule } from '@angular/common/http';
+import { HamburgerComponent } from './view/hamburger/hamburger.component';
+import { PorcoesComponent } from './view/porcoes/porcoes.component';
+import { BebidasComponent } from './view/bebidas/bebidas.component';
+import { AlcoolicasComponent } from './view/alcoolicas/alcoolicas.component'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProductCardComponent,
+    HomeComponent,
+    LoginComponent,
+    CadastroComponent,
+    HamburgerComponent,
+    PorcoesComponent,
+    BebidasComponent,
+    AlcoolicasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     TemplateModule,
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

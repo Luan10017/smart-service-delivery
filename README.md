@@ -1,3 +1,6 @@
+# JSON API
+Para ter a melhor experiência com esse projeto acesse meu projeto de [JSON API](https://github.com/Luan10017/json-api) execute com npm start e mantenha em funcionamento em conjunto com o projeto Angular SmartService.
+
 # SmartService
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.11.

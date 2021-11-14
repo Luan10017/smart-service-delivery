@@ -1,14 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './navigation/home/home.component';
-import { LoginComponent } from './navigation/login/login.component';
-import { CadastroComponent } from './navigation/cadastro/cadastro.component';
-import { ProdutoComponent } from './navigation/produto/produto.component';
-import { MesaComponent } from './navigation/mesa/mesa.component';
-import { PagamentoComponent } from './navigation/pagamento/pagamento.component';
-import { EnderecoComponent } from './navigation/endereco/endereco.component';
-import { PedidoComponent } from './navigation/pedido/pedido.component';
+import { HomeComponent } from './view/home/home.component';
+import { LoginComponent } from './view/login/login.component';
+import { CadastroComponent } from './view/cadastro/cadastro.component';
+import { HamburgerComponent } from './view/hamburger/hamburger.component';
+import { AlcoolicasComponent } from './view/alcoolicas/alcoolicas.component';
+import { BebidasComponent } from './view/bebidas/bebidas.component';
+import { PorcoesComponent } from './view/porcoes/porcoes.component';
+
+import { ProdutoComponent } from './view/produto/produto.component';
+import { MesaComponent } from './view/mesa/mesa.component';
+import { PagamentoComponent } from './view/pagamento/pagamento.component';
+import { EnderecoComponent } from './view/endereco/endereco.component';
+import { PedidoComponent } from './view/pedido/pedido.component';
 
 
 const routes: Routes = [
@@ -19,7 +24,12 @@ const routes: Routes = [
   { path: 'mesa', component: MesaComponent },
   { path: 'pagamento', component: PagamentoComponent },
   { path: 'endereco', component: EnderecoComponent },
-  { path: 'pedido', component: PedidoComponent }
+  { path: 'pedido', component: PedidoComponent },
+  { path: 'hamburger', component: HamburgerComponent },
+  { path: 'porcoes', component: PorcoesComponent },
+  { path: 'bebidas', component: BebidasComponent },
+  { path: 'alcoolicas', component: AlcoolicasComponent }
+
 ];
 
 @NgModule({
