@@ -16,18 +16,30 @@
               <span class="endereco"></span>
               <span id="msg"></span>
               <form name="" action="" id="">
-    
-                  <div class="mb-3">
-                      <label>Nome Completo</label>                            
-                      <input type="text"  class="form-control"  placeholder="Ex: José da Silva Almeida" required>                        
-                  </div>          
 
-                  <div class="mb-3">
-                      <label>E-mail</label>  
-                      <input type="email" class="form-control"  placeholder="Ex: seuemail@outlook.com"  required>                                                
-                  </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label>Nome Completo</label>
+                        <input type="text"  class="form-control"  placeholder="Ex: José da Silva Almeida" required>                        
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label>E-mail</label>
+                        <input type="email" class="form-control"  placeholder="Ex: seuemail@outlook.com"  required>                                                
+                    </div>
+                </div>
 
-                  <div class="row">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label>Usuário</label>
+                        <input type="text" name="" id="" class="form-control" placeholder="Ex: MeuNome" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label>Senha</label>
+                        <input type="text" name="" id="" class="form-control" placeholder="Ex: Sua senha" required>
+                    </div>
+                </div>
+
+                <div class="row">
                       <div class="col-md-3 mb-3">
                           <label>DDD</label>
                           <input type="text"  id=""  class="form-control" placeholder="Ex: 13" required>
@@ -36,11 +48,11 @@
                           <label>Telefone</label>
                           <input type="text" name="" id="" class="form-control" placeholder="Telefone sem traço Ex: 32256598 " required>
                       </div>
-                  </div>
+                </div>
 
-                  <h4 class="mb-3">Endereço de Entrega</h4>
+                <h4 class="mb-3">Endereço de Entrega</h4>
 
-                  <div class="row">
+                <div class="row">
                       <div class="col-md-9 mb-3">
                           <label>Logradouro</label>
                           <input type="text" class="form-control"  placeholder="Av. Rua"  required>
@@ -49,14 +61,14 @@
                           <label>Número</label>
                           <input type="text" name="" class="form-control" id="" placeholder="Ex: 78, 99, 505" required>
                       </div>
-                  </div>
+                </div>
 
-                  <div class="mb-3">
+                <div class="mb-3">
                       <label>Complemento</label>
                       <input type="text" name="" class="form-control" id="" placeholder="Ex: BLOCO C, apt 505">
-                  </div>
+                </div>
 
-                  <div class="row">
+                <div class="row">
                       <div class="col-md-5 mb-3">
                           <label>Bairro</label>
                           <input type="text"  class="form-control" id="" placeholder="Ex: Campo Grande, Aparecida" required>
@@ -98,20 +110,23 @@
                               <option value="TO">TO</option>
                           </select>
                       </div>
-                  </div>
+                </div>
 
-                  <div class="mb-3">
+                <div class="mb-3">
                       <label>CEP</label>
                       <input type="text" class="form-control" id="" placeholder="CEP sem traço Ex: 110600000, 13165000" required>
-                  </div>                                 
+                </div>                                 
 
-                  <div class="p-col-12 text-center">
-
-                    <button type="button" class="btn btn-primary button-login" >
-                        Cadastrar
-                    </button>
+                <div class="p-col-12 text-center">
+                   
+                    <a href="/home">
+                        <button type="button" class="btn btn-primary button-login" >
+                            Cadastrar
+                        </button>
+                    </a>
+                  
         
-                  </div>
+                </div>
                                              
               </form>
           </div>

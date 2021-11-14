@@ -13,18 +13,12 @@
   .button-login{
     background-color: #d91e18;
     margin: 2rem;
-    border-color: red;
-  }
-
-  .button-login{
-    background-color: #d91e18;
-    margin: 2rem;
-   
+    border-color: #d91e18;
   }
 
   .button-login:focus{
-    border-color: red;
-    border-radius: red;
+    border-color: #d91e18;
+    border-radius: #d91e18;
     box-shadow: #d91e18;
   }
 

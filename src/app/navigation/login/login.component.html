@@ -1,42 +1,46 @@
 <div class="p-grid p-justify-center card text-center">
-    <div class="p-col-10 p-sm-6 p-md-4">
-     
-        <div class="p-grid">
-          <div class="p-col-12 text-center">
-            <i class="fas fa-sign-in-alt fa-4x" style="color: #d91e18;"></i>
-            <h2>Login</h2>
-          </div>
-          <div class="p-col-12">
-            <label for="">Usuário:</label>
-            <input class="p-col-12 input-login" type="text" pInputText />
-          </div>
-          <div class="p-col-12">
-            <label for="">Senha: </label>
-            <input class="p-col-12 input-login" type="text" pInputText />
-          </div>
-          <div class="p-col-12">
+  <div  class="p-col-10 p-sm-6 p-md-4">
+    <div class="container">
 
-            <button type="button" class="btn btn-primary button-login" >
-                Entrar
-            </button>
-
-          </div>
-          <div class="p-col-12">
-
-            <p>Ainda não possui conta?   
-              <a routerLink="/cadastro" class="nav-link" 
-              role="button">Cadastre-se aqui</a>   
-            </p>
-
-          </div>
- 
-       
-
+      <div id="background-login" class="p-grid">
+        <div class="p-col-12 text-center">
+          <i class="fas fa-sign-in-alt fa-4x" style="color: #d91e18;"></i>
+          <h2>Login</h2>
         </div>
- 
+  
+        <div class="p-col-12">
+          <label for="">Usuário:</label>
+          <input class="p-col-12 input-login" type="text" pInputText />
+        </div>
+        <div class="p-col-12">
+          <label for="">Senha: &nbsp;</label>
+          <input class="p-col-12 input-login" type="text" pInputText />
+        </div>
+        <div class="p-col-12">
+  
+          <a href="/home" class="nav-link" role="button">
+            <button type="button" class="btn btn-primary button-login">
+              Entrar
+            </button>
+          </a>
+  
+        </div>
+  
+        <div class="col">
+  
+          <div class="p-col-12">
+            <p>Ainda não possui conta?
+              <a href="/cadastro" class="nav-link" role="button">Cadastre-se aqui</a>
+            </p>
+          </div>
+  
+        </div>
+  
+      </div>
+
+
+
     </div>
-
-
-
-
-   
+  
+  </div>
+</div>

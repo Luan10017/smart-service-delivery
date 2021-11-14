@@ -1,0 +1,120 @@
+<div id="top-image"  class="text-center" style="">
+    <h1 style="color: #fff;">Endereço de Entrega</h1>
+</div>
+
+<div class="container-fluid px-4" style="background-color: #fff;">
+
+    <div class="row g-3 my-2">
+    </div>
+
+    <div class="row my-5">
+        
+        <div class="col">
+            <div class="container">
+                  
+
+                <div class="row">
+
+                    <div class="col-md-12 order-md-1">
+
+                        <form name="formPagamento" action="" id="formPagamento">
+                            <span id="msg"></span>
+                            <h4 class="mb-3"></h4>
+
+                            <input type="hidden" name="shippingAddressRequired" id="shippingAddressRequired"
+                                value="true">
+
+                            <div class="row">
+                                <div class="col-md-9 mb-3">
+                                    <label>Logradouro</label>
+                                    <input type="text" name="shippingAddressStreet" class="form-control"
+                                        id="shippingAddressStreet" placeholder="Av. Rua" value="Av. Brig. Faria Lima"
+                                        required>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label>Número</label>
+                                    <input type="text" name="shippingAddressNumber" class="form-control"
+                                        id="shippingAddressNumber" placeholder="Número" value="1384" required>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Complemento</label>
+                                <input type="text" name="shippingAddressComplement" class="form-control"
+                                    id="shippingAddressComplement" placeholder="Complemento" value="5o andar">
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-5 mb-3">
+                                    <label>Bairro</label>
+                                    <input type="text" name="shippingAddressDistrict" class="form-control"
+                                        id="shippingAddressDistrict" placeholder="Bairro" value="Jardim Paulistano"
+                                        required>
+                                </div>
+                                <div class="col-md-5 mb-3">
+                                    <label>Cidade</label>
+                                    <input type="text" name="shippingAddressCity" class="form-control"
+                                        id="shippingAddressCity" placeholder="Cidade" value="Sao Paulo" required>
+                                </div>
+                                <div class="col-md-2 mb-3">
+                                    <label>Estado</label>
+                                    <select name="shippingAddressState" class="custom-select d-block w-100"
+                                        id="shippingAddressState" required>
+                                        <option value="">Selecione</option>
+                                        <option value="AC">AC</option>
+                                        <option value="AL">AL</option>
+                                        <option value="AP">AP</option>
+                                        <option value="AM">AM</option>
+                                        <option value="BA">BA</option>
+                                        <option value="CE">CE</option>
+                                        <option value="DF">DF</option>
+                                        <option value="ES">ES</option>
+                                        <option value="GO">GO</option>
+                                        <option value="MA">MA</option>
+                                        <option value="MT">MT</option>
+                                        <option value="MS">MS</option>
+                                        <option value="MG">MG</option>
+                                        <option value="PA">PA</option>
+                                        <option value="PB">PB</option>
+                                        <option value="PR">PR</option>
+                                        <option value="PE">PE</option>
+                                        <option value="PI">PI</option>
+                                        <option value="RJ">RJ</option>
+                                        <option value="RN">RN</option>
+                                        <option value="RS">RS</option>
+                                        <option value="RO">RO</option>
+                                        <option value="RR">RR</option>
+                                        <option value="SC">SC</option>
+                                        <option value="SP" selected>SP</option>
+                                        <option value="SE">SE</option>
+                                        <option value="TO">TO</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label>CEP</label>
+                                <input type="text" name="shippingAddressPostalCode" class="form-control"
+                                    id="shippingAddressPostalCode" placeholder="CEP sem traço" value="01452002"
+                                    required>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+                <div class="p-col-12 text-center">
+
+                    <a href="/pagamento" class="nav-link" role="button">
+                        <button type="button" class="btn btn-danger button-finish">
+                            Ir para Meios de Pagamento
+                        </button>
+                    </a>
+                                                       
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>

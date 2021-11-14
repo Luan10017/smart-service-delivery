@@ -1,0 +1,51 @@
+*{
+  text-decoration: none !important;
+}
+
+
+#top-image{
+  height:15em; 
+  background-size:cover;
+  width:auto;
+  background-image:url('/assets/entregador2.jpg');
+  background-position:50% 50%;
+  filter: grayscale(0.2);
+}
+
+div#top-image{
+  height: 10em;
+  position: relative 
+}
+
+div#top-image h1{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+
+a{
+  color: black;
+}
+
+a:hover{
+  color: #d91e18;
+}
+
+.button-finish{
+  background-color: #d91e18;
+  margin: 2rem;
+  border-color: #d91e18;
+}
+
+.button-finish:focus{
+  background-color: #d91e18;
+  margin: 2rem;
+  border-color: #d91e18;
+}
+
+
+
+

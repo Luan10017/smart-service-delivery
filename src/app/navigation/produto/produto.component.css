@@ -1,0 +1,31 @@
+*{
+  text-decoration: none !important;
+}
+
+a{
+  color: black;
+}
+
+a:hover{
+  color: #d91e18;
+}
+
+
+.item-img{
+  height: 500px;
+}
+
+
+.category{
+  color: #2e3131!important;
+  text-decoration: none;
+}
+
+.category:hover{
+  color: #d91e18 !important;
+  text-decoration: none;
+}
+
+.price{
+  color: #50a773 !important;
+}
