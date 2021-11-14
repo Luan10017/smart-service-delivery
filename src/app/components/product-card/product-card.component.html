@@ -1,12 +1,11 @@
-<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-    <div class="card-center" >
-        <div class="card text-center">
-            <a href="">
-                <img class="card-img-top item-img" src="/assets/home/fritas.jpg">
-            </a>
-            <h5 class="card-title title-post-home"><a class="category" href="">Porções</a></h5>
-            <p class="card-text">Batata Frita (2 pessoas)</p>
-            <h5 class="card-title title-post-home price">R$20,00</h5>
-        </div>
+<div class="card-center">
+    <div class="card text-center">
+        <a href="">
+            <img class="card-img-top item-img" src="{{ products.img_path }}">
+        </a>
+        <h5 class="card-title title-post-home"><a class="category" href="">Porções</a></h5>
+        <p class="card-text">{{products.name}}</p>
+        <h5 class="card-title title-post-home price">{{ products.price }}</h5>
+        <p>{{products.description}}</p>
     </div>
 </div>

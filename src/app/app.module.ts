@@ -11,19 +11,30 @@ import { HomeComponent } from './view/home/home.component';
 import { LoginComponent } from './view/login/login.component';
 import { CadastroComponent } from './view/cadastro/cadastro.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { HamburgerComponent } from './view/hamburger/hamburger.component';
+import { PorcoesComponent } from './view/porcoes/porcoes.component';
+import { BebidasComponent } from './view/bebidas/bebidas.component';
+import { AlcoolicasComponent } from './view/alcoolicas/alcoolicas.component'
+
 @NgModule({
   declarations: [
     AppComponent,
     ProductCardComponent,
     HomeComponent,
     LoginComponent,
-    CadastroComponent
+    CadastroComponent,
+    HamburgerComponent,
+    PorcoesComponent,
+    BebidasComponent,
+    AlcoolicasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     TemplateModule,
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

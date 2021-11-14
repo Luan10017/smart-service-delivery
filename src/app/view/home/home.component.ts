@@ -1,3 +1,5 @@
+import { MenuService } from './../../menu.service';
+import { Product } from './../../components/product-card/product.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  products: Product[] = [];
+
+  constructor(private productService: MenuService) { }
 
   ngOnInit(): void {
+    this.productService.read().subscribe(products => {
+      this.products = products
+    })
   }
+
 
 }

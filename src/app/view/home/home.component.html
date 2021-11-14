@@ -97,15 +97,10 @@
             <div class="container">
                 
                 <div class="row">
-                   <app-product-card></app-product-card>
-                   <app-product-card></app-product-card>
-                   <app-product-card></app-product-card>
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                   <app-product-card *ngFor="let product of products" [products]="product"></app-product-card>
                 </div>
-                
-                <div class="row">
-                    <app-product-card></app-product-card>
-                </div>
-                
+                </div> 
             </div>
         </div>
     </div>     
