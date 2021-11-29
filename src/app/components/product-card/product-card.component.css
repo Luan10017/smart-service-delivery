@@ -1,8 +1,24 @@
+#produto:hover{
+  background-color: #f2f1ef;
+}
+
+*{
+  top: 2px;
+  margin-top: 2px;
+}
+
+div#page-content-wrapper{
+  background-color: #f2f1ef;
+  margin-top: 2px;
+
+}
+
+
 .img-cooker{
 
     text-align: center;
   
-  }
+}
 
 .item-img{
   height: 185px;
@@ -32,3 +48,4 @@
   background-color: #d91e18 !important;
   color: #fff;
 }
+

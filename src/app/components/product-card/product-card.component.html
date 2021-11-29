@@ -1,11 +1,14 @@
-<div class="card-center">
-    <div class="card text-center">
-        <a href="">
-            <img class="card-img-top item-img" src="{{ products.img_path }}">
-        </a>
-        <h5 class="card-title title-post-home"><a class="category" href="">Porções</a></h5>
-        <p class="card-text">{{products.name}}</p>
-        <h5 class="card-title title-post-home price">{{ products.price }}</h5>
-        <p>{{products.description}}</p>
+<div class="col-lg-2 col-md-6 col-sm-12 col-xs-12"  style="display: inline-block;">
+    <div class="card-center"  style="display: inline-block;">
+        <div class="card text-center"  id="produto" style="display: inline-block;">
+            <a href="/produto">
+                <img class="card-img-top item-img" src="{{ products.img_path }}">
+            </a>
+            <h5 class="card-title title-post-home"><a class="category" href="">{{products.category}}</a></h5>
+            <p class="card-text">{{products.name}}</p>
+            <p>{{products.description}}</p>
+            <h5 class="card-title title-post-home price">R$ {{ products.price }}</h5>    
+        </div>
     </div>
 </div>
+

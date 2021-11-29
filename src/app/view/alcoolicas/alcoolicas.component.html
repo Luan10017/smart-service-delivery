@@ -1,4 +1,12 @@
-<div class="row">
-    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-   <app-product-card *ngFor="let product of products" [products]="product"></app-product-card>
+
+
+<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" style="display: inline-block;">
+    <div class="card-center" style="display: inline-block;">
+        <div class="card text-center"  style="display: inline-block;">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+               <app-product-card *ngFor="let product of products" [products]="product"></app-product-card>
+            </div>
+        </div>
+    </div>
 </div>
