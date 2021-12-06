@@ -1,3 +1,5 @@
+import { AuthGuard } from './guards/auth.guard';
+import { AuthService } from './view/login/auth.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -16,6 +18,7 @@ import { HamburgerComponent } from './view/hamburger/hamburger.component';
 import { PorcoesComponent } from './view/porcoes/porcoes.component';
 import { BebidasComponent } from './view/bebidas/bebidas.component';
 import { AlcoolicasComponent } from './view/alcoolicas/alcoolicas.component'
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,9 +37,10 @@ import { AlcoolicasComponent } from './view/alcoolicas/alcoolicas.component'
     AppRoutingModule,
     TemplateModule,
     CarouselModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
