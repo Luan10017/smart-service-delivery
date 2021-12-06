@@ -1,3 +1,4 @@
+import { AuthService } from './view/login/auth.service';
 import { Component, AfterViewInit  } from '@angular/core';
 
 @Component({
@@ -5,10 +6,20 @@ import { Component, AfterViewInit  } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent {
   title = 'smart-service';
 
-  ngAfterViewInit(){
+  mostrarMenu: boolean = false
+
+  constructor(private authService :AuthService) {}
+
+  ngOnInit(){
+    this.authService.mostrarMenuEmitter.subscribe(
+      mostrar => this.mostrarMenu = mostrar
+    )
+  }
+
+  /* ngAfterViewInit(){
     const el = document.getElementById("sidebar-wrapper");
     const toggleButton = document.getElementById("menu-toggle");
 
@@ -16,6 +27,6 @@ export class AppComponent implements AfterViewInit {
       el?.classList.toggle("toggled")
     })
 
-  }
+  } */
 
 }

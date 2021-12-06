@@ -1,3 +1,4 @@
+import { LayoutComponent } from './template/layout/layout.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -14,21 +15,29 @@ import { MesaComponent } from './view/mesa/mesa.component';
 import { PagamentoComponent } from './view/pagamento/pagamento.component';
 import { EnderecoComponent } from './view/endereco/endereco.component';
 import { PedidoComponent } from './view/pedido/pedido.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent,  },
+  {
+    path: '',
+    component: LayoutComponent,
+    children: [
+      { path: 'home', component: HomeComponent  },
+      { path: 'produto', component: ProdutoComponent },
+      { path: 'mesa', component: MesaComponent },
+      { path: 'pagamento', component: PagamentoComponent },
+      { path: 'endereco', component: EnderecoComponent },
+      { path: 'pedido', component: PedidoComponent },
+      { path: 'hamburger', component: HamburgerComponent },
+      { path: 'porcoes', component: PorcoesComponent },
+      { path: 'bebidas', component: BebidasComponent },
+      { path: 'alcoolicas', component: AlcoolicasComponent }
+    ],
+    canActivate: [AuthGuard]
+  },
   { path: 'login', component: LoginComponent },
   { path: 'cadastro', component: CadastroComponent },
-  { path: 'produto', component: ProdutoComponent },
-  { path: 'mesa', component: MesaComponent },
-  { path: 'pagamento', component: PagamentoComponent },
-  { path: 'endereco', component: EnderecoComponent },
-  { path: 'pedido', component: PedidoComponent },
-  { path: 'hamburger', component: HamburgerComponent },
-  { path: 'porcoes', component: PorcoesComponent },
-  { path: 'bebidas', component: BebidasComponent },
-  { path: 'alcoolicas', component: AlcoolicasComponent }
 
 ];
 
