@@ -15,16 +15,16 @@
         <div class="p-col-10 p-sm-6 p-md-4">
               <span class="endereco"></span>
               <span id="msg"></span>
-              <form name="" action="" id="">
+              <!-- <form name="" action="" id=""> -->
 
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label>Nome Completo</label>
-                        <input type="text"  class="form-control"  placeholder="Ex: José da Silva Almeida" required>                        
+                        <input [(ngModel)]="cadastro.nome" type="text"  class="form-control"  placeholder="Ex: José da Silva Almeida" required>                        
                     </div>
                     <div class="col-md-6 mb-3">
                         <label>E-mail</label>
-                        <input type="email" class="form-control"  placeholder="Ex: seuemail@outlook.com"  required>                                                
+                        <input [(ngModel)]="cadastro.email" type="email" class="form-control"  placeholder="Ex: seuemail@outlook.com"  required>                                                
                     </div>
                 </div>
 
@@ -35,7 +35,7 @@
                     </div>
                     <div class="col-md-6 mb-3">
                         <label>Senha</label>
-                        <input type="text" name="" id="" class="form-control" placeholder="Ex: Sua senha" required>
+                        <input [(ngModel)]="cadastro.password" type="text" name="" id="" class="form-control" placeholder="Ex: Sua senha" required>
                     </div>
                 </div>
 
@@ -55,31 +55,31 @@
                 <div class="row">
                       <div class="col-md-9 mb-3">
                           <label>Logradouro</label>
-                          <input type="text" class="form-control"  placeholder="Av. Rua"  required>
+                          <input [(ngModel)]="cadastro.logradouro" type="text" class="form-control"  placeholder="Av. Rua"  required>
                       </div>
                       <div class="col-md-3 mb-3">
                           <label>Número</label>
-                          <input type="text" name="" class="form-control" id="" placeholder="Ex: 78, 99, 505" required>
+                          <input [(ngModel)]="cadastro.numero" type="text" name="" class="form-control" id="" placeholder="Ex: 78, 99, 505" required>
                       </div>
                 </div>
 
                 <div class="mb-3">
                       <label>Complemento</label>
-                      <input type="text" name="" class="form-control" id="" placeholder="Ex: BLOCO C, apt 505">
+                      <input [(ngModel)]="cadastro.complemento" type="text" name="" class="form-control" id="" placeholder="Ex: BLOCO C, apt 505">
                 </div>
 
                 <div class="row">
                       <div class="col-md-5 mb-3">
                           <label>Bairro</label>
-                          <input type="text"  class="form-control" id="" placeholder="Ex: Campo Grande, Aparecida" required>
+                          <input [(ngModel)]="cadastro.bairro" type="text"  class="form-control" id="" placeholder="Ex: Campo Grande, Aparecida" required>
                       </div>
                       <div class="col-md-5 mb-3">
                           <label>Cidade</label>
-                          <input type="text" class="form-control" id="" placeholder="Ex: Santos, São Vicente" required>
+                          <input [(ngModel)]="cadastro.cidade" type="text" class="form-control" id="" placeholder="Ex: Santos, São Vicente" required>
                       </div>
                       <div class="col-md-2 mb-3">
                           <label>Estado</label>
-                          <select name="" class="custom-select d-block w-100" id="" required>
+                          <select [(ngModel)]="cadastro.estado" name="" class="custom-select d-block w-100" id="" required>
                               <option value="">Selecione</option>
                               <option value="AC">AC</option>
                               <option value="AL">AL</option>
@@ -114,13 +114,13 @@
 
                 <div class="mb-3">
                       <label>CEP</label>
-                      <input type="text" class="form-control" id="" placeholder="CEP sem traço Ex: 110600000, 13165000" required>
+                      <input [(ngModel)]="cadastro.cep" type="text" class="form-control" id="" placeholder="CEP sem traço Ex: 110600000, 13165000" required>
                 </div>                                 
 
                 <div class="p-col-12 text-center">
                    
-                    <a href="/home">
-                        <button type="button" class="btn btn-primary button-login" >
+                    <a >
+                        <button type="button" class="btn btn-primary button-login" (click)="fazerCadastro()" >
                             Cadastrar
                         </button>
                     </a>
@@ -128,7 +128,7 @@
         
                 </div>
                                              
-              </form>
+              <!-- </form> -->
           </div>
       </div>
   </div>
