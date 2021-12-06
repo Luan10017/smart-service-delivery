@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class CadastroService {
 
-  baseUrl = "http://localhost:3001/products"
+  baseUrl = "http://localhost:8080/cadastro/cliente"
   constructor(private http: HttpClient) { }
 
   ok(cadastro: Cadastro): Observable<Cadastro> {
