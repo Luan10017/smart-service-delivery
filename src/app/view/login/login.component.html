@@ -10,16 +10,16 @@
   
         <div class="p-col-12">
           <label for="">Usuário:</label>
-          <input class="p-col-12 input-login" type="text" pInputText />
+          <input [(ngModel)]="usuario.nome" class="p-col-12 input-login" type="text" pInputText />
         </div>
         <div class="p-col-12">
           <label for="">Senha: &nbsp;</label>
-          <input class="p-col-12 input-login" type="text" pInputText />
+          <input [(ngModel)]="usuario.senha" class="p-col-12 input-login" type="text" pInputText />
         </div>
         <div class="p-col-12">
   
-          <a href="/home" class="nav-link" role="button">
-            <button type="button" class="btn btn-primary button-login">
+          <a class="nav-link" role="button">
+            <button type="button" class="btn btn-primary button-login" (click)="fazerLogin()">
               Entrar
             </button>
           </a>
