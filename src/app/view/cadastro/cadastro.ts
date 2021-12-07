@@ -9,4 +9,5 @@ export class Cadastro {
     bairro!: string
     cidade!: string
     estado!: string
+    telefone!: number
 } 

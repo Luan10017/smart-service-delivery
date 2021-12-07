@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class CadastroService {
 
-  baseUrl = "http://localhost:8080/cadastro/cliente"
+  baseUrl = " https://smart-service-fatec.azurewebsites.net/cadastra/cliente"
   constructor(private http: HttpClient) { }
 
   ok(cadastro: Cadastro): Observable<Cadastro> {

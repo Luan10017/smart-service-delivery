@@ -17,7 +17,10 @@ export class CadastroComponent implements OnInit {
   }
 
   fazerCadastro(){
-    this.cadastroService.ok(this.cadastro)
+    console.log(this.cadastro)
+    this.cadastroService.ok(this.cadastro).subscribe(res =>{
+        console.log(res)
+    })
   }
 
 }
