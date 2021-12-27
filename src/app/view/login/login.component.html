@@ -1,46 +1,76 @@
-<div class="p-grid p-justify-center card text-center">
-  <div  class="p-col-10 p-sm-6 p-md-4">
-    <div class="container">
+<div class="p-justify-center" style="
+   background-color: #f2f1ef;
+   width: 100%;
+   height: 100%;
+   margin: 0 auto;
+  ">
 
-      <div id="background-login" class="p-grid">
-        <div class="p-col-12 text-center">
-          <i class="fas fa-sign-in-alt fa-4x" style="color: #d91e18;"></i>
-          <h2>Login</h2>
-        </div>
-  
-        <div class="p-col-12">
-          <label for="">Usuário:</label>
-          <input [(ngModel)]="usuario.nome" class="p-col-12 input-login" type="text" pInputText />
-        </div>
-        <div class="p-col-12">
-          <label for="">Senha: &nbsp;</label>
-          <input [(ngModel)]="usuario.senha" class="p-col-12 input-login" type="text" pInputText />
-        </div>
-        <div class="p-col-12">
-  
-          <a class="nav-link" role="button">
-            <button type="button" class="btn btn-primary button-login" (click)="fazerLogin()">
-              Entrar
-            </button>
-          </a>
-  
-        </div>
-  
-        <div class="col">
-  
-          <div class="p-col-12">
-            <p>Ainda não possui conta?
-              <a href="/cadastro" class="nav-link" role="button">Cadastre-se aqui</a>
-            </p>
+  <form [formGroup]="form">
+    <div class="p-col-10 p-sm-4 p-sx-4 p-md-4" style="height: auto">
+      <div class="container">
+
+        <div class="text-center card pt-5 mb-5 shadow p-3 mb-5 bg-white rounded" id="row2">
+          <div class="container card-body">
+            <div class="row">
+
+              <div class="p-col-10 p-sm-6 p-md-4">
+
+                <div class="p-col-12 pb-5 text-center">
+                  <img class="logo" src="/assets/logo.png">
+                </div>
+
+                <div class="row">
+                  <div class="col-md-9 col-sm-12 col-xs-12 p-3">
+
+                    <input [(ngModel)]="usuario.nome" type="text" class="form-control is-invalid"
+                      [ngClass]="{'is-invalid': f.email.errors && f.email.touched }" formControlName="email"
+                      placeholder="Email">
+                    <div *ngIf="f.email.errors?.required" class="invalid-feedback">
+                      O e-mail é obrigatório
+                    </div>
+                    <div *ngIf="f.email.errors?.email" class="invalid-feedback">
+                      Deve ser um endereço de email válido
+                    </div>
+
+                  </div>
+
+                  <div class="col-md-9 col-sm-12 col-xs-12 p-3">
+
+                    <input [(ngModel)]="usuario.senha" type="text" class="form-control is-invalid"
+                      [ngClass]="{'is-invalid': f.senha.errors && f.senha.touched }" formControlName="senha"
+                      placeholder="Senha">
+                    <div *ngIf="f.senha.errors?.required" class="invalid-feedback">
+                      A senha é obrigatória
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="p-col-12">
+
+                  <a class="nav-link" role="button">
+                    <button type="button" class="btn btn-primary button-login" (click)="fazerLogin()">
+                      Entrar
+                    </button>
+                  </a>
+
+                </div>
+
+                <div class="col">
+                  <div class="p-col-12">
+
+                    <a href="/cadastro" class="nav-link" role="button">Esqueceu a senha?</a>
+                    <a href="/cadastro" class="nav-link" role="button">Clique aqui para se cadastrar</a>
+
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-  
+
         </div>
-  
+
       </div>
-
-
-
     </div>
-  
-  </div>
+  </form>
 </div>

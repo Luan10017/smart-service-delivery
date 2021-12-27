@@ -3,20 +3,20 @@
 }
 .card {
   margin-top: 4em;
-
 }
 
 .input-login {
   margin: 1rem;
 }
 
-.button-login {
+.button-enviar {
   background-color: #ff363d;
   margin: 2rem;
   border-color: #ff363d;
+  width: 100px;
 }
 
-.button-login:focus {
+.button-enviar:focus {
   border-color: #ff363d;
   border-radius: #ff363d;
   box-shadow: #ff363d;
@@ -36,6 +36,6 @@
 }
 
 #row2 {
-  width: auto;
+  width: 50rem;
   margin-top: 5px !important;
 }

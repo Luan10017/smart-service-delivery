@@ -1,4 +1,15 @@
-<div class="row">
-    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-   <app-product-card *ngFor="let product of products" [products]="product"></app-product-card>
+<div class="container-fluid px-4" style="background-color: #f2f1ef;">
+
+  <div class="row my-5">
+    <h3 class="fs-4 mb-3 text-center">Bebidas</h3>
+
+    <div class="col">
+      <div class="container">
+
+          <app-product-card *ngFor="let product of products" [products]="product"></app-product-card>
+
+      </div>
+    </div>
+  </div>
+
 </div>

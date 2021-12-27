@@ -16,19 +16,21 @@ export class AuthService {
 
   fazerLogin(usuario: Usuario){
 
-    if (usuario.nome === 'usuario@email.com' && 
+    if (usuario.nome === 'usuario@email.com' &&
       usuario.senha === '123') {
 
       this.usuarioAutenticado = true;
-window.localStorage.setItem("nome", usuario.nome)
-window.localStorage.setItem("senha", usuario.senha)
+      window.localStorage.setItem("nome", usuario.nome)
+      window.localStorage.setItem("senha", usuario.senha)
       this.mostrarMenuEmitter.emit(true);
       this.router.navigate(['/home']);
 
     } else {
+
       this.usuarioAutenticado = false;
 
       this.mostrarMenuEmitter.emit(false);
+
     }
   }
 

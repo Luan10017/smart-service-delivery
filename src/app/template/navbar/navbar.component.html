@@ -1,46 +1,162 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4" style="height: 7rem;">
-    <div class="d-flex align-items-center">
-        <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-        <h2 class="fs-2 m-0  me-5">Dashboard</h2>
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4" style="height: 7rem;">
+  <div id="teste" class="d-flex align-items-center">
+
+    <img class="card-img-top item-img" id="logo" src="/assets/logo.png">
+
+  </div>
+
+  <div class="d-flex align-items-center">
+
+    <div class="input-group rounded">
+      <input type="search" class="form-control rounded" placeholder="Pesquisar" aria-label="Search"
+        aria-describedby="search-addon" />
+      <span class="input-group-text border-0" id="search-addon">
+        <i class="fas fa-search"></i>
+      </span>
     </div>
 
-    <div class="d-flex align-items-center">
+  </div>
 
-        <div class="input-group rounded">
-            <input type="search" class="form-control rounded" placeholder="Pesquisar" aria-label="Search"
-                aria-describedby="search-addon" />
-            <span class="input-group-text border-0" id="search-addon">
-                <i class="fas fa-search"></i>
-            </span>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+      <li class="nav-item dropdown">
+        <a routerLink="/login" class="nav-link second-text fw-bold" role="button">
+          <i class="fas fa-shopping-cart me-6
+                    "></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ms-auto mb-2 ml-3 mb-lg-0">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown" role="button"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fas fa-user me-2"></i>John Wick
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="#">Minha Conta</a></li>
+          <li><a class="dropdown-item" href="#">Configurações</a></li>
+          <li><a class="dropdown-item" href="#">Logout</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>-->
+
+
+
+<header class="section-header">
+  <section class="header-main border-bottom">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col-lg-3 col-sm-4 col-md-4 col-5"> <a href="#" class="brand-wrap" data-abc="true">
+            <img class="logo" src="/assets/logo.png"> <span
+              class="logo"></span> </a> </div>
+        <div class="col-lg-4 col-xl-5 col-sm-8 col-md-4 d-none d-md-block">
+          <form action="#" class="search-wrap">
+            <div class="input-group w-100"> <input type="text" class="form-control search-form" style="width:55%;"
+                placeholder="Pesquisar">
+              <div class="input-group-append">
+                <button class="btn btn-primary search-button" type="submit"  style="margin-left: 1px;"> <i
+                    class="fa fa-search pl-8"></i>
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
 
-    </div>
+        <div class="col-lg-5 col-xl-4 col-sm-8 col-md-4 col-7">
+          <div class="d-flex justify-content-end">
+            <a target="_blank" routerLink="/login" class="nav-link second-text fw-bold">
+              <i class="fas fa fa-shopping-cart second-text fw-bold"></i>
+            </a> <span class="vl"></span>
+            <div class="dropdown btn-group">
 
-
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item dropdown">
-                <a routerLink="/login" class="nav-link second-text fw-bold" role="button">
-                    <i class="fas fa-sign-in-alt me-2"></i>Entrar
+                <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-user me-2"></i>John Wick
                 </a>
-            </li>
-        </ul>
-    </div>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Sobre</a>
+                  <a class="dropdown-item" href="#">Configurações</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Contato</a>
+                </div>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fas fa-user me-2"></i>Lucas Mendes
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">Minha Conta</a></li>
-                    <li><a class="dropdown-item" href="#">Configurações</a></li>
-                    <li><a class="dropdown-item" href="#">Logout</a></li>
-                </ul>
-            </li>
-        </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
+
+
+
+  <nav class="navbar navbar-expand-md navbar-main border-bottom">
+    <div class="container-fluid">
+      <form class="d-md-none my-2">
+        <div class="input-group"> <input type="search" name="search" class="form-control" placeholder="Search"
+            required="">
+          <div class="input-group-append"> <button type="submit" class="btn btn-secondary"> <i class="fa fa-search"></i>
+            </button> </div>
+        </div>
+      </form>
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#dropdown6"
+        aria-expanded="false"> <span class="navbar-toggler-icon"></span>
+       </button>
+
+
+    </div>
+  </nav>
+
+
+</header>
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a routerLink="produto" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+            class="icon fas fa-search-dollar me-2"></i>Promoções</a>
+      </li>
+      <li class="nav-item active">
+        <a routerLink="hamburger" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+            class="icon fas fa-hamburger me-2"></i>Sanchuíches</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="porcoes" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+            class="icon fas fa-drumstick-bite me-2"></i>Porções</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="bebidas" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+            class="icon fas fa-cocktail me-2"></i>Bebidas</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="alcoolicas" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+            class="icon fas fa-beer me-2"></i>Bebidas Alcoólicas</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="porcoes" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+            class="icon fas fa-ice-cream me-2"></i>Sobremesas</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="porcoes" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+            class="icon fas fa-pizza-slice me-2"></i>Pizza</a>
+      </li>
+
+    </ul>
+
+  </div>
 </nav>
+

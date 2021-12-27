@@ -18,7 +18,9 @@ import { HamburgerComponent } from './view/hamburger/hamburger.component';
 import { PorcoesComponent } from './view/porcoes/porcoes.component';
 import { BebidasComponent } from './view/bebidas/bebidas.component';
 import { AlcoolicasComponent } from './view/alcoolicas/alcoolicas.component'
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EsqueceuSenhaComponent } from './view/esqueceu-senha/esqueceu-senha.component';
+import { RedefinirSenhaComponent } from './view/redefinir-senha/redefinir-senha.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { FormsModule } from '@angular/forms';
     HamburgerComponent,
     PorcoesComponent,
     BebidasComponent,
-    AlcoolicasComponent
+    AlcoolicasComponent,
+    EsqueceuSenhaComponent,
+    RedefinirSenhaComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,8 @@ import { FormsModule } from '@angular/forms';
     TemplateModule,
     CarouselModule.forRoot(),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]

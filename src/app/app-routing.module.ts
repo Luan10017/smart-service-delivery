@@ -16,6 +16,8 @@ import { PagamentoComponent } from './view/pagamento/pagamento.component';
 import { EnderecoComponent } from './view/endereco/endereco.component';
 import { PedidoComponent } from './view/pedido/pedido.component';
 import { AuthGuard } from './guards/auth.guard';
+import { EsqueceuSenhaComponent } from './view/esqueceu-senha/esqueceu-senha.component';
+import { RedefinirSenhaComponent } from './view/redefinir-senha/redefinir-senha.component';
 
 
 const routes: Routes = [
@@ -34,10 +36,12 @@ const routes: Routes = [
       { path: 'bebidas', component: BebidasComponent },
       { path: 'alcoolicas', component: AlcoolicasComponent }
     ],
-    canActivate: [AuthGuard]
+    //canActivate: [AuthGuard]
   },
   { path: 'login', component: LoginComponent },
   { path: 'cadastro', component: CadastroComponent },
+  { path: 'esqueceu-senha', component: EsqueceuSenhaComponent },
+  { path: 'redefinir-senha', component: RedefinirSenhaComponent }
 
 ];
 

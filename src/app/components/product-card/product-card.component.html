@@ -1,13 +1,22 @@
-<div class="col-lg-2 col-md-6 col-sm-12 col-xs-12"  style="display: inline-block;">
-    <div class="card-center"  style="display: inline-block;">
-        <div class="card text-center"  id="produto" style="display: inline-block;">
+<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12"  style="display: inline-block;">
+    <div class="card-center">
+        <div class="card text-center m-3 shadow bg-white rounded" id="produto">
             <a href="/produto">
                 <img class="card-img-top item-img" src="{{ products.img_path }}">
             </a>
-            <h5 class="card-title title-post-home"><a class="category" href="">{{products.category}}</a></h5>
-            <p class="card-text">{{products.name}}</p>
+            <!--<h5 class="card-title title-post-home"><a class="category" href="">{{products.category}}</a></h5>-->
+            <h3 class="card-text">{{products.name}}</h3>
             <p>{{products.description}}</p>
-            <h5 class="card-title title-post-home price">R$ {{ products.price }}</h5>    
+            <h5 class="card-title title-post-home price">R$ {{ products.price }}</h5>
+            <div class="p-col-12">
+
+              <a class="nav-link p-3" role="button">
+                <button type="button" class="btn btn-primary button-login">
+                  Adicionar ao Carrinho
+                </button>
+              </a>
+
+            </div>
         </div>
     </div>
 </div>

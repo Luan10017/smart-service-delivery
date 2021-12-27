@@ -1,16 +1,19 @@
 <div class="container-fluid px-4" style="background-color: #fff;">
 
-    <div class="row my-5">
-        <h3 class="fs-4 mb-3">Hambúrgues</h3>
-        <div class="col">
-            <div class="container">
+  <div class="row my-5">
+    <h3 class="fs-4 mb-3">Sanduíches</h3>
+    <div class="col">
+      <div class="container">
 
-                <div class="row" style="display: inline-block;">                  
-                
-                    <app-product-card *ngFor="let product of products" [products]="product"></app-product-card>               
+        <div class="row" style="display: inline-block;">
 
-                </div>           
-            </div>
-        </div>     
+          <app-product-card *ngFor="let product of products" [products]="product"></app-product-card>
 
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
 

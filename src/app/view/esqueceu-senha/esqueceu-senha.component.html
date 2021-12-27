@@ -1,0 +1,65 @@
+<div class="p-justify-center" style="background-color: #f2f1ef; width: 100vw;
+  height: 100vh;
+  margin: 0 auto;">
+
+  <div class="row">
+    <div class="p-col-10 p-sm-6 p-md-4">
+
+      <div class="p-col-12 text-center">
+
+      </div>
+    </div>
+
+  </div>
+
+  <form [formGroup]="form">
+    <div class="row">
+      <div class="card pt-3 mb-5 shadow p-3 mb-5 bg-white rounded" id="row2">
+        <div class="container card-body">
+          <div class="row">
+
+            <div class="p-col-10 p-sm-6 p-md-4">
+
+              <div class="p-col-12 pb-5 text-center">
+                <img class="logo" src="/assets/logo.png">
+              </div>
+
+              <div class="p-col-12 text-center">
+                <h5 class="pb-3">Digite o seu e-mail</h5>
+              </div>
+
+              <div class="row">
+                <div class="col-md-9 col-sm-12 col-xs-12">
+
+                  <input type="email" class="form-control is-invalid"
+                    [ngClass]="{'is-invalid': f.email.errors && f.email.touched }" formControlName="email"
+                    placeholder="Ex: seuemail@outlook.com">
+                  <div *ngIf="f.email.errors?.required" class="invalid-feedback">
+                    e-mail é obrigatório
+                  </div>
+                  <div *ngIf="f.email.errors?.email" class="invalid-feedback">
+                    Digite o seu email
+                  </div>
+
+                </div>
+                <div class="col-md-3 col-sm-12 col-xs-12 text-center">
+                  <a>
+                    <button type="button" class="btn btn-primary button-enviar">
+                      Enviar
+                    </button>
+                  </a>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- </form> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+</div>

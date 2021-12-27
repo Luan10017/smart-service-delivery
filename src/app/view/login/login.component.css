@@ -1,40 +1,30 @@
-.card {
-    margin-top: 4em;
-  }
-
-  .p-grid{
-    margin-top: 5%;
-  }
-
-  .input-login{
-     margin: 1rem;
-  }
-
-  .button-login{
-    background-color: #d91e18;
-    margin: 2rem;
-    border-color: red;
-  }
-
-  .button-login{
-    background-color: #d91e18;
-    margin: 2rem;
-   
-  }
-
-  .button-login:focus{
-    border-color: red;
-    border-radius: red;
-    box-shadow: #d91e18;
-  }
-
-  .btn-check:focus+.btn-primary, .btn-primary:focus {
-
-    box-shadow: none;
+*{
+ height: auto;
+  margin: 0 auto;
 }
 
+.card {
+  /*margin-top: 4em;*/
+}
 
-div#background-login.p-grid{
+.button-login {
+  background-color: #ff363d;
+  margin: 2rem;
+  border-color: #ff363d;
+  width: 100px;
+}
+
+.button-login:focus {
+  border-color: #ff363d;
+  border-radius: #ff363d;
+  box-shadow: #ff363d;
+}
+
+.btn-check:focus + .btn-primary,
+.btn-primary:focus {
+  box-shadow: none;
+}
+
+div#background-login.p-grid {
   border-radius: 16px;
-
 }
