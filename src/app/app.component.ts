@@ -14,9 +14,9 @@ export class AppComponent {
   constructor(private authService :AuthService) {}
 
   ngOnInit(){
-    this.authService.mostrarMenuEmitter.subscribe(
+    /* this.authService.mostrarMenuEmitter.subscribe(
       mostrar => this.mostrarMenu = mostrar
-    )
+    ) */
   }
 
   /* ngAfterViewInit(){
