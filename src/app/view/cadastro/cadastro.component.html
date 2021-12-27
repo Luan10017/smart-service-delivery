@@ -1,138 +1,276 @@
-<div class="p-grid p-justify-center card">
+<div class="p-justify-center" style="background-color: #f2f1ef; ">
+
+  <div class="row">
     <div class="p-col-10 p-sm-6 p-md-4">
-     
-        <div class="p-grid">
-          <div class="p-col-12 text-center">
-            <i class="fas fa-user fa-4x" style="color: #d91e18;"></i>
-            <h2>Cadastro</h2>
-          </div> 
-        </div>
-    </div>
-    
-    <div class="container">
-      <div class="row">
-        
-        <div class="p-col-10 p-sm-6 p-md-4">
-              <span class="endereco"></span>
-              <span id="msg"></span>
-              <!-- <form name="" action="" id=""> -->
 
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label>Nome Completo</label>
-                        <input [(ngModel)]="cadastro.nome" type="text"  class="form-control"  placeholder="Ex: José da Silva Almeida" required>                        
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label>E-mail</label>
-                        <input [(ngModel)]="cadastro.email" type="email" class="form-control"  placeholder="Ex: seuemail@outlook.com"  required>                                                
-                    </div>
-                </div>
-
-                <div class="row">
-                   <!--  <div class="col-md-6 mb-3">
-                        <label>Usuário</label>
-                        <input type="text" name="" id="" class="form-control" placeholder="Ex: MeuNome" required>
-                    </div> -->
-                    <div class="col-md-6 mb-3">
-                        <label>Senha</label>
-                        <input [(ngModel)]="cadastro.password" type="password" name="" id="" class="form-control" placeholder="Ex: Sua senha" required>
-                    </div>
-                </div>
-
-                <div class="row">
-                      <div class="col-md-3 mb-3">
-                          <label>DDD</label>
-                          <input type="text"  id=""  class="form-control" placeholder="Ex: 13" required>
-                      </div>
-                      <div class="col-md-9 mb-3">
-                          <label>Telefone</label>
-                          <input [(ngModel)]="cadastro.telefone" type="text" name="" id="" class="form-control" placeholder="Telefone sem traço Ex: 32256598 " required>
-                      </div>
-                </div>
-
-                <h4 class="mb-3">Endereço de Entrega</h4>
-
-                <div class="row">
-                      <div class="col-md-9 mb-3">
-                          <label>Logradouro</label>
-                          <input [(ngModel)]="cadastro.logradouro" type="text" class="form-control"  placeholder="Av. Rua"  required>
-                      </div>
-                      <div class="col-md-3 mb-3">
-                          <label>Número</label>
-                          <input [(ngModel)]="cadastro.numero" type="text" name="" class="form-control" id="" placeholder="Ex: 78, 99, 505" required>
-                      </div>
-                </div>
-
-                <div class="mb-3">
-                      <label>Complemento</label>
-                      <input [(ngModel)]="cadastro.complemento" type="text" name="" class="form-control" id="" placeholder="Ex: BLOCO C, apt 505">
-                </div>
-
-                <div class="row">
-                      <div class="col-md-5 mb-3">
-                          <label>Bairro</label>
-                          <input [(ngModel)]="cadastro.bairro" type="text"  class="form-control" id="" placeholder="Ex: Campo Grande, Aparecida" required>
-                      </div>
-                      <div class="col-md-5 mb-3">
-                          <label>Cidade</label>
-                          <input [(ngModel)]="cadastro.cidade" type="text" class="form-control" id="" placeholder="Ex: Santos, São Vicente" required>
-                      </div>
-                      <div class="col-md-2 mb-3">
-                          <label>Estado</label>
-                          <select [(ngModel)]="cadastro.estado" name="" class="custom-select d-block w-100" id="" required>
-                              <option value="">Selecione</option>
-                              <option value="AC">AC</option>
-                              <option value="AL">AL</option>
-                              <option value="AP">AP</option>
-                              <option value="AM">AM</option>
-                              <option value="BA">BA</option>
-                              <option value="CE">CE</option>
-                              <option value="DF">DF</option>
-                              <option value="ES">ES</option>
-                              <option value="GO">GO</option>
-                              <option value="MA">MA</option>
-                              <option value="MT">MT</option>
-                              <option value="MS">MS</option>
-                              <option value="MG">MG</option>
-                              <option value="PA">PA</option>
-                              <option value="PB">PB</option>
-                              <option value="PR">PR</option>
-                              <option value="PE">PE</option>
-                              <option value="PI">PI</option>
-                              <option value="RJ">RJ</option>
-                              <option value="RN">RN</option>
-                              <option value="RS">RS</option>
-                              <option value="RO">RO</option>
-                              <option value="RR">RR</option>
-                              <option value="SC">SC</option>
-                              <option value="SP" selected>SP</option>
-                              <option value="SE">SE</option>
-                              <option value="TO">TO</option>
-                          </select>
-                      </div>
-                </div>
-
-                <div class="mb-3">
-                      <label>CEP</label>
-                      <input [(ngModel)]="cadastro.cep" type="text" class="form-control" id="" placeholder="CEP sem traço Ex: 110600000, 13165000" required>
-                </div>                                 
-
-                <div class="p-col-12 text-center">
-                   
-                    <a >
-                        <button type="button" class="btn btn-primary button-login" (click)="fazerCadastro()" >
-                            Cadastrar
-                        </button>
-                    </a>
-                  
-        
-                </div>
-                                             
-              <!-- </form> -->
-          </div>
+      <div class="p-col-12 text-center">
+        <img class="logo" src="/assets/logo.png">
       </div>
+    </div>
+
   </div>
 
+  <form [formGroup]="form">
+    <div class="row">
+      <div class="card pt-3 mb-5 shadow p-3 mb-5 bg-white rounded" id="row2">
+        <div class="container card-body">
+          <div class="row">
+
+            <div class="p-col-10 p-sm-6 p-md-4">
 
 
-   
+              <h3 class="pb-3">Dados Pessoais</h3>
+
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+
+                  <label>Nome Completo</label>
+                  <input
+                    [(ngModel)]="cadastro.nome"
+                    type="text"
+                    class="form-control is-invalid"
+                    [ngClass]="{'is-invalid': f.nomeCompleto.errors && f.nomeCompleto.touched }"
+                    formControlName="nomeCompleto"
+                    placeholder="Ex: José da Silva Almeida">
+                  <div *ngIf="f.nomeCompleto.errors?.required" class="invalid-feedback">
+                    Nome Completo é obrigatório
+                  </div>
+
+
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label>E-mail</label>
+                  <input
+                   [(ngModel)]="cadastro.email"
+                   type="email"
+                   class="form-control is-invalid"
+                   [ngClass]="{'is-invalid': f.email.errors && f.email.touched }"
+                   formControlName="email"
+                   placeholder="Ex: seuemail@outlook.com">
+                   <div *ngIf="f.email.errors?.required" class="invalid-feedback">
+                    e-mail é obrigatório
+                  </div>
+                  <div *ngIf="f.email.errors?.email" class="invalid-feedback">
+                    Deve ser um endereço de email válido
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label>Senha</label>
+                  <input
+                    type="text"
+                    name=""
+                    id=""
+                    class="form-control is-invalid"
+                    [ngClass]="{'is-invalid': f.senha.errors && f.senha.touched }"
+                    formControlName="senha"
+                    placeholder="Sua senha deve conter no mínimo 5 caracteres"
+                    >
+                    <div *ngIf="f.senha.errors?.required" class="invalid-feedback">
+                      A senha é obrigatória
+                    </div>
+
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label>Confirmar Senha</label>
+                  <input
+                    [(ngModel)]="cadastro.password"
+                    type="text"
+                    name=""
+                    id=""
+                    class="form-control is-invalid"
+                    [ngClass]="{'is-invalid': f.confirmarSenha.errors && f.confirmarSenha.touched }"
+                    formControlName="confirmarSenha"
+                    placeholder="Sua senha deve conter no mínimo 5 caracteres">
+                    <div *ngIf="f.confirmarSenha.errors?.required" class="invalid-feedback">
+                      A senha é obrigatória
+                    </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-3 mb-3">
+                  <label>DDD</label>
+                  <input
+                  type="text"
+                   id=""
+                   class="form-control is-invalid"
+                   [ngClass]="{'is-invalid': f.ddd.errors && f.ddd.touched }"
+                   formControlName="ddd"
+                   placeholder="Ex: 13">
+                   <div *ngIf="f.ddd.errors?.required" class="invalid-feedback">
+                    O DDD é obrigatório
+                  </div>
+                </div>
+                <div class="col-md-9 mb-3">
+                  <label>Telefone</label>
+                  <input
+                  [(ngModel)]="cadastro.telefone"
+                   type="text"
+                   name=""
+                   id=""
+                   class="form-control is-invalid"
+                   [ngClass]="{'is-invalid': f.telefone.errors && f.telefone.touched }"
+                   formControlName="telefone"
+                   placeholder="Telefone sem traço Ex: 32256598 ">
+                   <div *ngIf="f.telefone.errors?.required" class="invalid-feedback">
+                    O telefone é obrigatório
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="row pt-3">
+                <h3 class="pb-3">Endereço de Entrega</h3>
+
+                <div class="col-md-3 mb-3">
+                  <label>CEP</label>
+                  <input
+                   [(ngModel)]="cadastro.cep"
+                   type="text"
+                   class="form-control is-invalid"
+                   id=""
+                   [ngClass]="{'is-invalid': f.cep.errors && f.cep.touched }"
+                   formControlName="cep"
+                  placeholder="CEP sem traço Ex: 110600000, 13165000">
+                  <div *ngIf="f.cep.errors?.required" class="invalid-feedback">
+                    O cep é obrigatório
+                  </div>
+                </div>
+                <div class="col-md-8 mb-3">
+                  <label>Logradouro</label>
+                  <input
+                  [(ngModel)]="cadastro.logradouro"
+                   type="text"
+                   class="form-control is-invalid"
+                   [ngClass]="{'is-invalid': f.logradouro.errors && f.logradouro.touched }"
+                   formControlName="logradouro"
+                   placeholder="Av. Rua">
+                   <div *ngIf="f.logradouro.errors?.required" class="invalid-feedback">
+                    O logradouro é obrigatório
+                  </div>
+                </div>
+                <div class="col-md-1 mb-3">
+                  <label>Número</label>
+                  <input
+                   [(ngModel)]="cadastro.numero"
+                   type="text"
+                   name=""
+                   class="form-control is-invalid"
+                   id=""
+                   [ngClass]="{'is-invalid': f.numero.errors && f.numero.touched }"
+                   formControlName="numero"
+                   placeholder="Ex: 78, 99, 505">
+                </div>
+                <div *ngIf="f.numero.errors?.required" class="invalid-feedback">
+                  O numero é obrigatório
+                </div>
+
+              </div>
+
+              <div class="row">
+                <div class="col-md-3 mb-3">
+                  <label>Complemento</label>
+                  <input
+                    [(ngModel)]="cadastro.complemento"
+                    type="text"
+                    name=""
+                    class="form-control is-invalid"
+                    id=""
+                    [ngClass]="{'is-invalid': f.complemento.errors && f.complemento.touched }"
+                    formControlName="complemento"
+                    placeholder="Ex: BLOCO C, apt 505">
+                    <div *ngIf="f.complemento.errors?.required" class="invalid-feedback">
+                      O complemento é obrigatório
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label>Bairro</label>
+                  <input
+                   [(ngModel)]="cadastro.bairro"
+                    type="text"
+                    class="form-control is-invalid"
+                    id=""
+                    [ngClass]="{'is-invalid': f.bairro.errors && f.bairro.touched }"
+                    formControlName="bairro"
+                    placeholder="Ex: Campo Grande, Aparecida">
+                    <div *ngIf="f.bairro.errors?.required" class="invalid-feedback">
+                      O bairro é obrigatório
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>Cidade</label>
+                  <input
+                  [(ngModel)]="cadastro.cidade"
+                  type="text"
+                  class="form-control is-invalid"
+                  id=""
+                  [ngClass]="{'is-invalid': f.cidade.errors && f.cidade.touched }"
+                  formControlName="cidade"
+                  placeholder="Ex: Santos, São Vicente">
+                  <div *ngIf="f.cidade.errors?.required" class="invalid-feedback">
+                    A cidade é obrigatório
+                  </div>
+                </div>
+                <div class="col-md-1 mb-3">
+                  <label>Estado</label>
+                  <select
+                  [(ngModel)]="cadastro.estado"
+                   name=""
+                    class="custom-select d-block w-100 is-invalid" id="">
+                    <option value="">Selecione</option>
+                    <option value="AC">AC</option>
+                    <option value="AL">AL</option>
+                    <option value="AP">AP</option>
+                    <option value="AM">AM</option>
+                    <option value="BA">BA</option>
+                    <option value="CE">CE</option>
+                    <option value="DF">DF</option>
+                    <option value="ES">ES</option>
+                    <option value="GO">GO</option>
+                    <option value="MA">MA</option>
+                    <option value="MT">MT</option>
+                    <option value="MS">MS</option>
+                    <option value="MG">MG</option>
+                    <option value="PA">PA</option>
+                    <option value="PB">PB</option>
+                    <option value="PR">PR</option>
+                    <option value="PE">PE</option>
+                    <option value="PI">PI</option>
+                    <option value="RJ">RJ</option>
+                    <option value="RN">RN</option>
+                    <option value="RS">RS</option>
+                    <option value="RO">RO</option>
+                    <option value="RR">RR</option>
+                    <option value="SC">SC</option>
+                    <option value="SP" selected>SP</option>
+                    <option value="SE">SE</option>
+                    <option value="TO">TO</option>
+                  </select>
+                </div>
+
+              </div>
+
+
+              <div class="p-col-12 text-center">
+                <a>
+                  <button type="button" class="btn btn-primary button-login" (click)="fazerCadastro()">
+                    Cadastrar
+                  </button>
+                </a>
+              </div>
+
+              <!-- </form> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+</div>

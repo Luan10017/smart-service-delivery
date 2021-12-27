@@ -1,0 +1,76 @@
+<div class="p-justify-center" style="background-color: #f2f1ef; width: 100vw;
+  height: 100vh;
+  margin: 0 auto;">
+
+  <div class="row">
+    <div class="p-col-10 p-sm-6 p-md-4">
+
+      <div class="p-col-12 text-center">
+
+      </div>
+    </div>
+
+  </div>
+
+  <form [formGroup]="form">
+    <div class="row">
+      <div class="card pt-3 mb-5 shadow p-3 mb-5 bg-white rounded" id="row2">
+        <div class="container card-body">
+          <div class="row">
+
+            <div class="p-col-10 p-sm-6 p-md-4">
+
+              <div class="p-col-12 pb-5 text-center">
+                <img class="logo" src="/assets/logo.png">
+              </div>
+
+              <div class="p-col-12 text-center">
+                <h5 class="pb-3">Digite a nova senha</h5>
+              </div>
+
+              <div class="row">
+                <div class="col-md-9 col-sm-12 col-xs-12 p-3">
+
+                  <input type="text" class="form-control is-invalid"
+                    [ngClass]="{'is-invalid': f.senha.errors && f.senha.touched }"
+                    formControlName="senha"
+                    placeholder="Senha">
+                  <div *ngIf="f.senha.errors?.required" class="invalid-feedback">
+                    A senha é obrigatória
+                  </div>
+
+                </div>
+
+                <div class="col-md-9 col-sm-12 col-xs-12 p-3">
+
+                  <input type="text" class="form-control is-invalid"
+                    [ngClass]="{'is-invalid': f.senha.errors && f.senha.touched }"
+                    formControlName="senha"
+                    placeholder="Confirmar Senha">
+                  <div *ngIf="f.senha.errors?.required" class="invalid-feedback">
+                     As senhas não correspondem
+                  </div>
+
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                  <a>
+                    <button type="button" class="btn btn-primary button-enviar">
+                      Enviar
+                    </button>
+                  </a>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- </form> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+</div>
