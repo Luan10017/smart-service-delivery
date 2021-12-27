@@ -34,7 +34,7 @@ const routes: Routes = [
       { path: 'bebidas', component: BebidasComponent },
       { path: 'alcoolicas', component: AlcoolicasComponent }
     ],
-    canActivate: [AuthGuard]
+    // canActivate: [AuthGuard]
   },
   { path: 'login', component: LoginComponent },
   { path: 'cadastro', component: CadastroComponent },
