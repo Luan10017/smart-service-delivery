@@ -1,38 +1,41 @@
-import { CompileShallowModuleMetadata } from '@angular/compiler';
-import { EventEmitter, Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Usuario } from './usuario';
+import { Router } from '@angular/router';
+import { Injectable, EventEmitter } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
 
-  private usuarioAutenticado: boolean = false;
+  private usuarioAutenticado: boolean = false
 
-  mostrarMenuEmitter = new EventEmitter<boolean>();
+  constructor(
+    private router: Router,
+    private http: HttpClient
+  ) { }
 
-  constructor(private router: Router) { }
+  url="http://localhost:8080/api/auth"
+  autentica(usuario: Usuario): Observable<any> {
+      return this.http.post(this.url, usuario)
+  }
+
 
   fazerLogin(usuario: Usuario){
-
-    if (usuario.nome === 'usuario@email.com' && 
-      usuario.senha === '123') {
-
-      this.usuarioAutenticado = true;
-window.localStorage.setItem("nome", usuario.nome)
-window.localStorage.setItem("senha", usuario.senha)
-      this.mostrarMenuEmitter.emit(true);
-      this.router.navigate(['/home']);
-
-    } else {
-      this.usuarioAutenticado = false;
-
-      this.mostrarMenuEmitter.emit(false);
-    }
+      this.autentica(usuario).subscribe(
+      response => {
+        this.usuarioAutenticado = true
+        localStorage.setItem("usuarioAutenticado","true")
+        localStorage.setItem("email",`${usuario.email}`)
+        this.router.navigate(['/'])
+      },
+      error => {alert("email ou senha inválidos")}
+    );
   }
 
   usuarioEstaAutenticado(){
-    return this.usuarioAutenticado;
+    return this.usuarioAutenticado
   }
 }
