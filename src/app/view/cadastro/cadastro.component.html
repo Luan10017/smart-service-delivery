@@ -87,7 +87,10 @@
                     formControlName="confirmarSenha"
                     placeholder="Sua senha deve conter no mínimo 5 caracteres">
                     <div *ngIf="f.confirmarSenha.errors?.required" class="invalid-feedback">
-                      A senha é obrigatória
+                      A Confirmar Senha é obrigatória
+                    </div>
+                    <div *ngIf="f.confirmarSenha.errors?.mustMatch" class="invalid-feedback">
+                      Repetir a Senha é obrigatório
                     </div>
                 </div>
               </div>

@@ -1,7 +1,8 @@
 import { CadastroService } from './cadastro.service';
 import { Component, OnInit } from '@angular/core';
 import { Cadastro } from './cadastro';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControlOptions, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ValidatiorFields } from 'src/app/helpers/ValidatiorFields';
 
 @Component({
   selector: 'app-cadastro',
@@ -33,6 +34,11 @@ export class CadastroComponent implements OnInit {
   }
 
   public validation(): void{
+
+    const formOptions: AbstractControlOptions = {
+      validators: ValidatiorFields.MustMatch('senha', 'confirmarSenha')
+    };
+
     this.form = this.fb.group({
       //cada um dos campos que tenho no model
 
@@ -76,7 +82,7 @@ export class CadastroComponent implements OnInit {
         '', Validators.required
       ],
 
-    });
+    }, formOptions);
   }
 
 

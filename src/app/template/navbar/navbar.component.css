@@ -3,6 +3,14 @@
         background-color:  #fff !important;
     }
 
+    .second-text {
+      color: var(--second-text-color);
+    }
+
+    .second-text:hover {
+      color: #ff363d;
+    }
+
     #teste{
       width: 20%;
     }
@@ -24,8 +32,6 @@
     body {
       background-color: #eee
   }
-
-
 
 
   .header-main {
@@ -166,3 +172,28 @@
   .login {
       color: black
   }
+
+
+  /*Os que estão abaixo eu tirei do global*/
+
+
+  .rounded-full {
+    border-radius: 100%;
+  }
+
+  #wrapper {
+    overflow-x: hidden;
+    /*background-image: linear-gradient(
+      to right,
+      #baf3d7,
+      #c2f5de,
+      #cbf7e4,
+      #d4f8ea,
+      #ddfaef
+    );*/
+    background-color: #f2f1ef;
+  }
+
+
+
+
