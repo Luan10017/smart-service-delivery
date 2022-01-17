@@ -1,3 +1,4 @@
+import { CadastroProdutoComponent } from './view/cadastro-produto/cadastro-produto.component';
 import { LayoutComponent } from './template/layout/layout.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -34,7 +35,8 @@ const routes: Routes = [
       { path: 'hamburger', component: HamburgerComponent },
       { path: 'porcoes', component: PorcoesComponent },
       { path: 'bebidas', component: BebidasComponent },
-      { path: 'alcoolicas', component: AlcoolicasComponent }
+      { path: 'alcoolicas', component: AlcoolicasComponent },
+      { path: 'cadastro/produtos', component: CadastroProdutoComponent }
     ],
     // canActivate: [AuthGuard]
   },
