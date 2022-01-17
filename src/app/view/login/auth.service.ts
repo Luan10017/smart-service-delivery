@@ -17,7 +17,7 @@ export class AuthService {
     private http: HttpClient
   ) { }
 
-  url="http://localhost:8080/api/auth"
+  url="http://localhost:8080/auth"
   autentica(usuario: Usuario): Observable<any> {
       return this.http.post(this.url, usuario)
   }
