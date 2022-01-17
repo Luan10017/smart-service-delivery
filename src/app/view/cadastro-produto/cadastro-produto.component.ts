@@ -1,6 +1,6 @@
+import { CadastroProdutosService } from './../../services/cadastro-produtos.service';
 import { Product } from './../../classes/Product';
 import { Component, OnInit } from '@angular/core';
-import { CadastroService } from '../cadastro/cadastro.service';
 
 @Component({
   selector: 'app-cadastro-produto',
@@ -12,7 +12,7 @@ export class CadastroProdutoComponent implements OnInit {
   produto: Product = new Product()
   formData = new FormData()
 
-  constructor(private cadastroService: CadastroService) { }
+  constructor(private cadastroService: CadastroProdutosService) { }
 
   ngOnInit(): void {
   }
