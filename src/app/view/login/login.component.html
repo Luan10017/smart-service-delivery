@@ -22,7 +22,7 @@
                 <div class="row">
                   <div class="col-md-9 col-sm-12 col-xs-12 p-3">
 
-                    <input [(ngModel)]="usuario.nome" type="text" class="form-control is-invalid"
+                    <input [(ngModel)]="usuario.email" type="text" class="form-control is-invalid"
                       [ngClass]="{'is-invalid': f.email.errors && f.email.touched }" formControlName="email"
                       placeholder="Email">
                     <div *ngIf="f.email.errors?.required" class="invalid-feedback">
@@ -36,7 +36,7 @@
 
                   <div class="col-md-9 col-sm-12 col-xs-12 p-3">
 
-                    <input [(ngModel)]="usuario.senha" type="text" class="form-control is-invalid"
+                    <input [(ngModel)]="usuario.password" type="text" class="form-control is-invalid"
                       [ngClass]="{'is-invalid': f.senha.errors && f.senha.touched }" formControlName="senha"
                       placeholder="Senha">
                     <div *ngIf="f.senha.errors?.required" class="invalid-feedback">
