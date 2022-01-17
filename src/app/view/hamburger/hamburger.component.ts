@@ -15,7 +15,7 @@ export class HamburgerComponent implements OnInit {
 
   ngOnInit(): void {
     this.productService.read().subscribe(products => {
-      this.products = products.filter(({category}) => category == "hamburguer")
+      this.products = products.filter(({categoria}) => categoria == "hamburguer")
     })
   }
 

@@ -15,7 +15,7 @@ export class AlcoolicasComponent implements OnInit {
 
   ngOnInit(): void {
     this.productService.read().subscribe(products => {
-      this.products = products.filter(({category}) => category == "alcoolicas")
+      this.products = products.filter(({categoria}) => categoria == "alcoolicas")
     })
   }
 

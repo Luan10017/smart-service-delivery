@@ -15,7 +15,7 @@ export class PorcoesComponent implements OnInit {
 
   ngOnInit(): void {
     this.productService.read().subscribe(products => {
-      this.products = products.filter(({category}) => category == "porcoes")
+      this.products = products.filter(({categoria}) => categoria == "porcoes")
     })
   }
 
