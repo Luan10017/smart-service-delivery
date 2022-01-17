@@ -25,10 +25,24 @@ export class CadastroComponent implements OnInit {
     this.validation();
   }
 
+  inputFileChange(event: any) {
+    if(event.target.files && event.target.files[0]) {
+      const foto = event.target.files[0]
+
+      const formData = new FormData()
+      formData.append('file',foto)
+      
+      this.cadastroService.ok({ "categoria": "PODRAO", "nome": "Hamburguer", "preco": "12.99", "descricao": "xxxxxxxxxxxxxxxxxxxxxxxx", "estoque": "20" }).subscribe(res =>{
+        this.cadastroService.putItem(formData,res.data[0]['produtoId']).subscribe(res => console.log(res))
+    })
+    }
+  }
+
   fazerCadastro(){
     console.log(this.cadastro)
-    this.cadastroService.ok(this.cadastro).subscribe(res =>{
-        console.log(res)
+    this.cadastroService.ok({ "categoria": "PODRAO", "nome": "Hamburguer", "preco": "12.99", "descricao": "xxxxxxxxxxxxxxxxxxxxxxxx", "estoque": "20" }).subscribe(res =>{
+        this.cadastroService.putItem({},res.data[0]['produtoId'])
+        console.log(res.data[0]['produtoId'])
     })
   }
 
