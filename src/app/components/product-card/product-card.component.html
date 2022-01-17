@@ -2,12 +2,12 @@
     <div class="card-center">
         <div class="card text-center m-3 shadow bg-white rounded" id="produto">
             <a href="/produto">
-                <img class="card-img-top item-img" src="{{ products.img_path }}">
+                <img class="card-img-top item-img" src="data:image/jpeg;base64,{{ products.imgUrl }}">
             </a>
             <!--<h5 class="card-title title-post-home"><a class="category" href="">{{products.category}}</a></h5>-->
-            <h3 class="card-text">{{products.name}}</h3>
-            <p>{{products.description}}</p>
-            <h5 class="card-title title-post-home price">R$ {{ products.price }}</h5>
+            <h3 class="card-text">{{products.nome}}</h3>
+            <p class="description">{{products.descricao | slice:0:100}}{{products.descricao.length > 100? ' ...':''}}</p>
+            <h5 class="card-title title-post-home price">R$ {{ products.preco }}</h5>
             <div class="p-col-12">
 
               <a class="nav-link p-3" role="button">
