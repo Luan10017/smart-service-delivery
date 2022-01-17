@@ -21,6 +21,7 @@ import { AlcoolicasComponent } from './view/alcoolicas/alcoolicas.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EsqueceuSenhaComponent } from './view/esqueceu-senha/esqueceu-senha.component';
 import { RedefinirSenhaComponent } from './view/redefinir-senha/redefinir-senha.component';
+import { CadastroProdutoComponent } from './view/cadastro-produto/cadastro-produto.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { RedefinirSenhaComponent } from './view/redefinir-senha/redefinir-senha.
     BebidasComponent,
     AlcoolicasComponent,
     EsqueceuSenhaComponent,
-    RedefinirSenhaComponent
+    RedefinirSenhaComponent,
+    CadastroProdutoComponent
   ],
   imports: [
     BrowserModule,
