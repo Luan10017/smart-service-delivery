@@ -1,4 +1,4 @@
-export class Product {
+export class Produto {
     id?: number
     categoria!: string 
     nome!: string 
