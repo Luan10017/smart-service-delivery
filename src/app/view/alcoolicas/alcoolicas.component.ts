@@ -14,9 +14,9 @@ export class AlcoolicasComponent implements OnInit {
   constructor(private productService: MenuService) { }
 
   ngOnInit(): void {
-    this.productService.read().subscribe(products => {
-      this.products = products.filter(({categoria}) => categoria == "alcoolicas")
-    })
+    // this.productService.read().subscribe(products => {
+    //   this.products = products.filter(({categoria}) => categoria == "alcoolicas")
+    // })
   }
 
 }

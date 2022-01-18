@@ -14,9 +14,9 @@ export class PorcoesComponent implements OnInit {
   constructor(private productService: MenuService) { }
 
   ngOnInit(): void {
-    this.productService.read().subscribe(products => {
-      this.products = products.filter(({categoria}) => categoria == "porcoes")
-    })
+    // this.productService.read().subscribe(products => {
+    //   this.products = products.filter(({categoria}) => categoria == "porcoes")
+    // })
   }
 
 }

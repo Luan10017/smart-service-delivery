@@ -14,9 +14,9 @@ export class HamburgerComponent implements OnInit {
   constructor(private productService: MenuService) { }
 
   ngOnInit(): void {
-    this.productService.read().subscribe(products => {
-      this.products = products.filter(({categoria}) => categoria == "hamburguer")
-    })
+    // this.productService.read().subscribe(products => {
+    //   this.products = products.filter(({categoria}) => categoria == "hamburguer")
+    // })
   }
 
 }
