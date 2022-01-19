@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { CadastroProdutosService } from './../../services/cadastro-produtos.service';
 import { Produto } from '../../classes/Produto';
+import { AbstractControlOptions, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-cadastro-produto',
@@ -10,12 +11,18 @@ import { Produto } from '../../classes/Produto';
 })
 export class CadastroProdutoComponent implements OnInit {
 
+  form!: FormGroup;
   produto: Produto = new Produto()
   formData = new FormData()
 
-  constructor(private cadastroService: CadastroProdutosService) { }
+  get f(): any {
+    return this.form.controls;
+  }
+
+  constructor(private fb: FormBuilder, private cadastroService: CadastroProdutosService) { }
 
   ngOnInit(): void {
+    this.validation();
   }
 
 
@@ -34,4 +41,32 @@ export class CadastroProdutoComponent implements OnInit {
           .subscribe(res => console.log(res))
       })
   }
+
+  public validation(): void {
+
+    this.form = this.fb.group({
+      //cada um dos campos que tenho no model
+
+      nomeProduto: [
+        '', Validators.required
+      ],
+      categoria: [
+        '', Validators.required
+      ],
+      descricao: [
+        '', Validators.required
+      ],
+      preco: [
+        '', Validators.required
+      ],
+      estoque: [
+        '', Validators.required
+      ],
+      arquivo: [
+        '', Validators.required
+      ],
+
+    });
+  }
+
 }

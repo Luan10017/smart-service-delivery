@@ -1,0 +1,26 @@
+
+.button-cadastro {
+  background-color: #ff363d;
+  margin: 2rem;
+  border-color: #ff363d;
+}
+
+.button-cadastro:focus {
+  border-color: #ff363d;
+  border-radius: #ff363d;
+  box-shadow: #ff363d;
+}
+
+
+.btn-check:focus + .btn-primary,
+.btn-primary:focus {
+  box-shadow: none;
+}
+
+.form-control:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: #ff363d;
+  outline: 1;
+  box-shadow: none !important;
+}

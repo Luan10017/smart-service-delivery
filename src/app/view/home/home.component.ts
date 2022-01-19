@@ -9,7 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+
   products: Product[] = [];
+
+  //carrousel fotos e intervalo
+  myInterval = 1500;
+  activeSlideIndex = 0;
+  slides: {image: string; text?: string}[] = [
+    {image: 'assets/home/carousel1.jpg'},
+    {image: 'assets/home/carousel2.jpeg'},
+    {image: 'assets/home/almoco.jpeg'}
+  ];
 
   constructor(private productService: MenuService) { }
 

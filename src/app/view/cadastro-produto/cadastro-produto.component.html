@@ -2,53 +2,82 @@
 
     <div class="row">
       <div class="p-col-10 p-sm-6 p-md-4">
-  
+
         <div class="p-col-12 text-center">
           <img class="logo" src="/assets/logo.png">
         </div>
       </div>
-  
+
     </div>
-  
-    <!-- <form [formGroup]="form"> -->
+
+    <form [formGroup]="form">
       <div class="row">
         <div class="card pt-3 mb-5 shadow p-3 mb-5 bg-white rounded" id="row2">
           <div class="container card-body">
             <div class="row">
-  
+
               <div class="p-col-10 p-sm-6 p-md-4">
-  
-  
-                <h3 class="pb-3">Dados Produto</h3>
-  
-  
+
+
+                <h3 class="pb-3">Cadastro de Produto</h3>
+
+
                 <div class="row">
                   <div class="col-md-6 mb-3">
-  
+
                     <label>Nome do produto</label>
                     <input
                       [(ngModel)]="produto.nome"
                       type="text"
                       class="form-control is-invalid"
+                      [ngClass]="{'is-invalid': f.nomeProduto.errors && f.nomeProduto.touched }"
+                      formControlName="nomeProduto"
+                      placeholder="Ex: Batata frita 200g"
                      >
-                    
-  
-  
+                     <div *ngIf="f.nomeProduto.errors?.required" class="invalid-feedback">
+                      Nome do Produto é obrigatório
+                    </div>
+
                   </div>
                   <div class="col-md-6 mb-3">
                     <label>Categoria</label>
                     <input
                      [(ngModel)]="produto.categoria"
-                     type="email"
+                     type="text"
                      class="form-control is-invalid"
-                     
-                     placeholder="Ex: seuemail@outlook.com">
-                    
-  
+                     [ngClass]="{'is-invalid': f.categoria.errors && f.categoria.touched }"
+                     formControlName="categoria"
+                     placeholder="Ex: Porções">
+                     <div *ngIf="f.categoria.errors?.required" class="invalid-feedback">
+                      Nome da Categoria é obrigatório
+                    </div>
+
                   </div>
+
                 </div>
-  
+
                 <div class="row">
+                  <div class="col-md-12 mb-3">
+                    <label>Descrição</label>
+                    <input
+                     [(ngModel)]="produto.descricao"
+                     type="text"
+                     id=""
+                     class="form-control is-invalid"
+                     [ngClass]="{'is-invalid': f.descricao.errors && f.descricao.touched }"
+                     formControlName="descricao"
+                     placeholder="Ex: Batatas-Fritas deliciosas que serve até 3 pessoas!"
+                     >
+                     <div *ngIf="f.descricao.errors?.required" class="invalid-feedback">
+                      Nome da Descrição é obrigatório
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
                   <div class="col-md-6 mb-3">
                     <label>Preço</label>
                     <input
@@ -57,59 +86,69 @@
                       name=""
                       id=""
                       class="form-control is-invalid"
-                     
-                      placeholder="Sua senha deve conter no mínimo 5 caracteres"
-                      >
-                     
-  
+                      [ngClass]="{'is-invalid': f.preco.errors && f.preco.touched }"
+                      formControlName="preco"
+                      placeholder="Ex: 5.50 R$">
+                      <div *ngIf="f.preco.errors?.required" class="invalid-feedback">
+                        O preço é obrigatório
+                      </div>
                   </div>
-                  
-                </div>
-  
-                <div class="row">
-                  <div class="col-md-3 mb-3">
-                    <label>Descrição</label>
-                    <input
-                    [(ngModel)]="produto.descricao"
-                    type="text"
-                     id=""
-                     class="form-control is-invalid"
-                     
-                     placeholder="Ex: 13">
-                   
-                  </div>
-                  <div class="col-md-9 mb-3">
+                  <div class="col-md-2 mb-3">
                     <label>Estoque</label>
                     <input
                     [(ngModel)]="produto.estoque"
-                     type="number"
+                      type="number"
+                      name=""
+                      id=""
+                      class="form-control is-invalid"
+                      [ngClass]="{'is-invalid': f.estoque.errors && f.estoque.touched }"
+                      formControlName="estoque"
+                      placeholder="Ex: 5">
+                     <div *ngIf="f.estoque.errors?.required" class="invalid-feedback">
+                       O Estoque é obrigatório
+                    </div>
+
+                  </div>
+                  <div class="col-md-2 mb-3">
+                    <label>Escolha a foto</label>
+                    <input
+                     type="file"
                      name=""
                      id=""
-                    
-                     placeholder="Telefone sem traço Ex: 32256598 ">
-                    
+                     [ngClass]="{'is-invalid': f.preco.errors && f.preco.touched }"
+                     formControlName="arquivo"
+                     (change)="inputFileChange($event)"
+                     >
                   </div>
-                </div>
-  
+                  <div *ngIf="f.categoria.errors?.required" class="invalid-feedback">
+                    Foto é obrigatória
+                  </div>
 
-                <input type="file" (change)="inputFileChange($event)"> 
-  
+                </div>
+
                 <div class="p-col-12 text-center">
+
                   <a>
-                    <button type="button" class="btn btn-primary button-login" (click)="fazerCadastro()">
+                    <button type="button" class="btn btn-primary button-cadastro" (click)="fazerCadastro()">
                       Cadastrar
                     </button>
                   </a>
+
                 </div>
-  
-                <!-- </form> -->
+                </div>
+                </div>
+
+                </div>
+                </div>
+                </div>
+               </form>
               <!-- </div>
             </div>
           </div>
         </div>
       </div>
     </form>
-  
+
   </div>
 
 <input type="file" (change)="inputFileChange($event)"> -->
