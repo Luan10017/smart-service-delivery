@@ -35,6 +35,10 @@ export class CadastroComponent implements OnInit {
     })
   }
 
+  changeValue(event: any) {
+    this.cadastro.estado = event.target.value
+  }
+
   public validation(): void {
 
     const formOptions: AbstractControlOptions = {

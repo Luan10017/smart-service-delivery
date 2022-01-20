@@ -224,6 +224,7 @@
                   <label>Estado</label>
                   <select
                   [(ngModel)]="cadastro.estado"
+                  (change)="changeValue($event)"
                    name=""
                     class="custom-select d-block w-100 is-invalid" id="">
                     <option value="">Selecione</option>
