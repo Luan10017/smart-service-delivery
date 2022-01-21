@@ -1,8 +1,10 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 import { CadastroProdutosService } from './../../services/cadastro-produtos.service';
 import { Produto } from '../../classes/Produto';
 import { AbstractControlOptions, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-cadastro-produto',
@@ -19,7 +21,12 @@ export class CadastroProdutoComponent implements OnInit {
     return this.form.controls;
   }
 
-  constructor(private fb: FormBuilder, private cadastroService: CadastroProdutosService) { }
+  constructor(
+    private fb: FormBuilder,
+    private cadastroService: CadastroProdutosService,
+    private toastr: ToastrService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.validation();
@@ -38,7 +45,12 @@ export class CadastroProdutoComponent implements OnInit {
     this.cadastroService.postItem(this.produto)
       .subscribe(res => {
         this.cadastroService.putItem(this.formData, res.data[0]['produtoId'])
-          .subscribe(res => console.log(res))
+          .subscribe(res => {
+            this.toastr.success("Produto cadastrado com sucesso!")
+            setTimeout( () => {
+              this.router.navigate(['/bebidas'])
+            },3000)
+          })
       })
   }
 
