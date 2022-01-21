@@ -2,6 +2,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { AuthService } from './view/login/auth.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EsqueceuSenhaComponent } from './view/esqueceu-senha/esqueceu-senha.component';
 import { RedefinirSenhaComponent } from './view/redefinir-senha/redefinir-senha.component';
 import { CadastroProdutoComponent } from './view/cadastro-produto/cadastro-produto.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,11 @@ import { CadastroProdutoComponent } from './view/cadastro-produto/cadastro-produ
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      progressBar: true
+    })
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
