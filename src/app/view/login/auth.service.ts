@@ -35,7 +35,6 @@ export class AuthService {
       },
       error => {
         this.toastr.error("emial ou senha invalidos")
-        // alert("email ou senha inválidos")
       }
     );
   }
