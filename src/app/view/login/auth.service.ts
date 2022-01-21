@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Usuario } from './usuario';
 import { Router } from '@angular/router';
 import { Injectable, EventEmitter } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,8 @@ export class AuthService {
 
   constructor(
     private router: Router,
-    private http: HttpClient
+    private http: HttpClient,
+    private toastr: ToastrService,
   ) { }
 
   url="http://localhost:8080/auth"
@@ -31,7 +33,10 @@ export class AuthService {
         localStorage.setItem("email",`${usuario.email}`)
         this.router.navigate(['/'])
       },
-      error => {alert("email ou senha inválidos")}
+      error => {
+        this.toastr.error("emial ou senha invalidos")
+        // alert("email ou senha inválidos")
+      }
     );
   }
 
