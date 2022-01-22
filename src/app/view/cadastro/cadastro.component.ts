@@ -1,5 +1,7 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControlOptions, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { ValidatiorFields } from 'src/app/helpers/ValidatiorFields';
 
 import { Cadastro } from '../../classes/cadastro';
@@ -22,16 +24,25 @@ export class CadastroComponent implements OnInit {
     return this.form.controls;
   }
 
-  constructor(private fb: FormBuilder, private cadastroService: CadastroClienteService) { }
+  constructor(
+    private fb: FormBuilder, 
+    private cadastroService: CadastroClienteService,
+    private toastr: ToastrService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.validation();
   }
 
   fazerCadastro() {
-    console.log(this.cadastro)
-    this.cadastroService.postItem(this.cadastro).subscribe(res => {
-      console.log(res)
+    this.cadastroService.postItem(this.cadastro)
+      .subscribe(res => {
+        this.toastr.success("Cadastro realizado com sucesso!")
+        this.router.navigate(['/login'])
+    },
+    error => {
+        this.toastr.error("Algo deu errado. Tente novamente!")
     })
   }
 
