@@ -24,6 +24,7 @@ import { EsqueceuSenhaComponent } from './view/esqueceu-senha/esqueceu-senha.com
 import { RedefinirSenhaComponent } from './view/redefinir-senha/redefinir-senha.component';
 import { CadastroProdutoComponent } from './view/cadastro-produto/cadastro-produto.component';
 import { ToastrModule } from 'ngx-toastr';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    CollapseModule.forRoot(),
     ToastrModule.forRoot({
       timeOut: 3000,
       progressBar: true

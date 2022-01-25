@@ -5,6 +5,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
 import { FooterComponent } from './footer/footer.component';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
+
 
 
 @NgModule({
@@ -16,7 +18,8 @@ import { FooterComponent } from './footer/footer.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    CollapseModule.forRoot(),
   ],
   exports: [
     NavbarComponent,

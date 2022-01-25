@@ -72,10 +72,10 @@
             <a target="_blank" routerLink="/login" class="nav-link second-text fw-bold">
               <i class="fas fa fa-shopping-cart second-text fw-bold"></i>
             </a> <span class="vl"></span>
-            <div class="dropdown btn-group">
+            <div class="dropdown btn-group d-none d-lg-block d-xl-nonee">
 
                 <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fas fa-user me-2"></i>John Wick
+                  <i class="fas fa-user me-2"></i>Andréo
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="#">Sobre</a>
@@ -86,11 +86,80 @@
 
             </div>
 
+
+            <div class="dropdown btn-group d-lg-none">
+              <nav class="navbar navbar-expand-lg" *ngIf="showMenu()">
+                <div class="container-fluid">
+                  <a class="navbar-brand" routerLink="dashboard"></a>
+                  <button class="navbar-toggler" (click)="isCollapsed = !isCollapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" [collapse]="isCollapsed" [isAnimated]="true" id="navbarNav">
+
+                    <ul class="navbar-nav">
+                      <li class="nav-item dropdown" dropdown>
+                        <a dropdownToggle class="nav-link dropdown-toggle" style="cursor: pointer;" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">
+                          Andrés
+                        </a>
+                        <div *dropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" routerLink="user/perfil" >
+                            Perfil
+                          </a>
+                          <div role="separator" class="divider"></div>
+                          <a class="dropdown-item" routerLink="user/login">
+                            Sair
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+
+                  </div>
+                </div>
+              </nav>
+
+            </div>
+
           </div>
         </div>
       </div>
     </div>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm" *ngIf="showMenu()">
+      <div class="container-fluid">
+        <a class="navbar-brand" routerLink="dashboard">MENU</a>
+        <button class="navbar-toggler" (click)="isCollapsed = !isCollapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" [collapse]="isCollapsed" [isAnimated]="true" id="navbarNav">
+
+
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown" dropdown>
+              <a dropdownToggle class="nav-link dropdown-toggle" style="cursor: pointer;" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Andrés
+              </a>
+              <div *dropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" routerLink="user/perfil" >
+                  Perfil
+                </a>
+                <div role="separator" class="divider"></div>
+                <a class="dropdown-item" routerLink="user/login">
+                  Sair
+                </a>
+              </div>
+            </li>
+          </ul>
+
+
+        </div>
+      </div>
+    </nav>
+
   </section>
+
 
 
 
@@ -112,14 +181,14 @@
 </header>
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-expand-md navbar-light bg-light">
+  <button class="navbar-toggler" (click)="isCollapsed = !isCollapsed" type="button" data-bs-toggle="collapse" data-bs-target="#categorias" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <a class="navbar-brand" href="#"></a>
+
+  <div class="collapse navbar-collapse" [collapse]="isCollapsed" [isAnimated]="true" id="categorias">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a routerLink="produto" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
