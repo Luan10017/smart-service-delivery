@@ -25,6 +25,8 @@ import { RedefinirSenhaComponent } from './view/redefinir-senha/redefinir-senha.
 import { CadastroProdutoComponent } from './view/cadastro-produto/cadastro-produto.component';
 import { ToastrModule } from 'ngx-toastr';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+
 
 @NgModule({
   declarations: [
@@ -49,12 +51,14 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    BsDropdownModule.forRoot(),
     BrowserAnimationsModule,
     CollapseModule.forRoot(),
     ToastrModule.forRoot({
       timeOut: 3000,
       progressBar: true
-    })
+    }),
+    BsDropdownModule.forRoot()
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]

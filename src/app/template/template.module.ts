@@ -6,8 +6,8 @@ import { RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
 import { FooterComponent } from './footer/footer.component';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
-
-
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -19,6 +19,8 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
   imports: [
     CommonModule,
     RouterModule,
+    NgbModule,
+    BsDropdownModule.forRoot(),
     CollapseModule.forRoot(),
   ],
   exports: [

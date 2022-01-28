@@ -1,5 +1,5 @@
 
-    *{
+   *{
         background-color:  #fff !important;
     }
 
@@ -24,15 +24,9 @@
       color: #ff363d;
     }
 
-    /*input.form-control.rounded{
-      width: 30rem;
-    }*/
-
-
     body {
       background-color: #eee
   }
-
 
   .header-main {
       position: relative;
@@ -57,6 +51,7 @@
       line-height: 48px !important;
       font-size: 20px
   }
+
 
   .widget-header {
       display: inline-block;
@@ -118,7 +113,7 @@
       border-radius: 0.37rem
   }
 
-  .dropdown-menu {
+ /* .dropdown-menu {
       position: absolute;
       top: 100%;
       left: 0;
@@ -149,7 +144,12 @@
       white-space: nowrap;
       background-color: transparent;
       border: 0
-  }
+  }*/
+
+   /*input.form-control.rounded{
+      width: 30rem;
+    }*/
+
 
   .navbar-toggler-icon {
       background-image: url(https://img.icons8.com/ios/50/000000/menu.png)
