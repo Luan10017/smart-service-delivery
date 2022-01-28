@@ -125,39 +125,6 @@
       </div>
     </div>
 
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm" *ngIf="showMenu()">
-      <div class="container-fluid">
-        <a class="navbar-brand" routerLink="dashboard">MENU</a>
-        <button class="navbar-toggler" (click)="isCollapsed = !isCollapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" [collapse]="isCollapsed" [isAnimated]="true" id="navbarNav">
-
-
-          <ul class="navbar-nav">
-            <li class="nav-item dropdown" dropdown>
-              <a dropdownToggle class="nav-link dropdown-toggle" style="cursor: pointer;" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                Andrés
-              </a>
-              <div *dropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" routerLink="user/perfil" >
-                  Perfil
-                </a>
-                <div role="separator" class="divider"></div>
-                <a class="dropdown-item" routerLink="user/login">
-                  Sair
-                </a>
-              </div>
-            </li>
-          </ul>
-
-
-        </div>
-      </div>
-    </nav>
-
   </section>
 
 
@@ -182,40 +149,40 @@
 
 
 <nav class="navbar navbar-expand-lg navbar-expand-md navbar-light bg-light">
-  <button class="navbar-toggler" (click)="isCollapsed = !isCollapsed" type="button" data-bs-toggle="collapse" data-bs-target="#categorias" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" (click)="isCollapsed2 = !isCollapsed2" type="button" data-bs-toggle="collapse" data-bs-target="#categorias" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <a class="navbar-brand" href="#"></a>
 
-  <div class="collapse navbar-collapse" [collapse]="isCollapsed" [isAnimated]="true" id="categorias">
+  <div class="collapse navbar-collapse" [collapse]="isCollapsed2" [isAnimated]="true" id="categorias">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a routerLink="produto" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+        <a routerLink="home" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" (click)="isCollapsed = !isCollapsed"><i
             class="icon fas fa-search-dollar me-2"></i>Promoções</a>
       </li>
       <li class="nav-item active">
-        <a routerLink="hamburger" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+        <a routerLink="hamburger" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" (click)="isCollapsed = !isCollapsed"><i
             class="icon fas fa-hamburger me-2"></i>Sanchuíches</a>
       </li>
       <li class="nav-item">
-        <a routerLink="porcoes" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+        <a routerLink="porcoes" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" (click)="isCollapsed = !isCollapsed"><i
             class="icon fas fa-drumstick-bite me-2"></i>Porções</a>
       </li>
       <li class="nav-item">
-        <a routerLink="bebidas" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+        <a routerLink="bebidas" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" (click)="isCollapsed = !isCollapsed"><i
             class="icon fas fa-cocktail me-2"></i>Bebidas</a>
       </li>
       <li class="nav-item">
-        <a routerLink="alcoolicas" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+        <a routerLink="alcoolicas" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" (click)="isCollapsed = !isCollapsed"><i
             class="icon fas fa-beer me-2"></i>Bebidas Alcoólicas</a>
       </li>
       <li class="nav-item">
-        <a routerLink="porcoes" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+        <a routerLink="porcoes" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" (click)="isCollapsed = !isCollapsed"><i
             class="icon fas fa-ice-cream me-2"></i>Sobremesas</a>
       </li>
       <li class="nav-item">
-        <a routerLink="porcoes" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+        <a routerLink="porcoes" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"  (click)="isCollapsed = !isCollapsed"><i
             class="icon fas fa-pizza-slice me-2"></i>Pizza</a>
       </li>
 

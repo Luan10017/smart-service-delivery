@@ -36,7 +36,8 @@ const routes: Routes = [
       { path: 'porcoes', component: PorcoesComponent },
       { path: 'bebidas', component: BebidasComponent },
       { path: 'alcoolicas', component: AlcoolicasComponent },
-      { path: 'cadastro/produtos', component: CadastroProdutoComponent }
+      { path: 'cadastro/produtos', component: CadastroProdutoComponent },
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
     ],
     // canActivate: [AuthGuard]
   },
