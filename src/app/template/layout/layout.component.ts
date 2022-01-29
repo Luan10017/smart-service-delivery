@@ -1,3 +1,4 @@
+import { CarrinhoService } from 'src/app/services/carrinho.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
-  constructor() { }
+  constructor( private carrinhoService: CarrinhoService ) { }
 
   ngOnInit(): void {
+    if (localStorage.getItem("carrinho")) {
+      const itensCarrinho = JSON.parse(localStorage.getItem("carrinho")!) 
+      this.carrinhoService.carregaCarrinhoLocalStorage(itensCarrinho)
+    }
   }
-
+  
 }
