@@ -22,10 +22,9 @@ export interface Result {
 
 export class MenuService {
 
-  baseUrl = "http://localhost:8080/produtos/categoria/BEBIDAS"
   constructor(private http: HttpClient) { }
 
-  getItens(): Observable<ObjetoPayload> {
-    return this.http.get<ObjetoPayload>(this.baseUrl, {})
+  getItens(baseUrl: string): Observable<ObjetoPayload> {
+    return this.http.get<ObjetoPayload>(baseUrl, {})
   }
 }
