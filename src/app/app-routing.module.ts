@@ -10,6 +10,7 @@ import { HamburgerComponent } from './view/hamburger/hamburger.component';
 import { AlcoolicasComponent } from './view/alcoolicas/alcoolicas.component';
 import { BebidasComponent } from './view/bebidas/bebidas.component';
 import { PorcoesComponent } from './view/porcoes/porcoes.component';
+import { DadosPessoaisComponent } from './view/dados-pessoais/dados-pessoais.component';
 
 import { ProdutoComponent } from './view/produto/produto.component';
 import { MesaComponent } from './view/mesa/mesa.component';
@@ -36,13 +37,14 @@ const routes: Routes = [
       { path: 'porcoes', component: PorcoesComponent },
       { path: 'bebidas', component: BebidasComponent },
       { path: 'alcoolicas', component: AlcoolicasComponent },
-      { path: 'cadastro/produtos', component: CadastroProdutoComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full' },
     ],
     // canActivate: [AuthGuard]
   },
   { path: 'login', component: LoginComponent },
   { path: 'cadastro', component: CadastroComponent },
+  { path: 'dados-pessoais', component: DadosPessoaisComponent },
+  { path: 'cadastro/produtos', component: CadastroProdutoComponent },
   { path: 'esqueceu-senha', component: EsqueceuSenhaComponent },
   { path: 'redefinir-senha', component: RedefinirSenhaComponent }
 

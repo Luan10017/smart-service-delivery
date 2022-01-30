@@ -26,6 +26,7 @@ import { CadastroProdutoComponent } from './view/cadastro-produto/cadastro-produ
 import { ToastrModule } from 'ngx-toastr';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { DadosPessoaisComponent } from './view/dados-pessoais/dados-pessoais.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
     AlcoolicasComponent,
     EsqueceuSenhaComponent,
     RedefinirSenhaComponent,
-    CadastroProdutoComponent
+    CadastroProdutoComponent,
+    DadosPessoaisComponent
   ],
   imports: [
     BrowserModule,
