@@ -94,6 +94,12 @@
       border-color: #ffffff
   }
 
+  .search-button {
+      color: #ff363d;
+      background-color: #ffffff;
+      border-color: #ffffff
+  }
+
   .navbar-main {
       background-color: #fff
   }
@@ -208,3 +214,6 @@
 #sair{
   color:  #ff363d;
 }
+
+
+
