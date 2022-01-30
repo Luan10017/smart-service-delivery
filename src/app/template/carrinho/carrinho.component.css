@@ -1,0 +1,28 @@
+ul li {
+    display: flex;
+}
+
+.carrinho_itens {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1%;
+}
+
+.quantidade_controle {
+    display: flex;
+}
+
+.quantidade_controle p {
+    margin: 0 25% 0;
+}
+
+.btn-success {
+    margin: 23px 25%;
+    width: 50%;
+}
+
+.realizado {
+    opacity: 0.8;
+}

@@ -8,13 +8,15 @@ import { FooterComponent } from './footer/footer.component';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
 
 @NgModule({
   declarations: [
     NavbarComponent,
     SidebarComponent,
     FooterComponent,
-    LayoutComponent
+    LayoutComponent,
+    CarrinhoComponent
   ],
   imports: [
     CommonModule,
