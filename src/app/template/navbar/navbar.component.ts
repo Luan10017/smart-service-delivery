@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
+import { Carrinho } from 'src/app/classes/carrihno';
+import { CarrinhoService } from 'src/app/services/carrinho.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,9 +12,12 @@ import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
 export class NavbarComponent implements OnInit {
   isCollapsed = true;
 
-  constructor(private router: Router) { }
+  carrinho: Carrinho = new Carrinho(); 
+
+  constructor(private router: Router , private carrinhoService: CarrinhoService) { }
 
   ngOnInit(): void {
+    this.carrinho = this.carrinhoService.carrinho
   }
 
   showMenu(): boolean{
