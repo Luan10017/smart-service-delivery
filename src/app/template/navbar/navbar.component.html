@@ -20,10 +20,16 @@
 
         <div class="col-lg-5 col-xl-4 col-sm-8 col-md-4 col-7">
           <div class="d-flex justify-content-end">
-            <a target="_blank" routerLink="/login" class="nav-link second-text fw-bold">
-              <i class="fas fa fa-shopping-cart second-text fw-bold"></i>
-            </a> <span class="vl"></span>
-
+            <div ngbDropdown>
+              <a ngbDropdownToggle target="_blank" class="nav-link second-text fw-bold">
+                <i class="fas fa fa-shopping-cart second-text fw-bold"></i>
+              </a> <span class="vl"></span>
+  <!-- Carrinho -->
+              <div class="carrinho" ngbDropdownMenu>
+                <app-carrinho [carrinho]="carrinho"></app-carrinho>
+              </div>
+            </div>
+  <!-- Carrinho -->
             <div ngbDropdown class="dropdown btn-group d-lg-block d-xl-nonee">
               <a ngbDropdownToggle class="nav-link dropdown-toggle second-text fw-bold" id="navbarDropdown" aria-expanded="false"  role="button" data-toggle="dropdown" aria-haspopup="true">
                 <i class="fas fa-user me-2"></i>André
