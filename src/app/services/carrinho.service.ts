@@ -30,6 +30,9 @@ export class CarrinhoService {
     } else {
       this.carrinho.itens[itenExiste].quantidade ++
     }
+
+    this.atualizaTotal()
+
     this.atualizaCarrinho()
   }
 
@@ -38,6 +41,7 @@ export class CarrinhoService {
 
     if (itenExiste !== -1) {
       this.carrinho.itens[itenExiste].quantidade --
+      this.atualizaTotal()
       this.atualizaCarrinho()
     } 
   }
@@ -70,6 +74,19 @@ export class CarrinhoService {
       }
     }
     return -1
+  }
+
+
+  /* 
+      Atualiza valor total do carrinho
+  */
+  atualizaTotal(): void {
+    let valorTotal = 0
+    
+    for (let i=0; i < this.carrinho.length; i++) {
+      valorTotal += this.carrinho.itens[i].quantidade * this.carrinho.itens[i].preco
+    }
+    this.carrinho.total = valorTotal
   }
 
 
