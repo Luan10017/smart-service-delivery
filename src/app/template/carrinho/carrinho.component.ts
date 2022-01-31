@@ -17,12 +17,10 @@ export class CarrinhoComponent implements OnInit {
   }
 
   adicionaItem(produto: any): void{
-    const itenExiste = this.carrinhoService.itemExiste(produto)
-    this.carrinhoService.carrinho.itens[itenExiste].quantidade ++
+    this.carrinhoService.adicionarAoCarrinho(produto)
   }
   removeItem(produto: any): void{
-    const itenExiste = this.carrinhoService.itemExiste(produto)
-    this.carrinhoService.carrinho.itens[itenExiste].quantidade --
+    this.carrinhoService.tiraItem(produto)
   }
 
 }
