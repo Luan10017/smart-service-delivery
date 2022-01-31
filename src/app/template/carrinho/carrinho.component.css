@@ -8,6 +8,7 @@ ul li {
     justify-content: space-around;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding: 1%;
+    margin-top: 0.5rem;
 }
 
 .quantidade_controle {
@@ -25,4 +26,6 @@ ul li {
 
 .realizado {
     opacity: 0.8;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.4);
 }
