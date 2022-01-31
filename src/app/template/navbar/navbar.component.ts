@@ -24,4 +24,8 @@ export class NavbarComponent implements OnInit {
     return this.router.url !== '/user/login';
   }
 
+  atualizaTotal(): void {
+    this.carrinhoService.atualizaTotal()
+  }
+
 }
