@@ -1,18 +1,18 @@
 <div *ngFor="let item of carrinho.itens">
-    <div class="carrinho_itens" [ngClass]="(item.realizado) ? 'realizado' : ''">
+    <div class="carrinho_itens" [ngClass]="!(item.realizado) ? 'realizado' : ''">
         <p>{{item.nome}}</p>
-        <p>R$ {{item.preco}}</p>
+        <p>{{item.preco | currency : 'BRL'}}</p>
         <div class="quantidade_controle">
-            <i (click)="adicionaItem(item)">
-                <img src="/assets/add_circle.png" alt="">
-            </i>
-            <p>{{item.quantidade}}</p>
             <i (click)="removeItem(item)">
                 <img src="/assets/remove_circle.png" alt="">
+            </i>
+            <p>{{item.quantidade}}</p>
+            <i (click)="adicionaItem(item)">
+                <img src="/assets/add_circle.png" alt="">
             </i>
         </div>
     </div>
 </div>
-
+<h1>Total {{carrinho.total | currency : 'BRL'}}</h1>
 <button class="btn btn-success"> Finalizar</button>
 
