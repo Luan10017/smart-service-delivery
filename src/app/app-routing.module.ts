@@ -1,3 +1,4 @@
+import { AdminComponent } from './admin/admin.component';
 import { CadastroProdutoComponent } from './view/cadastro-produto/cadastro-produto.component';
 import { LayoutComponent } from './template/layout/layout.component';
 import { NgModule } from '@angular/core';
@@ -41,10 +42,16 @@ const routes: Routes = [
     ],
     // canActivate: [AuthGuard]
   },
+  {
+    path: 'admin',
+    component: AdminComponent,
+    children: [
+      { path: 'cadastro/produtos', component: CadastroProdutoComponent },
+    ]
+  },
   { path: 'login', component: LoginComponent },
   { path: 'cadastro', component: CadastroComponent },
   { path: 'dados-pessoais', component: DadosPessoaisComponent },
-  { path: 'cadastro/produtos', component: CadastroProdutoComponent },
   { path: 'esqueceu-senha', component: EsqueceuSenhaComponent },
   { path: 'redefinir-senha', component: RedefinirSenhaComponent }
 

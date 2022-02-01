@@ -1,3 +1,4 @@
+import { AdminComponent } from './admin/admin.component';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthService } from './view/login/auth.service';
 import { NgModule } from '@angular/core';
@@ -43,7 +44,8 @@ import { DadosPessoaisComponent } from './view/dados-pessoais/dados-pessoais.com
     EsqueceuSenhaComponent,
     RedefinirSenhaComponent,
     CadastroProdutoComponent,
-    DadosPessoaisComponent
+    DadosPessoaisComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
