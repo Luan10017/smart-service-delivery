@@ -28,9 +28,18 @@ export class AuthService {
   fazerLogin(usuario: Usuario){
       this.autentica(usuario).subscribe(
       response => {
+        const nomeUsuario = response.data[0].usuario
+        const nivelUsuario = response.data[0].nivelUsuario
+
         this.usuarioAutenticado = true
         localStorage.setItem("usuarioAutenticado","true")
-        localStorage.setItem("email",`${usuario.email}`)
+        localStorage.setItem("emailUsuario",`${usuario.email}`)
+        localStorage.setItem("nomeUsuario",`${nomeUsuario}`)
+        if ( nivelUsuario === "ADMINISTRADOR" ) {
+          localStorage.setItem("isAdmin", "true")
+        } else {
+          localStorage.setItem("isAdmin", "false")
+        }
         this.router.navigate(['/'])
       },
       error => {
