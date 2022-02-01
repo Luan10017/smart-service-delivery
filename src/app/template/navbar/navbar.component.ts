@@ -13,11 +13,19 @@ export class NavbarComponent implements OnInit {
   isCollapsed = true;
 
   carrinho: Carrinho = new Carrinho(); 
+  nomeUsuario: string = 'Anônimo'
 
   constructor(private router: Router , private carrinhoService: CarrinhoService) { }
 
   ngOnInit(): void {
     this.carrinho = this.carrinhoService.carrinho
+    
+    if ( localStorage.getItem("nomeUsuario")) {
+      this.nomeUsuario = localStorage.getItem("nomeUsuario") as string
+      let handleName = this.nomeUsuario.toLowerCase()
+      handleName = handleName[0].toUpperCase() + handleName.slice(1)
+      this.nomeUsuario = handleName
+    }
   }
 
   showMenu(): boolean{
