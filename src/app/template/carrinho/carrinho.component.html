@@ -1,5 +1,5 @@
 <div *ngFor="let item of carrinho.itens">
-    <div class="carrinho_itens" [ngClass]="!(item.realizado) ? 'realizado' : ''">
+    <div class="carrinho_itens" [ngClass]="(item.realizado) ? 'realizado' : ''">
         <p>{{item.nome}}</p>
         <p>{{item.preco | currency : 'BRL'}}</p>
         <div class="quantidade_controle">
@@ -13,6 +13,8 @@
         </div>
     </div>
 </div>
+
 <h1>Total {{carrinho.total | currency : 'BRL'}}</h1>
-<button class="btn btn-success"> Finalizar</button>
+<button class="btn btn-success" (click)="finalizaPedido()"> Finalizar</button>
+<button class="btn btn-danger" (click)="limpaCarrinho()"> Limpa</button>
 

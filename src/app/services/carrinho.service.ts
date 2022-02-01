@@ -40,7 +40,11 @@ export class CarrinhoService {
     const itenExiste = this.itemExiste(produto)
 
     if (itenExiste !== -1) {
-      this.carrinho.itens[itenExiste].quantidade --
+      if (this.carrinho.itens[itenExiste].quantidade <= 1){
+        this.carrinho.itens.splice(itenExiste,1)
+      } else {
+        this.carrinho.itens[itenExiste].quantidade --
+      }
       this.atualizaTotal()
       this.atualizaCarrinho()
     } 
@@ -66,10 +70,10 @@ export class CarrinhoService {
 
 
 
-  // Verifica de produto já está no carrinho pelo id. Se existir retorna o index, senão -1
+  // Verifica se produto já está no carrinho pelo id. Se existir retorna o index, senão -1
   itemExiste(produto: ProdutoCarrinho) :number {
     for (let i=0;i < this.carrinho.length; i++) {
-      if (this.carrinho.itens[i].id === produto.id) {
+      if (this.carrinho.itens[i].id === produto.id && this.carrinho.itens[i].realizado === false) {
         return i
       }
     }
@@ -89,6 +93,20 @@ export class CarrinhoService {
     this.carrinho.total = valorTotal
   }
 
+  realizaPedidos(): void {
+    for (let i=0;i < this.carrinho.length; i++) {
+      if (this.carrinho.itens[i].realizado === false) {
+        this.carrinho.itens[i].realizado = true
+      }
+    }
+    this.atualizaCarrinho()
+  }
+
+  limpaCarrinho(): void {
+    this.carrinho.itens = []
+    this.carrinho.pago = false
+    localStorage.setItem("carrinho",JSON.stringify({}))
+  }
 
   //Salva estado do carrinho no localStorage
   atualizaCarrinho() :void {

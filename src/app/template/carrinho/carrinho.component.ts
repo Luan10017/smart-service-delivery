@@ -23,4 +23,11 @@ export class CarrinhoComponent implements OnInit {
     this.carrinhoService.tiraItem(produto)
   }
 
+  finalizaPedido(): void{
+    this.carrinhoService.realizaPedidos()
+  }
+
+  limpaCarrinho(): void {
+    this.carrinhoService.limpaCarrinho()
+  }
 }

@@ -21,12 +21,13 @@
         <div class="col-lg-5 col-xl-4 col-sm-8 col-md-4 col-7">
           <div class="d-flex justify-content-end">
             <div ngbDropdown (click)="atualizaTotal()">
-              <a ngbDropdownToggle target="_blank" class="nav-link second-text fw-bold">
+              <a ngbDropdownToggle target="_blank" [ngClass]="carrinho.length > 0  ? 'carrinho_cheio' : ''" class="nav-link second-text fw-bold">
                 <i class="fas fa fa-shopping-cart second-text fw-bold"></i>
               </a> <span class="vl"></span>
   <!-- Carrinho -->
               <div class="carrinho" ngbDropdownMenu>
-                <app-carrinho [carrinho]="carrinho"></app-carrinho>
+                <app-carrinho [carrinho]="carrinho" *ngIf="carrinho.length > 0"></app-carrinho>
+                <h1 *ngIf="carrinho.length == 0">O carrinho está vazio 😔</h1>
               </div>
             </div>
   <!-- Carrinho -->
