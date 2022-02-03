@@ -28,6 +28,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { DadosPessoaisComponent } from './view/dados-pessoais/dados-pessoais.component';
+import { AdministrativoComponent } from './view/administrativo/administrativo.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { DadosPessoaisComponent } from './view/dados-pessoais/dados-pessoais.com
     RedefinirSenhaComponent,
     CadastroProdutoComponent,
     DadosPessoaisComponent,
-    AdminComponent
+    AdminComponent,
+    AdministrativoComponent
   ],
   imports: [
     BrowserModule,

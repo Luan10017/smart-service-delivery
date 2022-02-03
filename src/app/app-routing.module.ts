@@ -12,6 +12,7 @@ import { AlcoolicasComponent } from './view/alcoolicas/alcoolicas.component';
 import { BebidasComponent } from './view/bebidas/bebidas.component';
 import { PorcoesComponent } from './view/porcoes/porcoes.component';
 import { DadosPessoaisComponent } from './view/dados-pessoais/dados-pessoais.component';
+import { AdministrativoComponent } from './view/administrativo/administrativo.component';
 
 import { ProdutoComponent } from './view/produto/produto.component';
 import { MesaComponent } from './view/mesa/mesa.component';
@@ -53,8 +54,8 @@ const routes: Routes = [
   { path: 'cadastro', component: CadastroComponent },
   { path: 'dados-pessoais', component: DadosPessoaisComponent },
   { path: 'esqueceu-senha', component: EsqueceuSenhaComponent },
-  { path: 'redefinir-senha', component: RedefinirSenhaComponent }
-
+  { path: 'redefinir-senha', component: RedefinirSenhaComponent },
+  { path: 'administrativo', component: AdministrativoComponent }
 ];
 
 @NgModule({
