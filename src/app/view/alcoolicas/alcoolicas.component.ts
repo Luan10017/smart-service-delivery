@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from 'src/app/components/product-card/product.model';
+import { map } from 'rxjs/operators';
+
+import { Produto } from 'src/app/classes/Produto';
 import { MenuService } from 'src/app/menu.service';
 
 @Component({
@@ -9,14 +11,16 @@ import { MenuService } from 'src/app/menu.service';
 })
 export class AlcoolicasComponent implements OnInit {
 
-  products: Product[] = [];
+  products: Produto[] = [];
+  baseUrl = "http://localhost:8080/produtos/categoria/BEBIDASALCOLICAS"
 
   constructor(private productService: MenuService) { }
 
   ngOnInit(): void {
-    // this.productService.read().subscribe(products => {
-    //   this.products = products.filter(({categoria}) => categoria == "alcoolicas")
-    // })
+    this.productService.getItens(this.baseUrl).pipe(map(result => result.data[0].produtos))
+    .subscribe(res => {
+      this.products = res
+    })
   }
 
 }
