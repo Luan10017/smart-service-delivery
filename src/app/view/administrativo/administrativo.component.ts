@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs/operators';
+import { Produto } from 'src/app/classes/Produto';
+import { MenuService } from 'src/app/menu.service';
 
 @Component({
   selector: 'app-administrativo',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdministrativoComponent implements OnInit {
 
-  constructor() { }
+  produtos:  Produto[] = []
+  baseUrl = "http://localhost:8080/produtos"
+
+  constructor(private productService: MenuService) { }
 
   ngOnInit(): void {
+    this.productService.getItens(this.baseUrl).pipe(map(result => result.data[0].produtos))
+      .subscribe(res => {
+        this.produtos = res 
+      })
   }
 
 }

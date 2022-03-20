@@ -56,16 +56,16 @@
         </thead>
         <tbody>
           <!-- Só vai aparecer se o tiver o objeto eventos e esse .length significa que ele existe E TEM ITENS-->
-          <tr  style="cursor:pointer;">
+          <tr *ngFor="let produto of produtos; let i = index"  style="cursor:pointer;">
             <td class="d-none d-md-table-cell">
               <img alt="">
             </td>
-            <td>1</td>
-            <td>batata-frita</td>
-            <td class="d-none d-md-table-cell">Porção</td>
-            <td>Batata-frita 200g</td>
-            <td class="d-none d-md-table-cell">R$ 20,00</td>
-            <td class="d-none d-md-table-cell">52</td>
+            <td>{{i + 1}}</td>
+            <td>{{produto.nome}}</td>
+            <td class="d-none d-md-table-cell">{{produto.categoria}}</td>
+            <td>{{produto.descricao}}</td>
+            <td class="d-none d-md-table-cell">R$ {{produto.preco}}</td>
+            <td class="d-none d-md-table-cell">{{produto.estoque}}</td>
             <td>
               <button type="button" class="btn btn-danger btn-lg mr-2" tooltip="Excluir">
                 <i class="fa fa-trash"></i>
@@ -79,7 +79,7 @@
         </tbody>
         <tfoot>
           <!--Se não nenhum item no objeto aí não mostra nada-->
-          <tr>
+          <tr *ngIf="produtos.length == 0">
             <td colspan="8" class="text-center">
               <h4>Nenhum produto encontrado!</h4>
             </td>
