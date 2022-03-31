@@ -21,7 +21,9 @@ div#page-content-wrapper{
 }
 
 .item-img{
+  /*height: 185px;*/
   height: 185px;
+  width: auto;
 }
 
 .price{

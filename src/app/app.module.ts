@@ -29,6 +29,7 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { DadosPessoaisComponent } from './view/dados-pessoais/dados-pessoais.component';
 import { AdministrativoComponent } from './view/administrativo/administrativo.component';
+import { EditarProdutoComponent } from './view/editar-produto/editar-produto.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { AdministrativoComponent } from './view/administrativo/administrativo.co
     CadastroProdutoComponent,
     DadosPessoaisComponent,
     AdminComponent,
-    AdministrativoComponent
+    AdministrativoComponent,
+    EditarProdutoComponent
   ],
   imports: [
     BrowserModule,

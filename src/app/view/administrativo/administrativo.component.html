@@ -29,7 +29,7 @@
           </div>
         </div>
         <div>
-          <a class="d-flex btn btn-outline-primary" href="eventos/detalhe">
+          <a class="d-flex btn btn-outline-primary" href="admin/cadastro/produtos">
             <i class="fa fa-plus-circle my-1"></i>
             <b class="ml-1 d-none d-sm-block">Novo</b>
           </a>
@@ -45,7 +45,7 @@
 
               </button>
             </th>
-            <th>#</th>
+            <th>Imagem</th>
             <th>Nome</th>
             <th class="d-none d-md-table-cell">Categoria</th>
             <th>Descrição</th>
@@ -54,30 +54,32 @@
             <th>Opções</th>
           </tr>
         </thead>
-        <tbody>
-          <!-- Só vai aparecer se o tiver o objeto eventos e esse .length significa que ele existe E TEM ITENS-->
-          <tr  style="cursor:pointer;">
+        <tbody *ngIf="produtos && produtos.length">
+          <!-- Só vai aparecer se o tiver o objeto produtos e esse .length significa que ele existe E TEM ITENS-->
+          <tr *ngFor="let produto of produtos"  style="cursor:pointer;">
             <td class="d-none d-md-table-cell">
               <img alt="">
             </td>
-            <td>1</td>
-            <td>batata-frita</td>
-            <td class="d-none d-md-table-cell">Porção</td>
-            <td>Batata-frita 200g</td>
-            <td class="d-none d-md-table-cell">R$ 20,00</td>
-            <td class="d-none d-md-table-cell">52</td>
+            <td>{{produto.id}}</td>
+            <td>{{produto.nome}}</td>
+            <td class="d-none d-md-table-cell">{{produto.categoria}}</td>
+            <td>{{produto.descricao}}</td>
+            <td class="d-none d-md-table-cell">{{produto.preco}}</td>
+            <td class="d-none d-md-table-cell">{{produto.estoque}}</td>
             <td>
               <button type="button" class="btn btn-danger btn-lg mr-2" tooltip="Excluir">
                 <i class="fa fa-trash"></i>
               </button>
               &nbsp;
-              <button type="button" class="btn btn-warning btn-lg ml-2" tooltip="Excluir">
-                <i class="fas fa-pencil-alt"></i>
-              </button>
+              <a href="admin/editar/produtos">
+                <button type="button" class="btn btn-warning btn-lg ml-2" tooltip="Editar">
+                  <i class="fas fa-pencil-alt"></i>
+                </button>
+              </a>
             </td>
           </tr>
         </tbody>
-        <tfoot>
+        <tfoot *ngIf="!produtos.length">
           <!--Se não nenhum item no objeto aí não mostra nada-->
           <tr>
             <td colspan="8" class="text-center">
@@ -88,10 +90,38 @@
       </table>
 
     </div>
+    <div>
+      <div *ngIf="produtos && produtos.length">
+        <tr *ngFor="let produto of produtos">
+          <td class="d-none d-md-table-cell">
+            <img alt="">
+          </td>
+          <td>{{produto.id}}</td>
+          <td>{{produto.nome}}</td>
+          <td class="d-none d-md-table-cell">{{produto.categoria}}</td>
+          <td>{{produto.descricao}}</td>
+          <td class="d-none d-md-table-cell">{{produto.preco}}</td>
+          <td class="d-none d-md-table-cell">{{produto.estoque}}</td>
+          <td>
+            <button type="button" class="btn btn-danger btn-lg mr-2" tooltip="Excluir">
+              <i class="fa fa-trash"></i>
+            </button>
+            &nbsp;
+            <a href="admin/editar/produtos">
+              <button type="button" class="btn btn-warning btn-lg ml-2" tooltip="Editar">
+                <i class="fas fa-pencil-alt"></i>
+              </button>
+            </a>
+          </td>
+        </tr>
+      </div>
+
+    </div>
 
 
 
-    <!-- {{eventos | json}}  use isso para ver o nome de todos os campos, sempre que precisar-->
+    {{produtos | json}}
+    <!-- {{produtos | json}}  use isso para ver o nome de todos os campos, sempre que precisar-->
 
     <ng-template #template>
       <div class="modal-body text-center">
