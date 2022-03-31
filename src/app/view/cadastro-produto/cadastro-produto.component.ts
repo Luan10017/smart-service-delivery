@@ -54,6 +54,10 @@ export class CadastroProdutoComponent implements OnInit {
       })
   }
 
+  changeValue(event: any) {
+    this.produto.categoria = event.target.value
+  }
+
   public validation(): void {
 
     this.form = this.fb.group({

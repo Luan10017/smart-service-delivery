@@ -215,6 +215,15 @@
   color:  #ff363d;
 }
 
+.nav-link.second-text.fw-bold.carrinho_cheio::before {
 
-
+    content: "";
+    background: #fa3434;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    left: 10px;
+ }
 

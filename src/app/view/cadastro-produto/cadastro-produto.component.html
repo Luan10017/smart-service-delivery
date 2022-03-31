@@ -41,13 +41,20 @@
                   </div>
                   <div class="col-md-6 mb-3">
                     <label>Categoria</label>
-                    <input
+                    <select name="" id="" (change)="changeValue($event)">
+                      <option value="">Selecione</option>
+                      <option value="HAMBURGERS">Hamburgers</option>
+                      <option value="BEBIDAS">Bebidas</option>
+                      <option value="BEBIDASALCOLICAS">Bebidas alcolicas</option>
+                      <option value="PORCOES">Porções</option>
+                    </select>
+                    <!-- <input
                      [(ngModel)]="produto.categoria"
                      type="text"
                      class="form-control is-invalid"
                      [ngClass]="{'is-invalid': f.categoria.errors && f.categoria.touched }"
                      formControlName="categoria"
-                     placeholder="Ex: Porções">
+                     placeholder="Ex: Porções"> -->
                      <div *ngIf="f.categoria.errors?.required" class="invalid-feedback">
                       Nome da Categoria é obrigatório
                     </div>

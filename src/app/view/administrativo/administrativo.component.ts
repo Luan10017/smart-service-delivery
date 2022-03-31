@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs/operators';
 import { Produto } from 'src/app/classes/Produto';
-import { ProdutosService } from 'src/app/services/produtos.service';
-import { ToastrService } from 'ngx-toastr';
+import { MenuService } from 'src/app/menu.service';
 
 @Component({
   selector: 'app-administrativo',
@@ -10,38 +10,16 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AdministrativoComponent implements OnInit {
 
-  public produtos: Produto[] = []
-  //public produtosFiltrados: Produto[] = [];
+  produtos:  Produto[] = []
+  baseUrl = "http://localhost:8080/produtos"
 
-
-  constructor(
-      public produtosService: ProdutosService,
-      private toastr: ToastrService,
-  ) { }
+  constructor(private productService: MenuService) { }
 
   ngOnInit(): void {
-
-    this.carregarProdutos();
-
+    this.productService.getItens(this.baseUrl).pipe(map(result => result.data[0].produtos))
+      .subscribe(res => {
+        this.produtos = res
+      })
   }
-
-  public carregarProdutos(): void{
-
-    this.produtosService.getProdutos().subscribe(
-      (_produtos: Produto[]) => {
-        this.produtos = _produtos,
-        console.log(this.produtos),
-        alert('muito bem, existe produtos')
-      },
-      error => {
-        this.toastr.error('Erro ao Carregar os produtos', 'Erro!');
-      },
-      () => {
-       //this.spinner.hide(); vou implementar o loading depois
-      }
-    );
-
-  }
-
 
 }
