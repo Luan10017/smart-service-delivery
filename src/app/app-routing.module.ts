@@ -23,6 +23,8 @@ import { AuthGuard } from './guards/auth.guard';
 import { EsqueceuSenhaComponent } from './view/esqueceu-senha/esqueceu-senha.component';
 import { RedefinirSenhaComponent } from './view/redefinir-senha/redefinir-senha.component';
 import { EditarProdutoComponent } from './view/editar-produto/editar-produto.component';
+import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
+import { QrCodeComponent } from './components/qr-code/qr-code.component';
 
 
 const routes: Routes = [
@@ -50,6 +52,8 @@ const routes: Routes = [
     children: [
       { path: 'cadastro/produtos', component: CadastroProdutoComponent },
       { path: 'editar/produtos', component: EditarProdutoComponent },
+      { path: 'acompanhar/produtos', component: ProgressBarComponent },
+      { path: 'qrcode', component: QrCodeComponent },
     ]
   },
   { path: 'login', component: LoginComponent },

@@ -30,6 +30,9 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { DadosPessoaisComponent } from './view/dados-pessoais/dados-pessoais.component';
 import { AdministrativoComponent } from './view/administrativo/administrativo.component';
 import { EditarProdutoComponent } from './view/editar-produto/editar-produto.component';
+import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
+import { NgQrScannerModule } from 'angular2-qrscanner';
+import { QrCodeComponent } from './components/qr-code/qr-code.component';
 
 
 @NgModule({
@@ -49,7 +52,9 @@ import { EditarProdutoComponent } from './view/editar-produto/editar-produto.com
     DadosPessoaisComponent,
     AdminComponent,
     AdministrativoComponent,
-    EditarProdutoComponent
+    EditarProdutoComponent,
+    ProgressBarComponent,
+    QrCodeComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +71,8 @@ import { EditarProdutoComponent } from './view/editar-produto/editar-produto.com
       timeOut: 3000,
       progressBar: true
     }),
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    NgQrScannerModule,
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
