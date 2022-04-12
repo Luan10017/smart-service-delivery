@@ -1,0 +1,23 @@
+<div class="row">
+        
+        <div class="col-md-9 col-sm-12 col-xs-12 p-3">
+
+          <input [(ngModel)]="usuario.name" type="text" placeholder="Nome">
+        </div>
+
+</div>
+
+
+<div class="qrcode_screen">
+        <qr-scanner
+                [debug]="false"
+                [canvasWidth]="1080"
+                [canvasHeight]="720" 
+                [stopAfterScan]="true" 
+                [updateTime]="500"> 
+        </qr-scanner>
+</div>
+
+<button type="button" class="btn btn-primary button-login" (click)="readQRCodeTable()">
+        Ler QRcode
+      </button>
