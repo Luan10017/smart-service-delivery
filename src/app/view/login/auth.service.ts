@@ -48,6 +48,13 @@ export class AuthService {
     );
   }
 
+  selectTable(table: String, userName: String){
+    this.usuarioAutenticado = true
+    localStorage.setItem("usuarioAutenticado","true")
+    localStorage.setItem("nomeUsuario",`${userName}`)
+    this.router.navigate(['/'])
+  }
+
   usuarioEstaAutenticado(){
     return this.usuarioAutenticado
   }
