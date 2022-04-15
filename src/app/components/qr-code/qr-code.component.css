@@ -1,4 +1,98 @@
-.qrcode_screen {
+/* .qrcode_screen {
     width: 50%;
+} */
+.container_qrCode {
+    background: #f2f1ef;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.text_container {
+    width: 30vw;
+    text-align: center;
+}
+
+.text_container h1 {
+    color: #414141;
+    font-size: 2rem;
+}
+
+.text_container p {
+    color: #ff363d;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.row_input {
+    width: 30vw;
+}
+
+.row_input input {
+    width: 100%;
+    padding-left: 0.5rem;
+}
+
+.qrcode_screen {
     margin: 2rem auto;
+    width: 30vw;
+    background: #ffff;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: solid 3px rgba(65, 65, 65, 0.4);
+    border-style: dashed;
+}
+
+.qrcode_screen::before {
+    content: "";
+    height: 0;
+    float: left;
+    padding-bottom: 70%;
+
+}
+
+.qrcode_screen::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+@media (max-width: 912px) {
+    .logo {
+        width: 8rem;
+    }
+
+    .text_container h1 {
+        font-size: 1.4rem;
+    }
+    
+
+    .qrcode_screen {
+        width: 50vw;
+    }
+
+    .text_container {
+        width: 50vw;
+    }
+
+    .row_input {
+        width: 50vw;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .qrcode_screen {
+        width: 70vw;
+    }
+
+    .text_container {
+        width: 70vw;
+    }
+
+    .row_input {
+        width: 70vw;
+    }
 }
