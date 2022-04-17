@@ -2,9 +2,16 @@
   background-color: #f2f1ef;
 }
 
+p{
+  text-align: center;
+}
+
 #produto{
-  min-height: 200px;
-  height: 460px;
+  /*min-height: 200px;
+  height: 460px;*/
+
+  min-height: auto;
+
   justify-content: space-between;
   padding: 2%;
 }
@@ -20,11 +27,20 @@ div#page-content-wrapper{
 
 }
 
+
+
 .item-img{
   /*height: 185px;*/
-  height: 185px;
-  width: auto;
+  /*height: 10rem;*/
+  /*object-fit: cover;*/
+  /*width: auto;*/
+  max-width: 100%;
+  height: calc(100% - 15px);
+  /*height: 190px;*/
+  object-fit: cover;
 }
+
+
 
 .price{
   color: #50a773 !important;

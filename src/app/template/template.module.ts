@@ -9,6 +9,8 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
+import { FormsModule }   from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,12 +18,14 @@ import { CarrinhoComponent } from './carrinho/carrinho.component';
     SidebarComponent,
     FooterComponent,
     LayoutComponent,
-    CarrinhoComponent
+    CarrinhoComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
     NgbModule,
+    HttpClientModule,
+    FormsModule,
     BsDropdownModule.forRoot(),
     CollapseModule.forRoot(),
   ],
