@@ -1,89 +1,85 @@
 <header class="section-header">
-  <section class="header-main border-bottom">
-    <div class="container-fluid">
-      <div class="row align-items-center">
-        <div class="col-lg-3 col-sm-4 col-md-4 col-5"> <a href="#" class="brand-wrap" data-abc="true">
-            <img class="logo" src="/assets/logo.png"> <span
-              class="logo"></span> </a> </div>
-        <div class="col-lg-4 col-xl-5 col-sm-8 col-md-4 d-none d-md-block">
-          <form action="#" class="search-wrap">
-            <div class="input-group w-100">
-              <input
-              name="pesquisar"
-              type="text"
-              class="form-control search-form"
-              style="width:55%;"
-              placeholder="Pesquisar"
-              [(ngModel)]="_filtroProdutos"
-              >
-              <h5>{{_filtroProdutos}}</h5>
-              <!--<div class="input-group-append">
-                <button class="btn btn-primary search-button" type="submit"  style="margin-left: 1px;"> <i
-                    class="fa fa-search pl-8"></i>
-                </button>
-              </div>-->
-            </div>
-          </form>
-        </div>
+  <nav class="navbar navbar-dark navbar-expand p-0 bg-dark">
+      <div class="container-fluid">
+          <ul class="navbar-nav d-none d-md-flex mr-auto">
+              <li class="nav-item"><a class="nav-link" href="#" data-abc="true">Delivery</a></li>
+              <li class="nav-item"><a class="nav-link" href="#" data-abc="true">Ótimos Preços</a></li>
+              <li class="nav-item"><a class="nav-link" href="#" data-abc="true">Pratos Todos os Dias</a></li>
+          </ul>
+          <ul class="navbar-nav d-flex align-items-center">
+              <li class="nav-item">
 
-        <div class="col-lg-6 col-xl-4 col-sm-8 col-md-4 col-7">
-          <div class="d-flex justify-content-end">
-            <div ngbDropdown (click)="atualizaTotal()">
-              <a ngbDropdownToggle target="_blank" [ngClass]="carrinho.length > 0  ? 'carrinho_cheio' : ''" class="nav-link second-text fw-bold">
-                <i class="fas fa fa-shopping-cart second-text fw-bold"></i>
-              </a> <span class="vl"></span>
-  <!-- Carrinho -->
-              <div class="carrinho" ngbDropdownMenu>
-                <app-carrinho [carrinho]="carrinho" *ngIf="carrinho.length > 0"></app-carrinho>
-                <h1 *ngIf="carrinho.length == 0" class="pt-3">O carrinho está vazio 😔</h1>
+                  <div ngbDropdown class="dropdown btn-group d-lg-block d-xl-nonee">
+                    <a ngbDropdownToggle class="nav-link dropdown-toggle second-text fw-bold" id="navbarDropdown" aria-expanded="false"  role="button" data-toggle="dropdown" aria-haspopup="true">
+                      <i class="fas fa-user me-2"></i>{{nomeUsuario}}
+                    </a>
+                    <ul ngbDropdownMenu aria-labelledby="dropdownMenuButton1">
+                      <li><a ngbDropdownItem href="dados-pessoais">Dados Pessoais</a></li>
+                      <li><a ngbDropdownItem href="#">Sair <i class="fa fa-power-off" aria-hidden="true" id="sair"></i></a></li>
+                    </ul>
+                  </div>
+
+          </ul> <!-- list-inline // -->
+      </div> <!-- navbar-collapse .// -->
+      <!-- container // -->
+  </nav> <!-- header-top-light.// -->
+  <section class="header-main border-bottom bg-white">
+      <div class="container-fluid">
+          <div class="row p-2 pt-3 pb-3 d-flex align-items-center">
+              <div class="col-md-2 col-xs-2">
+                 <img class="d-none d-md-flex" src="/assets/logo.png" width="100">
               </div>
-            </div>
-  <!-- Carrinho -->
-            <div ngbDropdown class="dropdown btn-group d-lg-block d-xl-nonee">
-              <a ngbDropdownToggle class="nav-link dropdown-toggle second-text fw-bold" id="navbarDropdown" aria-expanded="false"  role="button" data-toggle="dropdown" aria-haspopup="true">
-                <i class="fas fa-user me-2"></i>{{nomeUsuario}}
-              </a>
-              <ul ngbDropdownMenu aria-labelledby="dropdownMenuButton1">
-                <li><a ngbDropdownItem href="dados-pessoais">Dados Pessoais</a></li>
-                <li><a ngbDropdownItem href="#">Sair <i class="fa fa-power-off" aria-hidden="true" id="sair"></i></a></li>
-              </ul>
-            </div>
+              <div class="col-md-8 col-xs-8">
+                  <div class="d-flex form-inputs"> <input class="form-control" type="text" placeholder="Pesquisar..."> <i class="bx bx-search"></i> </div>
+              </div>
+              <div class="col-md-2 col-xs-2">
+                  <div class="d-flex d-none d-md-flex flex-row align-items-center">
+                      <div class="d-flex flex-column ms-2">
+                        <div ngbDropdown (click)="atualizaTotal()">
+                          <a ngbDropdownToggle target="_blank" [ngClass]="carrinho.length > 0  ? 'carrinho_cheio' : ''" class="nav-link second-text fw-bold">
+                            <i class="fas fa fa-shopping-cart second-text fw-bold"></i>
+                          </a> <span class="vl"></span>
 
-            <div class="dropdown btn-group d-lg-none">
-              <nav class="navbar navbar-expand-lg" *ngIf="showMenu()">
-                <div class="container-fluid">
-                  <a class="navbar-brand" routerLink="dashboard"></a>
-                  <button class="navbar-toggler" (click)="isCollapsed = !isCollapsed" type="button" data-bs-toggle="collapse" data-bs-target="#categorias" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                </div>
-              </nav>
-            </div>
-
-
-
+                          <div class="carrinho" ngbDropdownMenu>
+                            <app-carrinho [carrinho]="carrinho" *ngIf="carrinho.length > 0"></app-carrinho>
+                            <h1 *ngIf="carrinho.length == 0" class="pt-3">O carrinho está vazio 😔</h1>
+                          </div>
+                        </div>
+                       </div>
+                  </div>
+              </div>
           </div>
+      </div>
+  </section>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="dropdown btn-group d-lg-none">
+      <div ngbDropdown (click)="atualizaTotal()">
+        <a ngbDropdownToggle target="_blank" [ngClass]="carrinho.length > 0  ? 'carrinho_cheio' : ''" class="nav-link second-text fw-bold">
+          <i class="fas fa fa-shopping-cart second-text fw-bold"></i>
+        </a> <span class="vl"></span>
+
+        <div class="carrinho" ngbDropdownMenu>
+          <app-carrinho [carrinho]="carrinho" *ngIf="carrinho.length > 0"></app-carrinho>
+          <h1 *ngIf="carrinho.length == 0" class="pt-3">O carrinho está vazio 😔</h1>
         </div>
       </div>
+
     </div>
 
-  </section>
-
-  <div class="col-lg-4 col-sm-12  col-xs-12 col-md-4 d-block d-sm-none">
-    <br>
-    <form action="#" class="search-wrap">
-      <div class="input-group w-100"> <input type="text" class="form-control search-form" style="width:55%;"
-          placeholder="Pesquisar">
-        <div class="input-group-append">
-          <button class="btn btn-primary search-button" type="submit"  style="margin-left: 1px;"> <i
-              class="fa fa-search pl-8"></i>
+    <div class="dropdown btn-group d-lg-none">
+      <nav class="navbar navbar-expand-lg" *ngIf="showMenu()">
+        <div class="container-fluid">
+          MENU<a class="navbar-brand" routerLink="dashboard"></a>
+          <button class="navbar-toggler" (click)="isCollapsed = !isCollapsed" type="button" data-bs-toggle="collapse" data-bs-target="#categorias" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
           </button>
         </div>
-      </div>
-    </form>
-  </div>
+      </nav>
+    </div>
 
+  </nav>
 </header>
+
 
 
 <nav class="navbar navbar-expand-lg navbar-expand-md navbar-light bg-light d-none d-lg-block">

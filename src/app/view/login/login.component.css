@@ -1,11 +1,8 @@
 *{
  height: auto;
-  margin: 0 auto;
+margin: 0 auto;
 }
 
-.card {
-  /*margin-top: 4em;*/
-}
 
 .button-login {
   background-color: #ff363d;

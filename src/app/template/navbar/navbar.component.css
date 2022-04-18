@@ -1,7 +1,41 @@
+  .form-inputs {
+    position: relative
+  }
 
-   *{
-        background-color:  #fff !important;
-    }
+  .form-inputs .form-control {
+    height: 45px
+  }
+
+  .form-inputs .form-control:focus {
+    box-shadow: none;
+    border: 1px solid #000
+  }
+
+  .form-inputs i {
+    position: absolute;
+    right: 10px;
+    top: 15px
+  }
+
+  .shop-bag {
+    background-color: #000;
+    color: #fff;
+    height: 50px;
+    width: 50px;
+    font-size: 25px;
+    display: flex;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center
+  }
+
+  .qty {
+    font-size: 12px
+  }
+
+
+
+
 
     .second-text {
       color: var(--second-text-color);
@@ -119,43 +153,6 @@
       border-radius: 0.37rem
   }
 
- /* .dropdown-menu {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      z-index: 1000;
-      display: none;
-      float: left;
-      min-width: 10rem;
-      padding: .5rem 0;
-      margin: .5rem 7px 0px;
-      font-size: 1rem;
-      color: #212529;
-      text-align: left;
-      list-style: none;
-      background-color: #fff;
-      background-clip: padding-box;
-      border: 1px solid rgba(0, 0, 0, .15);
-      border-radius: .25rem
-  }
-
-  .dropdown-item {
-      display: block;
-      width: 100%;
-      padding: .45rem 1.5rem;
-      clear: both;
-      font-weight: 400;
-      color: #212529;
-      text-align: inherit;
-      white-space: nowrap;
-      background-color: transparent;
-      border: 0
-  }*/
-
-   /*input.form-control.rounded{
-      width: 30rem;
-    }*/
-
 
   .navbar-toggler-icon {
       background-image: url(https://img.icons8.com/ios/50/000000/menu.png)
@@ -185,19 +182,6 @@
 
   .rounded-full {
     border-radius: 100%;
-  }
-
-  #wrapper {
-    overflow-x: hidden;
-    /*background-image: linear-gradient(
-      to right,
-      #baf3d7,
-      #c2f5de,
-      #cbf7e4,
-      #d4f8ea,
-      #ddfaef
-    );*/
-    background-color: #f2f1ef;
   }
 
 
