@@ -1,4 +1,4 @@
-import { AuthService } from './view/login/auth.service';
+import { AuthService } from './core/services/auth.service';
 import { Component, AfterViewInit  } from '@angular/core';
 
 @Component({
@@ -13,20 +13,6 @@ export class AppComponent {
 
   constructor(private authService :AuthService) {}
 
-  ngOnInit(){
-    /* this.authService.mostrarMenuEmitter.subscribe(
-      mostrar => this.mostrarMenu = mostrar
-    ) */
-  }
-
-  /* ngAfterViewInit(){
-    const el = document.getElementById("sidebar-wrapper");
-    const toggleButton = document.getElementById("menu-toggle");
-
-    toggleButton?.addEventListener("click", ()=> {
-      el?.classList.toggle("toggled")
-    })
-
-  } */
+  ngOnInit(){}
 
 }

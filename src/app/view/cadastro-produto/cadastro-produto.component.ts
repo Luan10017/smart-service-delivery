@@ -1,8 +1,8 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
-import { CadastroProdutosService } from './../../services/cadastro-produtos.service';
-import { Produto } from '../../classes/Produto';
+import { CadastroProdutosService } from './../../core/services/cadastro-produtos.service';
+import { Produto } from '../../shared/models/Produto';
 import { AbstractControlOptions, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 

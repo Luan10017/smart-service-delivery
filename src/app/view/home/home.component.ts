@@ -1,5 +1,5 @@
-import { MenuService } from './../../menu.service';
-import { Product } from './../../components/product-card/product.model';
+import { MenuService } from '../../core/services/menu.service';
+import { Product } from '../../shared/models/product.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,9 +8,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-
-  products: Product[] = [];
 
   //carrousel fotos e intervalo
   myInterval = 1500;
@@ -24,9 +21,6 @@ export class HomeComponent implements OnInit {
   constructor(private productService: MenuService) { }
 
   ngOnInit(): void {
-    // this.productService.read().subscribe(products => {
-    //   this.products = products
-    // })
   }
 
 

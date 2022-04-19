@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { Produto } from 'src/app/classes/Produto';
-import { MenuService } from 'src/app/menu.service';
+import { Produto } from 'src/app/shared/models/Produto';
+import { MenuService } from 'src/app/core/services/menu.service';
 
 @Component({
   selector: 'app-administrativo',

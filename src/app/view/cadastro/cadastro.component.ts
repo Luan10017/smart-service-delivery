@@ -1,11 +1,11 @@
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControlOptions, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-import { ValidatiorFields } from 'src/app/helpers/ValidatiorFields';
+import { ValidatiorFields } from 'src/app/shared/helpers/ValidatiorFields';
 
-import { Cadastro } from '../../classes/cadastro';
-import { CadastroClienteService } from './../../services/cadastro-cliente.service';
+import { Cliente } from '../../shared/models/Cliente';
+import { CadastroClienteService } from './../../core/services/cadastro-cliente.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -16,7 +16,11 @@ import { CadastroClienteService } from './../../services/cadastro-cliente.servic
 export class CadastroComponent implements OnInit {
 
   form!: FormGroup;
-  cadastro: Cadastro = new Cadastro()
+  cliente: Cliente = new Cliente()
+  id!: number 
+  edicao: boolean = false 
+  cadastro: boolean = true
+
 
   //toda vez que eu chamar o f ele já vai me chamar os
   // f do form control qq campo que eu quiser no cadastro do smart service
@@ -28,15 +32,28 @@ export class CadastroComponent implements OnInit {
     private fb: FormBuilder, 
     private cadastroService: CadastroClienteService,
     private toastr: ToastrService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
     this.validation();
+
+    if (this.route.snapshot.url.length > 1) {
+      this.edicao = true
+      this.cadastro = false
+      this.route.params.subscribe(res => this.id = res.id)
+      
+      //Quando o Gabriel fizer o end-point de get cliente basta ativar essas parte do código
+      //os dados vão ser adicionados aos campos 
+      //this.service.getItem(this.id)
+      //  .subscribe(res => this.cliente = res)
+
+      }
   }
 
   fazerCadastro() {
-    this.cadastroService.postItem(this.cadastro)
+    this.cadastroService.postItem(this.cliente)
       .subscribe(res => {
         this.toastr.success("Cadastro realizado com sucesso!")
         this.router.navigate(['/login'])
@@ -47,7 +64,7 @@ export class CadastroComponent implements OnInit {
   }
 
   changeValue(event: any) {
-    this.cadastro.estado = event.target.value
+    this.cliente.estado = event.target.value
   }
 
   public validation(): void {
