@@ -7,24 +7,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './view/home/home.component';
 import { LoginComponent } from './view/login/login.component';
 import { CadastroComponent } from './view/cadastro/cadastro.component';
-import { HamburgerComponent } from './view/hamburger/hamburger.component';
-import { AlcoolicasComponent } from './view/alcoolicas/alcoolicas.component';
-import { BebidasComponent } from './view/bebidas/bebidas.component';
-import { PorcoesComponent } from './view/porcoes/porcoes.component';
-import { DadosPessoaisComponent } from './view/dados-pessoais/dados-pessoais.component';
+import { CategoriasComponent } from './view/categorias/categorias.component';
 import { AdministrativoComponent } from './view/administrativo/administrativo.component';
 
 import { ProdutoComponent } from './view/produto/produto.component';
-import { MesaComponent } from './view/mesa/mesa.component';
 import { PagamentoComponent } from './view/pagamento/pagamento.component';
 import { EnderecoComponent } from './view/endereco/endereco.component';
 import { PedidoComponent } from './view/pedido/pedido.component';
-import { AuthGuard } from './guards/auth.guard';
+import { AuthGuard } from './core/guards/auth.guard';
 import { EsqueceuSenhaComponent } from './view/esqueceu-senha/esqueceu-senha.component';
 import { RedefinirSenhaComponent } from './view/redefinir-senha/redefinir-senha.component';
-import { EditarProdutoComponent } from './view/editar-produto/editar-produto.component';
-import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
-import { QrCodeComponent } from './components/qr-code/qr-code.component';
+import { ProgressBarComponent } from './shared/components/progress-bar/progress-bar.component';
+import { QrCodeComponent } from './shared/components/qr-code/qr-code.component';
 
 
 const routes: Routes = [
@@ -34,14 +28,13 @@ const routes: Routes = [
     children: [
       { path: 'home', component: HomeComponent  },
       { path: 'produto', component: ProdutoComponent },
-      { path: 'mesa', component: MesaComponent },
       { path: 'pagamento', component: PagamentoComponent },
       { path: 'endereco', component: EnderecoComponent },
       { path: 'pedido', component: PedidoComponent },
-      { path: 'hamburger', component: HamburgerComponent },
-      { path: 'porcoes', component: PorcoesComponent },
-      { path: 'bebidas', component: BebidasComponent },
-      { path: 'alcoolicas', component: AlcoolicasComponent },
+      { path: 'hamburgers', component: CategoriasComponent },
+      { path: 'porcoes', component: CategoriasComponent  },
+      { path: 'bebidas', component: CategoriasComponent },
+      { path: 'bebidasalcolicas', component: CategoriasComponent  },
       { path: '', redirectTo: 'home', pathMatch: 'full' },
     ],
     // canActivate: [AuthGuard]
@@ -51,14 +44,14 @@ const routes: Routes = [
     component: AdminComponent,
     children: [
       { path: 'cadastro/produtos', component: CadastroProdutoComponent },
-      { path: 'editar/produtos', component: EditarProdutoComponent },
+      { path: 'editar/produtos', component: CadastroProdutoComponent },
       { path: 'acompanhar/produtos', component: ProgressBarComponent },
       { path: 'qrcode', component: QrCodeComponent },
     ]
   },
   { path: 'login', component: LoginComponent },
   { path: 'cadastro', component: CadastroComponent },
-  { path: 'dados-pessoais', component: DadosPessoaisComponent },
+  { path: 'dados-pessoais', component: CadastroComponent },
   { path: 'esqueceu-senha', component: EsqueceuSenhaComponent },
   { path: 'redefinir-senha', component: RedefinirSenhaComponent },
   { path: 'administrativo', component: AdministrativoComponent }

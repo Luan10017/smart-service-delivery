@@ -1,11 +1,10 @@
-import { Component, NgModule, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
-import { Carrinho } from 'src/app/classes/carrihno';
-import { CarrinhoService } from 'src/app/services/carrinho.service';
+import { Carrinho } from 'src/app/shared/models/carrihno';
+import { CarrinhoService } from 'src/app/core/services/carrinho.service';
 import { FormsModule }   from '@angular/forms';
-import { Produto } from 'src/app/classes/Produto';
-import { ProdutosService } from 'src/app/services/produtos.service';
+import { Produto } from 'src/app/shared/models/Produto';
+import { ProdutosService } from 'src/app/core/services/produtos.service';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
