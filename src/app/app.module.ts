@@ -30,6 +30,7 @@ import { NgQrScannerModule } from 'angular2-qrscanner';
 import { QrCodeComponent } from './shared/components/qr-code/qr-code.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

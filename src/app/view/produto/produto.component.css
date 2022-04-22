@@ -15,6 +15,16 @@ a:hover{
   height: 500px;
 }
 
+button{
+  background-color: #ff363d;
+  border-color: #fff;
+}
+
+button:hover{
+  background-color: #212529;
+  border-color: #fff;
+}
+
 
 .category{
   color: #2e3131!important;

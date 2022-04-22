@@ -21,6 +21,7 @@ import { ProgressBarComponent } from './shared/components/progress-bar/progress-
 import { QrCodeComponent } from './shared/components/qr-code/qr-code.component';
 
 
+
 const routes: Routes = [
   {
     path: '',
