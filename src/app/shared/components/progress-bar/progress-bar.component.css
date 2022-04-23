@@ -82,12 +82,13 @@ ul li .progress{
 }*/
 
 .progress::after{
-  content: ""  !important;
-  position: absolute  !important;
-  width: 125px  !important;
-  height: 5px  !important;
-  background-color: rgba(68, 68, 68, 0.781)  !important;
-  right: 30px  !important;
+  content: "";
+  position: absolute;
+  z-index: 10;
+  width: 125px;
+  height: 5px;
+  background-color: rgba(68, 68, 68, 0.781);
+  right: 30px;
 }
 
 .one::after{
