@@ -31,7 +31,7 @@ export class QrCodeComponent implements OnInit {
 
   readQRCodeTable(): void {
     this.qrScannerComponent.getMediaDevices().then(devices => {
-      console.log(devices);
+      console.log("devices",devices);
       const videoDevices: MediaDeviceInfo[] = [];
       for (const device of devices) {
         if (device.kind.toString() === 'videoinput') {
@@ -46,11 +46,12 @@ export class QrCodeComponent implements OnInit {
             break;
           }
         }
-        if (choosenDev) {
-          this.qrScannerComponent.chooseCamera.next(choosenDev);
-        } else {
-          this.qrScannerComponent.chooseCamera.next(videoDevices[1]);
-        }
+        this.qrScannerComponent.chooseCamera.next(videoDevices[1])
+        // if (choosenDev) {
+        //   this.qrScannerComponent.chooseCamera.next(choosenDev);
+        // } else {
+        //   this.qrScannerComponent.chooseCamera.next(videoDevices[0]);
+        // }
       }
     });
 
