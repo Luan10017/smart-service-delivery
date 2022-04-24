@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs/operators'
 
@@ -14,8 +14,9 @@ export class CategoriasComponent implements OnInit {
 
   products: Produto[] = [];
 
+
   constructor(private productService: MenuService, private route: ActivatedRoute) { }
-  
+
 
   ngOnInit(): void {
     const categoriaURL = this.route.snapshot.url[0].path
@@ -25,7 +26,7 @@ export class CategoriasComponent implements OnInit {
     .subscribe(res => {
       this.products = res
     })
-    
+
   }
 
 }

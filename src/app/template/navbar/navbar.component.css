@@ -1,3 +1,16 @@
+  .list-group-item {
+    border: none;
+    padding: 20px 30px;
+   }
+
+  .list-group-item.active {
+   background-color: transparent;
+   color: var(--main-text-color);
+   font-weight: bold;
+   border: none;
+  }
+
+
   .form-inputs {
     position: relative
   }
@@ -210,4 +223,5 @@
     top: 20px;
     left: 10px;
  }
+
 

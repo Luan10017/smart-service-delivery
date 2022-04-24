@@ -1,7 +1,9 @@
 *{
   top: 2px;
   margin-top: 2px;
+  width: auto;
 }
+
 #produto:hover{
   background-color: #f2f1ef;
 }
@@ -14,12 +16,8 @@ p{
   /*min-height: 200px;
   height: 460px;*/
   min-height: auto;
-
   justify-content: space-between;
-  padding: 2%;
 }
-
-
 
 div#page-content-wrapper{
   background-color: #f2f1ef;
@@ -62,4 +60,6 @@ button:hover{
   background-color: #212529;
   border-color: #fff;
 }
+
+
 

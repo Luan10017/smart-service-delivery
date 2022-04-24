@@ -1,0 +1,18 @@
+#page-content-wrapper {
+  min-width: 100%;
+}
+
+#wrapper {
+  overflow-x: hidden;
+  background-color: #f2f1ef;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+#menu-toggle {
+cursor: pointer;
+}
+
+
