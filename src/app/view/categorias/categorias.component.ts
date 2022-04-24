@@ -19,7 +19,8 @@ export class CategoriasComponent implements OnInit {
 
   ngOnInit(): void {
     const categoriaURL = this.route.snapshot.url[0].path
-    const baseUrl = `http://localhost:8080/produtos/categoria/${categoriaURL.toUpperCase()}`
+    const baseUrl = `174.129.164.95:8080/produtos/categoria/${categoriaURL.toUpperCase()}`
+    // const baseUrl = `http://localhost:8080/produtos/categoria/${categoriaURL.toUpperCase()}`
 
     this.productService.getItens(baseUrl).pipe(map(result => result.data[0].produtos))
     .subscribe(res => {

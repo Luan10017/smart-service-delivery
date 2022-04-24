@@ -17,7 +17,8 @@ export interface ObjetoPayload2<T> {
 })
 export class CadastroProdutosService {
 
-  baseUrl = "http://localhost:8080/cadastra/produto"
+  baseUrl = "174.129.164.95:8080/cadastra/produto"
+  // baseUrl = "http://localhost:8080/cadastra/produto"
 
   constructor(private http: HttpClient) { }
 

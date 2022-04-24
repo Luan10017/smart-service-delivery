@@ -9,7 +9,8 @@ import { take } from 'rxjs/operators';
 )
 export class ProdutosService {
 
-  baseURL =  "http://localhost:8080/produtos"
+  baseURL =  "174.129.164.95:8080/produtos"
+  // baseURL =  "http://localhost:8080/produtos"
 
   constructor(private http: HttpClient) { }
 

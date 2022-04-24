@@ -8,7 +8,8 @@ import { Cliente } from '../../shared/models/Cliente';
 })
 export class CadastroClienteService {
 
-  baseUrl = "http://localhost:8080/cadastra/cliente"
+  baseUrl = "174.129.164.95:8080/cadastra/cliente"
+  // baseUrl = "http://localhost:8080/cadastra/cliente"
   
   constructor(private http: HttpClient) { }
 
