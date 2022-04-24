@@ -1,5 +1,5 @@
-# JSON API
-Para ter a melhor experiência com esse projeto acesse meu projeto de [JSON API](https://github.com/Luan10017/json-api) execute com npm start e mantenha em funcionamento em conjunto com o projeto Angular SmartService.
+# Link heroku
+[Aplicação no Heroku](https://smart-service-front.herokuapp.com/home) .
 
 # SmartService
 
