@@ -2,6 +2,7 @@ import { Produto } from './../../shared/models/Produto';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 
 export interface ObjetoPayload {
@@ -17,7 +18,7 @@ export interface ObjetoPayload2<T> {
 })
 export class CadastroProdutosService {
 
-  baseUrl = "http://localhost:8080/cadastra/produto"
+  baseUrl = `${environment.API}cadastra/produto`
 
   constructor(private http: HttpClient) { }
 
@@ -26,7 +27,7 @@ export class CadastroProdutosService {
   }
 
   putItem(item: any, id: any): Observable<any> {
-    const url_id = `http://localhost:8080/cadastra/imagem/produto/${id}`;
+    const url_id = `${environment.API}cadastra/imagem/produto/${id}`;
     return this.http.put<any>(url_id, item);
   }
 }
