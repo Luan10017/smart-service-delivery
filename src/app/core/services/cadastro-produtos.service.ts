@@ -27,7 +27,7 @@ export class CadastroProdutosService {
   }
 
   putItem(item: any, id: any): Observable<any> {
-    const url_id = `http://localhost:8080/cadastra/imagem/produto/${id}`;
+    const url_id = `${environment.API}cadastra/imagem/produto/${id}`;
     return this.http.put<any>(url_id, item);
   }
 }
