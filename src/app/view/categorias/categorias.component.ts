@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators'
 
 import { Produto } from 'src/app/shared/models/Produto';
 import { MenuService } from 'src/app/core/services/menu.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-categorias',
@@ -20,8 +21,7 @@ export class CategoriasComponent implements OnInit {
 
   ngOnInit(): void {
     const categoriaURL = this.route.snapshot.url[0].path
-    const baseUrl = `174.129.164.95:8080/produtos/categoria/${categoriaURL.toUpperCase()}`
-    // const baseUrl = `http://localhost:8080/produtos/categoria/${categoriaURL.toUpperCase()}`
+    const baseUrl =  `${environment.API}produtos/categoria/${categoriaURL.toUpperCase()}`
 
     this.productService.getItens(baseUrl).pipe(map(result => result.data[0].produtos))
     .subscribe(res => {

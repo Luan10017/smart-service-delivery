@@ -6,6 +6,7 @@ import { FormsModule }   from '@angular/forms';
 import { Produto } from 'src/app/shared/models/Produto';
 import { ProdutosService } from 'src/app/core/services/produtos.service';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-navbar',
@@ -61,7 +62,7 @@ export class NavbarComponent implements OnInit {
   }
 
   public getProducts(): void {
-    this.http.get('http://localhost:8080/produtos').subscribe(
+    this.http.get(`${environment.API}produtos`).subscribe(
       response => {
         this.products = response;
         this._filtroProdutos= this.products;

@@ -4,6 +4,7 @@ import { Usuario } from '../../shared/models/usuario';
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class AuthService {
     private toastr: ToastrService,
   ) { }
 
-  url="http://localhost:8080/auth"
+  url=`${environment.API}auth`
   autentica(usuario: Usuario): Observable<any> {
       return this.http.post(this.url, usuario)
   }
@@ -43,7 +44,7 @@ export class AuthService {
         this.router.navigate(['/'])
       },
       error => {
-        this.toastr.error("emial ou senha invalidos")
+        this.toastr.error("email ou senha inválidos")
       }
     );
   }

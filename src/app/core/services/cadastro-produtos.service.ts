@@ -2,6 +2,7 @@ import { Produto } from './../../shared/models/Produto';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 
 export interface ObjetoPayload {
@@ -17,8 +18,7 @@ export interface ObjetoPayload2<T> {
 })
 export class CadastroProdutosService {
 
-  baseUrl = "174.129.164.95:8080/cadastra/produto"
-  // baseUrl = "http://localhost:8080/cadastra/produto"
+  baseUrl = `${environment.API}cadastra/produto`
 
   constructor(private http: HttpClient) { }
 
