@@ -24,6 +24,10 @@
                         [updateTime]="500"> 
                 </qr-scanner>
         </div>
+        <div *ngFor="let t of teste">
+                <p >{{t}}</p>     
+
+        </div>
         
         <button type="button" class="btn btn-primary button-login" (click)="readQRCodeTable()">
                 Ler QRcode
