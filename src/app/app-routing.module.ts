@@ -28,7 +28,7 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       { path: 'home', component: HomeComponent  },
-      { path: 'produto', component: ProdutoComponent },
+      { path: 'produto/:id', component: ProdutoComponent },
       { path: 'pagamento', component: PagamentoComponent },
       { path: 'endereco', component: EnderecoComponent },
       { path: 'pedido', component: PedidoComponent },
