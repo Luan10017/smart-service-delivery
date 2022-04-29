@@ -50,7 +50,13 @@ export class CadastroProdutoComponent implements OnInit {
             setTimeout( () => {
               this.router.navigate(['/bebidas'])
             },3000)
+          },
+          error => {
+            this.toastr.error("Opa algo deu errado, sua foto não foi salva.")
           })
+      },
+      error => {
+        this.toastr.error("Opa algo deu errado, seu produto não foi cadastrado.")
       })
   }
 
