@@ -1,3 +1,10 @@
 #msgVazio{
   text-align: center;
 }
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+  justify-content: center;
+}
+

@@ -1,8 +1,9 @@
-<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12" style="display: inline-block;">
+<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 product_card">
 
-  <div class="card-center d-flex" style="width: 100%; height: auto;">
+  <div class="card-center d-flex">
     <div class="card text-center m-3 shadow bg-white rounded" id="produto" (click)="vaiParaDetalhesProduto($event, products.id)">
-        <img class="card-img-top item-img img-responsive" src="data:image/jpeg;base64,{{ products.imgUrl }}">
+        <img class="card-img-top item-img img-responsive" *ngIf="products.imgUrl !== null" src="data:image/jpeg;base64,{{ products.imgUrl }}">
+        <img class="card-img-top item-img img-responsive" *ngIf="products.imgUrl == null" src="/assets/img_template.png">
         <h3 class="card-text">{{products.nome}}</h3>
         <p class="description">{{products.descricao | slice:0:30}}{{products.descricao.length > 30? ' ...':''}}</p>
         <h5 class="card-title title-post-home price">R$ {{ products.preco }}</h5>

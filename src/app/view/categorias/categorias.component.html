@@ -4,7 +4,7 @@
     <h3 class="fs-4 mb-3 text-center">Bebidas</h3>
 
     <div class="col">
-      <div  *ngIf="products.length > 0; else semProdutos" class="container" style="padding: 0%;">
+      <div  *ngIf="products.length > 0; else semProdutos" class="container">
 
         <app-product-card *ngFor="let product of products" [products]="product"></app-product-card>
 
