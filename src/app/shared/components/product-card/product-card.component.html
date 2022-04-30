@@ -1,23 +1,18 @@
+<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 product_card">
 
-<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12"  style="display: inline-block;">
-
-    <div class="card-center d-flex" style="width: 100%; height: auto;">
-        <div class="card text-center m-3 shadow bg-white rounded" id="produto">
-            <a href="/produto">
-                <img class="card-img-top item-img img-responsive" src="data:image/jpeg;base64,{{ products.imgUrl }}">
-            </a>
-            <!--<h5 class="card-title title-post-home"><a class="category" href="">{{products.category}}</a></h5>-->
-            <h3 class="card-text">{{products.nome}}</h3>
-            <p class="description">{{products.descricao | slice:0:30}}{{products.descricao.length > 30? ' ...':''}}</p>
-            <h5 class="card-title title-post-home price">R$ {{ products.preco }}</h5>
-            <div class="p-col-12">
-              <a class="nav-link p-3" role="button">
-                <button type="button" class="btn btn-primary button-login"  (click)="adicionarAoCarrinho(products)">
-                  Adicionar ao Carrinho
-                </button>
-              </a>
-            </div>
-        </div>
+  <div class="card-center d-flex">
+    <div class="card text-center m-3 shadow bg-white rounded" id="produto" (click)="vaiParaDetalhesProduto($event, products.id)">
+        <img class="card-img-top item-img img-responsive" *ngIf="products.imgUrl !== null" src="data:image/jpeg;base64,{{ products.imgUrl }}">
+        <img class="card-img-top item-img img-responsive" *ngIf="products.imgUrl == null" src="/assets/img_template.png">
+        <h3 class="card-text">{{products.nome}}</h3>
+        <p class="description">{{products.descricao | slice:0:30}}{{products.descricao.length > 30? ' ...':''}}</p>
+        <h5 class="card-title title-post-home price">R$ {{ products.preco }}</h5>
+      <div class="p-col-12">
+        <button type="button" class="btn btn-primary button-login" (click)="adicionarAoCarrinho(products)">
+          Adicionar ao Carrinho
+        </button>
+      </div>
     </div>
+  </div>
 
 </div>

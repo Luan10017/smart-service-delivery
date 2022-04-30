@@ -12,17 +12,17 @@
             Porções (Categoria)
           </div>
           <div class="card-body">
-            <h5 class="card-title">Batata Frita 500g (Nome)</h5>
+            <h5 class="card-title">{{product.nome}}</h5>
             <div class="card text-center">
-                <img class="card-img-top item-img" src="/assets/home/fritas.jpg" height="50">
+                <img class="card-img-top item-img" src="data:image/jpeg;base64,{{ product.imgUrl }}" height="50">
             </div>
             <br>
-            <p class="card-text">Deliciosa porção de batata frita! (Descrição)</p>
+            <p class="card-text">{{product.descricao}}</p>
 
             <div class="row">
 
               <h5 class="card-title title-post-home price"><span style="color: #000;">Preço: </span>
-                R$26,00</h5>
+                {{product.preco}}</h5>
 
             </div>
 

@@ -4,7 +4,6 @@ import { Carrinho } from 'src/app/shared/models/carrihno';
 import { CarrinhoService } from 'src/app/core/services/carrinho.service';
 import { FormsModule }   from '@angular/forms';
 import { Produto } from 'src/app/shared/models/Produto';
-import { ProdutosService } from 'src/app/core/services/produtos.service';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
@@ -45,7 +44,6 @@ export class NavbarComponent implements OnInit {
     private router: Router ,
     private carrinhoService: CarrinhoService,
     private http: HttpClient,
-    private produtosService: ProdutosService
     ) { }
 
   ngOnInit(): void {

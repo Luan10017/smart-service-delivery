@@ -5,5 +5,5 @@ export class Produto {
     preco!: number
     descricao!: string
     estoque!: number
-    imggUrl!: string
+    imgUrl!: string
 }
