@@ -1,15 +1,15 @@
 <div class="p-justify-center" style="background-color: #f2f1ef; ">
-  
+
   <div class="row">
     <div class="p-col-10 p-sm-6 p-md-4">
-      
+
       <div class="p-col-12 text-center">
         <img class="logo" src="/assets/logo.png">
       </div>
     </div>
-    
+
   </div>
-  <form [formGroup]="form">
+  <form [formGroup]="form" #cadastroForm="ngForm">
     <div class="row">
       <div class="card pt-3 mb-5 shadow p-3 mb-5 bg-white rounded" id="row2">
         <div class="container card-body">
@@ -220,9 +220,10 @@
                 <div class="col-md-1 mb-3">
                   <label>Estado</label>
                   <select
-                  [(ngModel)]="cliente.estado"
-                  (change)="changeValue($event)"
-                   name=""
+                    [(ngModel)]="cliente.estado"
+                    (change)="changeValue($event)"
+                    [ngClass]="{'is-invalid': f.estado.errors && f.estado.touched }"
+                    formControlName="estado"
                     class="custom-select d-block w-100 is-invalid" id="">
                     <option value="">Selecione</option>
                     <option value="AC">AC</option>
@@ -253,14 +254,17 @@
                     <option value="SE">SE</option>
                     <option value="TO">TO</option>
                   </select>
+                  <div *ngIf="f.estado.errors?.required" class="invalid-feedback">
+                    O estado é obrigatório
+                  </div>
                 </div>
 
-              
+
               </div>
 
               <div class="p-col-12 text-center">
                 <a>
-                  <button *ngIf="cadastro" type="button" class="btn btn-primary button-login" (click)="fazerCadastro()">
+                  <button  [disabled]="cadastroForm.invalid" *ngIf="cadastro" type="button" class="btn btn-primary button-login" (click)="fazerCadastro()">
                     Cadastrar
                   </button>
                 </a>
