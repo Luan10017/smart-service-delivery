@@ -13,9 +13,12 @@ export class HomeComponent implements OnInit {
   myInterval = 1500;
   activeSlideIndex = 0;
   slides: {image: string; text?: string}[] = [
-    {image: 'assets/home/carousel1.jpg'},
-    {image: 'assets/home/carousel2.jpeg'},
-    {image: 'assets/home/almoco.jpeg'}
+    {image: 'assets/home/home.jpg'},
+    {image: 'assets/home/slide-2.jpg'},
+    {image: 'assets/home/slide-3.jpg'},
+    {image: 'assets/home/slide-4.jpg'},
+    {image: 'assets/home/slide-5.jpg'},
+    {image: 'assets/home/slide-1.jpg'}
   ];
 
   constructor(private productService: MenuService) { }

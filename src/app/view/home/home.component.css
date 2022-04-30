@@ -3,3 +3,7 @@
   margin: auto 0;
   display: inline-block;
 }
+
+#slides{
+ filter: grayscale(0.2);
+}
