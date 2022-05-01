@@ -4,7 +4,7 @@
    height: 100%;
    margin: 0 auto;">
 
-  <form [formGroup]="form">
+  <form [formGroup]="form" #loginForm="ngForm">
     <div class="p-col-10 p-sm-4 p-sx-4 p-md-4" style="height: auto">
       <div class="container">
 
@@ -48,7 +48,7 @@
                 <div class="p-col-12">
 
                   <a class="nav-link" role="button">
-                    <button type="button" class="btn btn-primary button-login" (click)="fazerLogin()">
+                    <button type="button" class="btn btn-primary button-login" [disabled]="loginForm.invalid" (click)="fazerLogin()">
                       Entrar
                     </button>
                   </a>
