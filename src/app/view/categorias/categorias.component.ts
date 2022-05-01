@@ -14,14 +14,15 @@ import { environment } from 'src/environments/environment';
 export class CategoriasComponent implements OnInit {
 
   products: Produto[] = [];
+  categoriaURL!: string
 
 
   constructor(private productService: MenuService, private route: ActivatedRoute) { }
 
 
   ngOnInit(): void {
-    const categoriaURL = this.route.snapshot.url[0].path
-    const baseUrl =  `${environment.API}produtos/categoria/${categoriaURL.toUpperCase()}`
+    this.categoriaURL = this.route.snapshot.url[0].path.toUpperCase()
+    const baseUrl =  `${environment.API}produtos/categoria/${this.categoriaURL}`
 
     this.productService.getItens(baseUrl).pipe(map(result => result.data[0].produtos))
     .subscribe(res => {

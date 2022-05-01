@@ -3,7 +3,7 @@
   /* height: calc(100% - 15px); */
   height: 14rem;
   margin: 0.5rem auto;
-  /* object-fit: cover; */
+  object-fit: cover;
 }
 
 .price{
@@ -23,11 +23,10 @@ button:hover{
 
 .product_card {
   width: 24rem;
-  max-width: 24rem;
-  /* min-width: 24rem; */
 }
 
 #produto {
-  max-width: 19rem;
+  width: 24rem;
+  margin: 0;
 }
 

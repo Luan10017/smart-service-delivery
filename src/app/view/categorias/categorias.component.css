@@ -2,9 +2,9 @@
   text-align: center;
 }
 
-.container {
+.container-product-card {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
-  justify-content: center;
+  justify-items: center;
 }
 
