@@ -1,6 +1,6 @@
 <div *ngFor="let item of carrinho.itens">
     <div class="carrinho_itens" [ngClass]="(item.realizado) ? 'realizado' : ''">
-        <p>{{item.nome}}</p>
+        <p>{{item.nome | slice:0:10}}{{item.nome.length > 10? ' ...':''}}</p>
         <p>{{item.preco | currency : 'BRL'}}</p>
         <div class="quantidade_controle">
             <i (click)="removeItem(item)">

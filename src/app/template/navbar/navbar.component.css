@@ -224,4 +224,11 @@
     left: 10px;
  }
 
+ @media (max-width: 600px) {
+  .carrinho {
+    width: 90vw;
+  }
+
+ }
+
 
