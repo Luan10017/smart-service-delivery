@@ -46,7 +46,7 @@ export class QrCodeComponent implements OnInit {
             break;
           }
         }
-        this.qrScannerComponent.chooseCamera.next(videoDevices[1])
+        this.qrScannerComponent.chooseCamera.next(videoDevices[3])
         // if (choosenDev) {
         //   this.qrScannerComponent.chooseCamera.next(choosenDev);
         // } else {
