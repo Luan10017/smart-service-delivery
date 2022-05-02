@@ -21,7 +21,7 @@ export class QrCodeComponent implements OnInit {
   @ViewChild(QrScannerComponent, { static: false })
   qrScannerComponent!: QrScannerComponent;
   ngOnInit(): void {
-   
+  
   }
 
 
@@ -46,7 +46,7 @@ export class QrCodeComponent implements OnInit {
             break;
           }
         }
-        this.qrScannerComponent.chooseCamera.next(videoDevices[0])
+ 
         if (choosenDev) {
           this.qrScannerComponent.chooseCamera.next(choosenDev);
         } else {
