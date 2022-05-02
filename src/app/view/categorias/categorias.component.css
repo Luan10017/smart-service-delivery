@@ -4,7 +4,7 @@
 
 .container-product-card {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
-  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  justify-content: center;
 }
 

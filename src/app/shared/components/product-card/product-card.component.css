@@ -21,12 +21,8 @@ button:hover{
   border-color: #fff;
 }
 
-.product_card {
-  width: 24rem;
-}
-
 #produto {
-  width: 22rem;
+  width: 20rem;
   margin: 0;
 }
 
