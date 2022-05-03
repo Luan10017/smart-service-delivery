@@ -1,9 +1,26 @@
-ul li {
-    display: flex;
+.header_carrinho {
+    background-color: #ff363d;
+    color: #ff363d;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.titulo-carrinho {
+    background-color: #ff363d;
+    width: 100%;
+    color: #ffff;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.carrinho_content {
+    padding: 0 1rem 0;
 }
 
 .carrinho_itens {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     justify-content: space-around;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding: 1%;
@@ -11,20 +28,33 @@ ul li {
 }
 
 .quantidade_controle {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
 }
 
-.quantidade_controle p {
-    margin: 0 25% 0;
-}
 
 .btn-success {
-    margin: 23px 25%;
-    width: 50%;
+    width: 8rem;
+    margin-left: auto;
 }
 
 .realizado {
     opacity: 0.8;
     pointer-events: none;
     background: rgba(0, 0, 0, 0.4);
+}
+
+
+.carrinho_footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    padding: 3% 0 1% 1%;
+}
+
+.carrinho_footer p {
+    font-weight: bold;
+    margin: 0;
+    font-size: 1.5rem;
 }

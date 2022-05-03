@@ -1,20 +1,30 @@
-<div *ngFor="let item of carrinho.itens">
-    <div class="carrinho_itens" [ngClass]="(item.realizado) ? 'realizado' : ''">
-        <p>{{item.nome | slice:0:10}}{{item.nome.length > 10? ' ...':''}}</p>
-        <p>{{item.preco | currency : 'BRL'}}</p>
-        <div class="quantidade_controle">
-            <i (click)="removeItem(item)">
-                <img src="/assets/remove_circle.png" alt="">
-            </i>
-            <p>{{item.quantidade}}</p>
-            <i (click)="adicionaItem(item)">
-                <img src="/assets/add_circle.png" alt="">
-            </i>
-        </div>
-    </div>
+<span class="header_carrinho">1</span>
+<div class="titulo-carrinho">
+    <h1>Seus pedidos</h1>
 </div>
 
-<h1>Total {{carrinho.total | currency : 'BRL'}}</h1>
-<button class="btn btn-success" (click)="finalizaPedido()"> Finalizar</button>
-<button class="btn btn-danger" (click)="limpaCarrinho()"> Limpa</button>
+<div class="carrinho_content">
 
+    <div *ngFor="let item of carrinho.itens">
+        <div class="carrinho_itens" [ngClass]="(item.realizado) ? 'realizado' : ''">
+            <p>{{item.nome | slice:0:10}}{{item.nome.length > 10? ' ...':''}}</p>
+            <p>{{item.preco | currency : 'BRL'}}</p>
+            <div class="quantidade_controle">
+                <i (click)="removeItem(item)">
+                    <img src="/assets/remove_circle.png" alt="">
+                </i>
+                <p>{{item.quantidade}}</p>
+                <i (click)="adicionaItem(item)">
+                    <img src="/assets/add_circle.png" alt="">
+                </i>
+            </div>
+        </div>
+    </div>
+
+    <div class="carrinho_footer">
+        <p>Total</p>
+        <p>{{carrinho.total | currency : 'BRL'}}</p>
+        <button class="btn btn-success" (click)="finalizaPedido()"> Finalizar</button>
+    </div>
+    <!-- <button class="btn btn-danger" (click)="limpaCarrinho()"> Limpa</button> -->
+</div>

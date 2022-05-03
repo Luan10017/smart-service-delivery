@@ -205,7 +205,12 @@
     height: 60vh;
     overflow-y: auto;
     box-shadow: 10px 10px 10px 0.1px rgba(0, 0, 0, 0.2);
-    padding: 0 40% 0;
+    /* padding: 0 40% 0; */
+}
+
+
+.carrinho-vazio {
+  text-align: center;
 }
 
 #sair{
