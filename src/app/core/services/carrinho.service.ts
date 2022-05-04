@@ -66,6 +66,8 @@ export class CarrinhoService {
 
       this.carrinho.itens.push(produtoCarrinho)
     })
+    this.carrinho.total = carrinho.total
+    this.carrinho.pago = carrinho.pago
   }
 
 
