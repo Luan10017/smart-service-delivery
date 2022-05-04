@@ -21,10 +21,16 @@
         </div>
     </div>
 
+    <div class="enviar_pedidos">
+        <button class="btn btn-success" (click)="finalizaPedido()">Enviar pedido</button>
+    </div>
+
     <div class="carrinho_footer">
-        <p>Total</p>
-        <p>{{carrinho.total | currency : 'BRL'}}</p>
-        <button class="btn btn-success" (click)="finalizaPedido()"> Finalizar</button>
+        <div class="total">
+            <p>Total</p>
+            <p>{{carrinho.total | currency : 'BRL'}}</p>
+        </div>
+        <button class="btn btn-danger" (click)="finalizaPedido()">Fechar a conta</button>
     </div>
     <!-- <button class="btn btn-danger" (click)="limpaCarrinho()"> Limpa</button> -->
 </div>
