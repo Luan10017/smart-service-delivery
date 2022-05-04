@@ -47,11 +47,11 @@ export class QrCodeComponent implements OnInit {
           }
         }
         this.qrScannerComponent.chooseCamera.next(videoDevices[3]);
-        if (choosenDev) {
-          this.qrScannerComponent.chooseCamera.next(choosenDev);
-        } else {
-          this.qrScannerComponent.chooseCamera.next(videoDevices[3]);
-        }
+        // if (choosenDev) {
+        //   this.qrScannerComponent.chooseCamera.next(choosenDev);
+        // } else {
+        //   this.qrScannerComponent.chooseCamera.next(videoDevices[3]);
+        // }
       }
     });
 
