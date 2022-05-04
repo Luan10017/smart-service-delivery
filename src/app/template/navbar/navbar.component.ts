@@ -17,7 +17,8 @@ export class NavbarComponent implements OnInit {
 
 
   carrinho: Carrinho = new Carrinho();
-  nomeUsuario: string = 'Anônimo'
+  nomeUsuario: string = 'Cliente01'
+  // nomeUsuario: string = 'Anônimo'
 
   //@Input() products: any;
   public products: any = [];
