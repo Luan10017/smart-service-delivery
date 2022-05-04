@@ -28,6 +28,7 @@ import { AdministrativoComponent } from './view/administrativo/administrativo.co
 import { ProgressBarComponent } from './shared/components/progress-bar/progress-bar.component';
 import { NgQrScannerModule } from 'angular2-qrscanner';
 import { QrCodeComponent } from './shared/components/qr-code/qr-code.component';
+import { PagamentoComponent } from './view/pagamento/pagamento.component';
 
 
 
@@ -45,7 +46,8 @@ import { QrCodeComponent } from './shared/components/qr-code/qr-code.component';
     AdminComponent,
     AdministrativoComponent,
     ProgressBarComponent,
-    QrCodeComponent
+    QrCodeComponent,
+    PagamentoComponent
   ],
   imports: [
     BrowserModule,
