@@ -1,49 +1,109 @@
-*{
-  text-decoration: none !important;
+.container_pagameto {
+  background: #f2f1ef;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-a{
-  color: black;
+.text_container {
+  width: 30vw;
+  text-align: center;
 }
 
-a:hover{
-  color: #d91e18;
+.text_container h1 {
+  color: #414141;
+  font-size: 2rem;
 }
 
-
-.button-finish{
-  background-color: #d91e18;
-  margin: 2rem;
-  border-color: #d91e18;
-}
-
-.button-finish:focus{
-  background-color: #d91e18;
-  margin: 2rem;
-  border-color: #d91e18;
-
-}
-
-
-.item-img{
-  height: 100px;
+.text_container p {
+  color: #ff363d;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
 
-.button-login:focus{
-  border-color: #d91e18;
-  border-radius: #d91e18;
-  box-shadow: #d91e18;
+.conta_wrapper {
+  margin: 2rem auto;
+  width: 30vw;
+  background: #ffff;
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: solid 3px rgba(65, 65, 65, 0.4);
+  border-style: dashed;
 }
 
-.btn-check:focus+.btn-primary, .btn-primary:focus {
-  box-shadow: none;
+.conta_wrapper::before {
+  content: "";
+  height: 0;
+  float: left;
+  padding-bottom: 70%;
+
 }
 
-.form-control:focus {
-color: #212529;
-background-color: #fff;
-border-color: #d91e18;
-outline: 1;
-box-shadow: none !important;
+.conta_wrapper::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+table {
+  border-collapse:collapse;
+}
+
+
+tbody tr {
+  border-top: solid 1px rgba(65, 65, 65, 0.4);
+  border-style: dashed;
+}
+
+tbody td:nth-child(3) {
+  text-align: center;
+}
+
+tfoot td {
+  border-top: solid 2px rgba(65, 65, 65, 0.4);
+  border-style: dashed;
+  font-weight: bold;
+  padding-top: 2rem;
+}
+
+
+@media (max-width: 912px) {
+  .logo {
+      width: 8rem;
+  }
+
+  .text_container h1 {
+      font-size: 1.4rem;
+  }
+  
+
+  .conta_wrapper {
+      width: 50vw;
+  }
+
+  .text_container {
+      width: 50vw;
+  }
+
+  .row_input {
+      width: 50vw;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .conta_wrapper {
+      width: 80vw;
+  }
+
+  .text_container {
+      width: 80vw;
+  }
+
+  .row_input {
+      width: 80vw;
+  }
 }

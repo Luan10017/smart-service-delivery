@@ -29,7 +29,6 @@ const routes: Routes = [
     children: [
       { path: 'home', component: HomeComponent  },
       { path: 'produto/:id', component: ProdutoComponent },
-      { path: 'pagamento', component: PagamentoComponent },
       { path: 'endereco', component: EnderecoComponent },
       { path: 'pedido', component: PedidoComponent },
       { path: 'hamburgers', component: CategoriasComponent },
@@ -55,6 +54,7 @@ const routes: Routes = [
   { path: 'dados-pessoais', component: CadastroComponent },
   { path: 'esqueceu-senha', component: EsqueceuSenhaComponent },
   { path: 'redefinir-senha', component: RedefinirSenhaComponent },
+  { path: 'pagamento', component: PagamentoComponent },
   { path: 'administrativo', component: AdministrativoComponent }
 ];
 
