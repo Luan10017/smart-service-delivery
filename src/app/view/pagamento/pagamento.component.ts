@@ -10,7 +10,7 @@ import { Carrinho } from 'src/app/shared/models/carrihno';
 export class PagamentoComponent implements OnInit {
 
   carrinho: Carrinho = new Carrinho();
-  nomeUsuario!: String
+  nomeUsuario: String = "Cliente01"
 
   constructor(private carrinhoService: CarrinhoService) { }
 
