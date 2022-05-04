@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CarrinhoService } from 'src/app/core/services/carrinho.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class CarrinhoComponent implements OnInit {
   @Input() carrinho: any;
   classToItemRealizado = {}
 
-  constructor( private carrinhoService: CarrinhoService ) { }
+  constructor( private carrinhoService: CarrinhoService, private router: Router ) { }
 
   ngOnInit(): void {
   }
@@ -23,8 +24,12 @@ export class CarrinhoComponent implements OnInit {
     this.carrinhoService.tiraItem(produto)
   }
 
-  finalizaPedido(): void{
+  realizaPedidos(): void{
     this.carrinhoService.realizaPedidos()
+  }
+
+  finalizaPedido(): void {
+    this.router.navigate(['/pagamento'])
   }
 
   limpaCarrinho(): void {
