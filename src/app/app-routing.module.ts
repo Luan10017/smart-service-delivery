@@ -19,6 +19,7 @@ import { EsqueceuSenhaComponent } from './view/esqueceu-senha/esqueceu-senha.com
 import { RedefinirSenhaComponent } from './view/redefinir-senha/redefinir-senha.component';
 import { ProgressBarComponent } from './shared/components/progress-bar/progress-bar.component';
 import { QrCodeComponent } from './shared/components/qr-code/qr-code.component';
+import { PagamentoDeliveryComponent } from './view/pagamento-delivery/pagamento-delivery.component';
 
 
 
@@ -55,6 +56,8 @@ const routes: Routes = [
   { path: 'esqueceu-senha', component: EsqueceuSenhaComponent },
   { path: 'redefinir-senha', component: RedefinirSenhaComponent },
   { path: 'pagamento', component: PagamentoComponent },
+  { path: 'pedido', component: PedidoComponent },
+  { path: 'pagamento-delivery', component: PagamentoDeliveryComponent },
   { path: 'administrativo', component: AdministrativoComponent }
 ];
 
