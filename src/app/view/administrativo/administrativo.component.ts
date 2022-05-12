@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Produto } from 'src/app/shared/models/Produto';
 import { MenuService } from 'src/app/core/services/menu.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-administrativo',
@@ -11,7 +12,7 @@ import { MenuService } from 'src/app/core/services/menu.service';
 export class AdministrativoComponent implements OnInit {
 
   produtos:  Produto[] = []
-  baseUrl = "http://localhost:8080/produtos"
+  baseUrl = `${environment.API}produtos`
 
   constructor(private productService: MenuService) { }
 
