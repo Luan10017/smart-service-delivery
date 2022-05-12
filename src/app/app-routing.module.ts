@@ -45,7 +45,7 @@ const routes: Routes = [
     component: AdminComponent,
     children: [
       { path: 'cadastro/produtos', component: CadastroProdutoComponent },
-      { path: 'editar/produtos', component: CadastroProdutoComponent },
+      { path: 'editar/produtos/:id', component: CadastroProdutoComponent },
       { path: 'acompanhar/produtos', component: ProgressBarComponent },
       { path: 'qrcode', component: QrCodeComponent },
     ]

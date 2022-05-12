@@ -120,6 +120,7 @@
                   <div class="col-md-4 mb-3">
                     <label>Escolha a foto</label>
                     <input
+                    [(ngModel)]="produto.imgUrl"
                      type="file"
                      name=""
                      id=""
@@ -137,11 +138,25 @@
                 <div class="p-col-12 text-center">
 
                   <a>
-                    <button type="button" class="btn btn-primary button-cadastro" (click)="fazerCadastro()" [disabled]="cadastroForm.invalid" >
+                    <button type="button" class="btn btn-primary button-cadastro" *ngIf="cadastro" (click)="fazerCadastro()" [disabled]="cadastroForm.invalid" >
                       Cadastrar
                     </button>
                   </a>
 
+                </div>
+
+                <div *ngIf="edicao" class="p-col-12 text-center">
+                  <a>
+                    <button type="button" class="btn btn-warning button-login m-3" (click)="editarCadastro()">
+                      Editar
+                    </button>
+                  </a>
+                
+                  <a href="#">
+                    <button type="button" class="btn btn-danger button-login">
+                      Voltar
+                    </button>
+                  </a>
                 </div>
               </div>
             </div>

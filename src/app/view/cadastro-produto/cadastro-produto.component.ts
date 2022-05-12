@@ -1,10 +1,13 @@
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 import { CadastroProdutosService } from './../../core/services/cadastro-produtos.service';
 import { Produto } from '../../shared/models/Produto';
 import { AbstractControlOptions, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { MenuService } from 'src/app/core/services/menu.service';
+import { environment } from 'src/environments/environment';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-cadastro-produto',
@@ -17,6 +20,10 @@ export class CadastroProdutoComponent implements OnInit {
   produto: Produto = new Produto()
   formData = new FormData()
 
+  id!: number 
+  edicao: boolean = false 
+  cadastro: boolean = true
+
   get f(): any {
     return this.form.controls;
   }
@@ -25,11 +32,28 @@ export class CadastroProdutoComponent implements OnInit {
     private fb: FormBuilder,
     private cadastroService: CadastroProdutosService,
     private toastr: ToastrService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute,
+    private productService: MenuService
   ) { }
 
   ngOnInit(): void {
     this.validation();
+    if (this.route.snapshot.url.length > 2) {
+      this.edicao = true
+      this.cadastro = false
+      this.route.params.subscribe(res => this.id = res.id)
+      
+      const baseUrl =  `${environment.API}produto/${this.id}`
+      this.productService.getItens(baseUrl).pipe(map(result => result.data[0].produtos))
+        .subscribe(res => {
+          this.produto = res[0]
+
+          console.log(this.produto)
+        })
+
+      }
+
   }
 
 
@@ -60,8 +84,36 @@ export class CadastroProdutoComponent implements OnInit {
       })
   }
 
+  editarCadastro() {
+    
+    const payloadProduto = {
+      categoria: this.produto.categoria.nome,
+      nome: this.produto.nome,
+      preco: this.produto.preco,
+      descricao: this.produto.descricao,
+      estoque: this.produto.estoque
+    }
+
+    this.cadastroService.putProduto(payloadProduto, this.id)
+      .subscribe( res => {
+        this.cadastroService.putItem(this.formData, this.id)
+          .subscribe(res => {
+            this.toastr.success("Produto cadastrado com sucesso!")
+            setTimeout( () => {
+              this.router.navigate(['/bebidas'])
+            },3000)
+          },
+          error => {
+            this.toastr.error("Opa algo deu errado, sua foto não foi salva.")
+          })
+      },
+      error => {
+        this.toastr.error("Opa algo deu errado, seu produto não foi cadastrado.")
+      })
+  }
+
   changeValue(event: any) {
-    this.produto.categoria = event.target.value
+    this.produto.categoria.nome = event.target.value
   }
 
   public validation(): void {

@@ -46,7 +46,7 @@ export class CadastroComponent implements OnInit {
       
       //Quando o Gabriel fizer o end-point de get cliente basta ativar essas parte do código
       //os dados vão ser adicionados aos campos 
-      //this.service.getItem(this.id)
+      // this.service.getItem(this.id)
       //  .subscribe(res => this.cliente = res)
 
       }
