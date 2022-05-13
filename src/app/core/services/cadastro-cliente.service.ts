@@ -16,4 +16,8 @@ export class CadastroClienteService {
   postItem(cliente: Cliente): Observable<Cliente> {
     return this.http.post<Cliente>(this.baseUrl,cliente)
   }
+
+  recuperaSenha(email: string, url: string): Observable<string> {
+    return this.http.post<string>(url,email)
+  }
 }
