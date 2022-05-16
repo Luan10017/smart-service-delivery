@@ -42,6 +42,7 @@
                   <div class="col-md-6 mb-3">
                     <label>Categoria</label><br>
                     <select
+                    [(ngModel)]="produto.categoria"
                      class="form-control is-invalid"
                      [ngClass]="{'is-invalid': f.categoria.errors && f.categoria.touched }"
                      formControlName="categoria"
