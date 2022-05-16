@@ -30,12 +30,14 @@ export class AuthService {
       this.autentica(usuario).subscribe(
       response => {
         const nomeUsuario = response.data[0].usuario
-        const nivelUsuario = response.data[0].nivelUsuario
+        const nivelUsuario = response.data[0].nivel_usuario
+        const idUsuario = response.data[0].id_usuario
 
         this.usuarioAutenticado = true
         localStorage.setItem("usuarioAutenticado","true")
         localStorage.setItem("emailUsuario",`${usuario.email}`)
         localStorage.setItem("nomeUsuario",`${nomeUsuario}`)
+        localStorage.setItem("idUsuario",`${idUsuario}`)
         if ( nivelUsuario === "ADMINISTRADOR" ) {
           localStorage.setItem("isAdmin", "true")
         } else {
