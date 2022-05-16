@@ -6,6 +6,7 @@ import { ValidatiorFields } from 'src/app/shared/helpers/ValidatiorFields';
 
 import { Cliente } from '../../shared/models/Cliente';
 import { CadastroClienteService } from './../../core/services/cadastro-cliente.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-cadastro',
@@ -38,17 +39,17 @@ export class CadastroComponent implements OnInit {
 
   ngOnInit(): void {
     this.validation();
-
-    if (this.route.snapshot.url.length > 1) {
+    if (this.route.snapshot.url.length > 2) {
       this.edicao = true
       this.cadastro = false
       this.route.params.subscribe(res => this.id = res.id)
       
-      //Quando o Gabriel fizer o end-point de get cliente basta ativar essas parte do código
-      //os dados vão ser adicionados aos campos 
-      // this.service.getItem(this.id)
-      //  .subscribe(res => this.cliente = res)
+      const baseUrl = `${environment.API}usuario/${this.id}`
 
+      this.cadastroService.getUser(baseUrl)
+       .subscribe(res => {
+        this.cliente = res.data[0]
+      })
       }
   }
 
@@ -61,6 +62,20 @@ export class CadastroComponent implements OnInit {
     error => {
         this.toastr.error("Algo deu errado. Tente novamente!")
     })
+  }
+
+  editarCadastro() {
+    const editUser = {...this.cliente}
+    delete editUser.nivel_usuario
+    
+    this.cadastroService.patchUser(`${environment.API}edita/${this.cliente.email}`,editUser)
+      .subscribe( res => {
+        this.toastr.success("Cadastro atualizado com sucesso!")
+      },
+      error => {
+        this.toastr.error("Algo deu errado. Tente novamente!")
+      }
+      )
   }
 
   changeValue(event: any) {

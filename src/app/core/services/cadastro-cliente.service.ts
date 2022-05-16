@@ -13,8 +13,16 @@ export class CadastroClienteService {
   
   constructor(private http: HttpClient) { }
 
+  getUser(baseUrl: string): Observable<any> {
+    return this.http.get<any>(baseUrl, {})
+  }
+
   postItem(cliente: Cliente): Observable<Cliente> {
     return this.http.post<Cliente>(this.baseUrl,cliente)
+  }
+
+  patchUser(url: string, cliente: Cliente): Observable<any> {
+    return this.http.patch<any>(url,cliente)
   }
 
   recuperaSenha(email: string, url: string): Observable<string> {

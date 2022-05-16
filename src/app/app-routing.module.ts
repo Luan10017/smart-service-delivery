@@ -52,6 +52,7 @@ const routes: Routes = [
   },
   { path: 'login', component: LoginComponent },
   { path: 'cadastro', component: CadastroComponent },
+  { path: 'editar/cadastro/:id', component: CadastroComponent },
   { path: 'dados-pessoais', component: CadastroComponent },
   { path: 'esqueceu-senha', component: EsqueceuSenhaComponent },
   { path: 'redefinir-senha', component: RedefinirSenhaComponent },

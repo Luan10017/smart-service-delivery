@@ -10,4 +10,5 @@ export class Cliente {
     cidade!: string
     estado!: string
     telefone!: number
+    nivel_usuario?: string
 } 
