@@ -62,7 +62,7 @@
           </td>
           <td>{{i + 1}}</td>
           <td>{{produto.nome}}</td>
-          <td class="d-none d-md-table-cell">{{produto.categoria}}</td>
+          <td class="d-none d-md-table-cell">{{produto.categoria.nome}}</td>
           <td>{{produto.descricao}}</td>
           <td class="d-none d-md-table-cell">R$ {{produto.preco}}</td>
           <td class="d-none d-md-table-cell">{{produto.estoque}}</td>
@@ -71,7 +71,7 @@
               <i class="fa fa-trash"></i>
             </button>
             &nbsp;
-            <button type="button" class="btn btn-warning btn-lg ml-2" tooltip="Excluir">
+            <button type="button" routerLink="/admin/editar/produtos/{{produto.id}}" class="btn btn-warning btn-lg ml-2" tooltip="Excluir">
               <i class="fas fa-pencil-alt"></i>
             </button>
           </td>

@@ -87,7 +87,7 @@ export class CadastroProdutoComponent implements OnInit {
   editarCadastro() {
     
     const payloadProduto = {
-      categoria: this.produto.categoria.nome,
+      categoria: this.produto.categoria,
       nome: this.produto.nome,
       preco: this.produto.preco,
       descricao: this.produto.descricao,
