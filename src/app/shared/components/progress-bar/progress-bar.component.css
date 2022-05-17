@@ -57,7 +57,7 @@ ul li .text{
   color: #ff4732;
 }
 
-ul li .progress{
+.MYprogress{
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -69,6 +69,18 @@ ul li .progress{
   position: relative;
   cursor: pointer;
 }
+/* ul li .progress{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(68, 68, 68, 0.781);
+  margin: 14px 0;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  position: relative;
+  cursor: pointer;
+} */
 
 /*.progress::after{
 
@@ -81,7 +93,7 @@ ul li .progress{
 
 }*/
 
-.progress::after{
+.MYprogress::after{
   content: "";
   position: absolute;
   z-index: 10;
@@ -96,10 +108,10 @@ ul li .progress{
   height: 0;
 }
 
-ul li .progress .uil{
+ul li .MYprogress .svg-inline--fa{
   display: none;
 }
-ul li .progress p{
+ul li .MYprogress p{
   font-size: 13px;
 }
 
@@ -116,7 +128,7 @@ li .active::after{
 ul li .active p{
   display: none;
 }
-ul li .active .uil{
+ul li .active .svg-inline--fa{
   font-size: 20px;
   display: flex;
 }
@@ -128,10 +140,10 @@ ul li .active .uil{
   ul li{
       flex-direction: row;
   }
-  ul li .progress{
+  ul li .MYprogress{
       margin: 0 30px;
   }
-  .progress::after{
+  .MYprogress::after{
       width: 5px;
       height: 55px;
       bottom: 30px;
@@ -157,16 +169,8 @@ ul li .active .uil{
 }
 
 
-.teste::after{
-  content: "";
-  background-color: blue;
-  position: absolute;
-  width: 125px !important;
-  height: 5px !important;
-  top: 470px;
-  left: 455px;
 
-}
+
 
 
 

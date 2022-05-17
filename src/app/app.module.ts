@@ -30,6 +30,7 @@ import { NgQrScannerModule } from 'angular2-qrscanner';
 import { QrCodeComponent } from './shared/components/qr-code/qr-code.component';
 import { PagamentoComponent } from './view/pagamento/pagamento.component';
 import { PagamentoDeliveryComponent } from './view/pagamento-delivery/pagamento-delivery.component';
+import { PedidosComponent } from './view/pedidos/pedidos.component';
 
 
 
@@ -50,7 +51,8 @@ import { PagamentoDeliveryComponent } from './view/pagamento-delivery/pagamento-
     ProgressBarComponent,
     QrCodeComponent,
     PagamentoComponent,
-    PagamentoDeliveryComponent
+    PagamentoDeliveryComponent,
+    PedidosComponent
   ],
   imports: [
     BrowserModule,

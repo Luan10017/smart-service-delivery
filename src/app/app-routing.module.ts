@@ -20,6 +20,7 @@ import { RedefinirSenhaComponent } from './view/redefinir-senha/redefinir-senha.
 import { ProgressBarComponent } from './shared/components/progress-bar/progress-bar.component';
 import { QrCodeComponent } from './shared/components/qr-code/qr-code.component';
 import { PagamentoDeliveryComponent } from './view/pagamento-delivery/pagamento-delivery.component';
+import { PedidosComponent } from './view/pedidos/pedidos.component';
 
 
 
@@ -48,6 +49,7 @@ const routes: Routes = [
       { path: 'editar/produtos/:id', component: CadastroProdutoComponent },
       { path: 'acompanhar/produtos', component: ProgressBarComponent },
       { path: 'qrcode', component: QrCodeComponent },
+      { path: 'pedidos', component: PedidosComponent },
     ]
   },
   { path: 'login', component: LoginComponent },

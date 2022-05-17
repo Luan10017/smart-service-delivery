@@ -10,6 +10,17 @@ export class ProgressBarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    const ul = document.querySelector("ul")
+    const progressElementes = document.querySelectorAll(".MYprogress")
+
+
+    ul?.addEventListener("click", (event) => {
+      
+      console.log(event.target)
+    } )
+    
+
+    console.log(progressElementes[0].classList)
   }
 
 }
