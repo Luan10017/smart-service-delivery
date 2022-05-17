@@ -26,7 +26,7 @@ export class CategoriasComponent implements OnInit {
 
     this.productService.getItens(baseUrl).pipe(map(result => result.data[0].produtos))
     .subscribe(res => {
-      this.products = res
+      this.products = res.filter(({estoque}) => estoque > 0)
     })
 
   }
