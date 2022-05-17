@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CarrinhoService } from 'src/app/core/services/carrinho.service';
+import { PedidosService } from 'src/app/core/services/pedidos.service';
 
 @Component({
   selector: 'app-carrinho',
@@ -12,7 +13,11 @@ export class CarrinhoComponent implements OnInit {
   @Input() carrinho: any;
   classToItemRealizado = {}
 
-  constructor( private carrinhoService: CarrinhoService, private router: Router ) { }
+  constructor(
+    private carrinhoService: CarrinhoService,
+    private router: Router,
+    private pedidos: PedidosService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -29,7 +34,13 @@ export class CarrinhoComponent implements OnInit {
   }
 
   finalizaPedido(): void {
-    this.router.navigate(['/pagamento'])
+    // Atendimento remoto
+    this.pedidos.postPedido(this.carrinhoService.carrinho,"794078f5-db12-4a4a-9a7f-448dcf06248a").subscribe(res => {
+      console.log(res)
+    })
+
+    // Atendimento presencial
+    // this.router.navigate(['/pagamento'])
   }
 
   limpaCarrinho(): void {
