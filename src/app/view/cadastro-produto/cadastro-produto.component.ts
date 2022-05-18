@@ -23,6 +23,7 @@ export class CadastroProdutoComponent implements OnInit {
   id!: number 
   edicao: boolean = false 
   cadastro: boolean = true
+  isLoading: boolean = false
 
   get f(): any {
     return this.form.controls;
@@ -66,6 +67,7 @@ export class CadastroProdutoComponent implements OnInit {
   }
 
   fazerCadastro() {
+    this.isLoading = true
     this.cadastroService.postItem(this.produto)
       .subscribe(res => {
         this.cadastroService.putItem(this.formData, res.data[0]['produtoId'])

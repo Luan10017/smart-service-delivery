@@ -139,7 +139,8 @@
                 <div class="p-col-12 text-center">
 
                   <a>
-                    <button type="button" class="btn btn-primary button-cadastro" *ngIf="cadastro" (click)="fazerCadastro()" [disabled]="cadastroForm.invalid" >
+                    <button type="button" class="btn btn-primary button-cadastro" *ngIf="cadastro" (click)="fazerCadastro()" [disabled]="cadastroForm.invalid" [disabled]="isLoading">
+                      <img *ngIf="isLoading" src="/assets/loading-buffering.gif" alt="loading" style="width: 20%;">
                       Cadastrar
                     </button>
                   </a>
