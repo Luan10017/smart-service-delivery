@@ -10,17 +10,19 @@ export class ProgressBarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    const ul = document.querySelector("ul")
     const progressElementes = document.querySelectorAll(".MYprogress")
 
+    for (let i=0; i < progressElementes.length; i++) {
+      progressElementes[i].addEventListener("click", () => {
+        this.clickInteracional(i,progressElementes)
+      })
+    }
+  }
 
-    ul?.addEventListener("click", (event) => {
-      
-      console.log(event.target)
-    } )
-    
-
-    console.log(progressElementes[0].classList)
+  clickInteracional(index:any, progressElementes:any){
+    for (let i=0; i <= index; i++) {
+      progressElementes[i].classList.add("active")
+    }
   }
 
 }

@@ -1,41 +1,3 @@
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-/* @font-face {
-    font-family: pop;
-    src: url(./Fonts/Poppins-Medium.ttf);
-} */
-
-.main{
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: pop;
-  flex-direction: column;
-}
-.head{
-  text-align: center;
-}
-.head_1{
-  font-size: 30px;
-  font-weight: 600;
-  color: #333;
-}
-.head_1 span{
-  color: #ff4732;
-}
-.head_2{
-  font-size: 16px;
-  font-weight: 600;
-  color: #333;
-  margin-top: 3px;
-}
-
 ul{
   display: flex;
   margin-top: 80px;
@@ -69,29 +31,6 @@ ul li .text{
   position: relative;
   cursor: pointer;
 }
-/* ul li .progress{
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: rgba(68, 68, 68, 0.781);
-  margin: 14px 0;
-  display: grid;
-  place-items: center;
-  color: #fff;
-  position: relative;
-  cursor: pointer;
-} */
-
-/*.progress::after{
-
-  content: "";
-  background-color: blue;
-  position: absolute;
-  width: 50px !important;
-  height: 5px !important;
-  right: 12px;
-
-}*/
 
 .MYprogress::after{
   content: "";
@@ -159,14 +98,7 @@ ul li .active .svg-inline--fa{
   }
 }
 
-@media (max-width:600px) {
-  .head .head_1{
-      font-size: 24px;
-  }
-  .head .head_2{
-      font-size: 16px;
-  }
-}
+
 
 
 

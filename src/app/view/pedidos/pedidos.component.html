@@ -1,1 +1,9 @@
-<app-progress-bar></app-progress-bar>
+<div class="main" style="background-color: #f2f1ef;">
+
+    <div class="head">
+      <img class="logo" src="/assets/logo.png">
+      <h2>Barra de Progresso</h2>
+    </div>
+    <app-progress-bar *ngFor="let pedido of pedidos"></app-progress-bar>
+
+</div>
