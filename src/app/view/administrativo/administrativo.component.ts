@@ -23,4 +23,11 @@ export class AdministrativoComponent implements OnInit {
       })
   }
 
+  deletaProduto(produtoId: string): void {
+    const deleteUrl = `${environment.API}deleta/produto/${produtoId}`
+    this.productService.deleteProduct(deleteUrl).subscribe(res => {
+      console.log("é do brasil")
+    })
+  }
+
 }

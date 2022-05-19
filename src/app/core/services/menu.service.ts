@@ -27,4 +27,8 @@ export class MenuService {
   getItens(baseUrl: string): Observable<ObjetoPayload> {
     return this.http.get<ObjetoPayload>(baseUrl, {})
   }
+
+  deleteProduct(baseUrl: string): Observable<any> {
+    return this.http.delete<any>(baseUrl)
+  }
 }
