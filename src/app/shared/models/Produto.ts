@@ -1,6 +1,6 @@
 export class Produto {
     id!: string
-    categoria!: Categoria 
+    categoria!: string 
     nome!: string 
     preco!: number
     descricao!: string

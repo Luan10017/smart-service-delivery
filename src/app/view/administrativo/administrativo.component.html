@@ -62,12 +62,12 @@
           </td>
           <td>{{i + 1}}</td>
           <td>{{produto.nome}}</td>
-          <td class="d-none d-md-table-cell">{{produto.categoria.nome}}</td>
+          <td class="d-none d-md-table-cell">{{produto.categoria}}</td>
           <td>{{produto.descricao}}</td>
           <td class="d-none d-md-table-cell">R$ {{produto.preco}}</td>
           <td class="d-none d-md-table-cell">{{produto.estoque}}</td>
           <td>
-            <button type="button" class="btn btn-danger btn-lg mr-2" tooltip="Excluir">
+            <button type="button" class="btn btn-danger btn-lg mr-2" tooltip="Excluir" (click)="deletaProduto(produto.id)">
               <i class="fa fa-trash"></i>
             </button>
             &nbsp;

@@ -49,8 +49,6 @@ export class CadastroProdutoComponent implements OnInit {
       this.productService.getItens(baseUrl).pipe(map(result => result.data[0].produtos))
         .subscribe(res => {
           this.produto = res[0]
-
-          console.log(this.produto)
         })
 
       }
@@ -72,10 +70,7 @@ export class CadastroProdutoComponent implements OnInit {
       .subscribe(res => {
         this.cadastroService.putItem(this.formData, res.data[0]['produtoId'])
           .subscribe(res => {
-            this.toastr.success("Produto cadastrado com sucesso!")
-            setTimeout( () => {
-              this.router.navigate(['/bebidas'])
-            },3000)
+            this.rediretoIntoProductList()
           },
           error => {
             this.toastr.error("Opa algo deu errado, sua foto não foi salva.")
@@ -98,24 +93,32 @@ export class CadastroProdutoComponent implements OnInit {
 
     this.cadastroService.putProduto(payloadProduto, this.id)
       .subscribe( res => {
-        this.cadastroService.putItem(this.formData, this.id)
-          .subscribe(res => {
-            this.toastr.success("Produto cadastrado com sucesso!")
-            setTimeout( () => {
-              this.router.navigate(['/bebidas'])
-            },3000)
-          },
-          error => {
-            this.toastr.error("Opa algo deu errado, sua foto não foi salva.")
-          })
+        if (this.formData.getAll("file").length) {
+          this.cadastroService.putItem(this.formData, this.id)
+            .subscribe(res => {
+              this.rediretoIntoProductList()
+            },
+            error => {
+              this.toastr.error("Opa algo deu errado, sua foto não foi salva.")
+            })
+        } else {
+          this.rediretoIntoProductList()
+        }
       },
       error => {
         this.toastr.error("Opa algo deu errado, seu produto não foi cadastrado.")
       })
   }
 
+  rediretoIntoProductList(): void {
+    this.toastr.success("Produto cadastrado com sucesso!")
+    setTimeout(() => {
+      this.router.navigate(['/administrativo'])
+    }, 3000)
+  }
+
   changeValue(event: any) {
-    this.produto.categoria.nome = event.target.value
+    this.produto.categoria = event.target.value
   }
 
   public validation(): void {
