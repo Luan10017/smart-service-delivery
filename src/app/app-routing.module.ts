@@ -21,6 +21,7 @@ import { ProgressBarComponent } from './shared/components/progress-bar/progress-
 import { QrCodeComponent } from './shared/components/qr-code/qr-code.component';
 import { PagamentoDeliveryComponent } from './view/pagamento-delivery/pagamento-delivery.component';
 import { PedidosComponent } from './view/pedidos/pedidos.component';
+import { ErrorComponent } from './view/error/error.component';
 
 
 
@@ -61,6 +62,7 @@ const routes: Routes = [
   { path: 'pagamento', component: PagamentoComponent },
   { path: 'pedido', component: PedidoComponent },
   { path: 'pagamento-delivery', component: PagamentoDeliveryComponent },
+  { path: 'error', component: ErrorComponent },
   { path: 'administrativo', component: AdministrativoComponent }
 ];
 
