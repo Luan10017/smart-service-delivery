@@ -13,6 +13,7 @@ import { environment } from 'src/environments/environment';
 export class AuthService {
 
   private usuarioAutenticado: boolean = false
+  private usuarioAdmin: boolean = false
 
   constructor(
     private router: Router,
@@ -39,11 +40,14 @@ export class AuthService {
         localStorage.setItem("nomeUsuario",`${nomeUsuario}`)
         localStorage.setItem("idUsuario",`${idUsuario}`)
         if ( nivelUsuario === "ADMINISTRADOR" ) {
+          this.usuarioAdmin = true
           localStorage.setItem("isAdmin", "true")
+          this.router.navigate(['/admin/lista/produtos'])
         } else {
+          this.usuarioAdmin = false
           localStorage.setItem("isAdmin", "false")
+          this.router.navigate(['/'])
         }
-        this.router.navigate(['/'])
       },
       error => {
         this.toastr.error("email ou senha inválidos")
@@ -60,5 +64,9 @@ export class AuthService {
 
   usuarioEstaAutenticado(){
     return this.usuarioAutenticado
+  }
+
+  usuarioIsAdmin() {
+    return this.usuarioAdmin
   }
 }
