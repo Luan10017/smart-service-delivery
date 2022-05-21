@@ -10,7 +10,7 @@
 
     </div>
 
-    <form [formGroup]="form" #cadastroForm="ngForm">
+    <form [formGroup]="form" #cadastroForm="ngForm" class="form_card">
       <div class="row">
         <div class="card pt-3 mb-5 shadow p-3 mb-5 bg-white rounded" id="row2">
           <div class="container card-body">
@@ -41,7 +41,7 @@
                   </div>
                   <div class="col-md-6 mb-3">
                     <label>Categoria</label><br>
-                    <select
+                    <select 
                     [(ngModel)]="produto.categoria"
                      class="form-control is-invalid"
                      [ngClass]="{'is-invalid': f.categoria.errors && f.categoria.touched }"
@@ -51,10 +51,7 @@
                      (change)="changeValue($event)"
                      style="width: 100%; height: 36px;">
                       <option value="">Selecione</option>
-                      <option value="HAMBURGERS">Hamburgers</option>
-                      <option value="BEBIDAS">Bebidas</option>
-                      <option value="BEBIDASALCOLICAS">Bebidas alcolicas</option>
-                      <option value="PORCOES">Porções</option>
+                      <option *ngFor="let categoria of categotias" value="{{categoria}}">{{categoria}}</option>
                     </select>
 
                      <div *ngIf="f.categoria.errors?.required" class="invalid-feedback">
@@ -149,13 +146,14 @@
 
                 <div *ngIf="edicao" class="p-col-12 text-center">
                   <a>
-                    <button type="button" class="btn btn-warning button-login m-3" (click)="editarCadastro()">
+                    <button type="button" class="btn btn-warning button-editar" (click)="editarCadastro()"  [disabled]="isLoading">
+                    <img *ngIf="isLoading" src="/assets/loading-buffering.gif" alt="loading" style="width: 20%;">
                       Editar
                     </button>
                   </a>
                 
                   <a href="#">
-                    <button type="button" class="btn btn-danger button-login">
+                    <button type="button" class="btn btn-danger button-login"  [disabled]="isLoading">
                       Voltar
                     </button>
                   </a>

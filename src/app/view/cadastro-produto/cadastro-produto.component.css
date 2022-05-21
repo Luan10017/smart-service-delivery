@@ -2,11 +2,20 @@
   margin: auto;
 }
 
+.form_card {
+  width: 80%;
+}
+
 .button-cadastro {
   background-color: #ff363d;
   margin: 2rem;
   border-color: #ff363d;
   width: 8rem;
+}
+
+.button-editar {
+  width: 8rem;
+  margin-right: 2rem;
 }
 
 .button-cadastro:focus {

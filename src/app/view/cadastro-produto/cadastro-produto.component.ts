@@ -18,6 +18,7 @@ export class CadastroProdutoComponent implements OnInit {
 
   form!: FormGroup;
   produto: Produto = new Produto()
+  categotias!: string[]
   formData = new FormData()
 
   id!: number 
@@ -44,14 +45,19 @@ export class CadastroProdutoComponent implements OnInit {
       this.edicao = true
       this.cadastro = false
       this.route.params.subscribe(res => this.id = res.id)
-      
-      const baseUrl =  `${environment.API}produto/${this.id}`
+
+      const baseUrl = `${environment.API}produto/${this.id}`
       this.productService.getItens(baseUrl).pipe(map(result => result.data[0].produtos))
         .subscribe(res => {
           this.produto = res[0]
         })
 
-      }
+    }
+
+    this.productService.getCategorias(`${environment.API}categorias`)
+      .subscribe(res => {
+        this.categotias = res.data[0].categorias
+      })
 
   }
 
@@ -82,7 +88,7 @@ export class CadastroProdutoComponent implements OnInit {
   }
 
   editarCadastro() {
-    
+    this.isLoading = true
     const payloadProduto = {
       categoria: this.produto.categoria,
       nome: this.produto.nome,
