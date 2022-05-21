@@ -53,12 +53,15 @@
 
 }
 
+.error_body{
+  margin-top: 16rem;
+}
 
 .main{
 
   min-height: 600px;
   margin: 0px auto;
-  width: auto;
+  width: 90%;
   max-width: 460px;
   display: flex;
   align-items: center;
@@ -69,6 +72,17 @@
   stroke-dasharray: 300;
   stroke-dashoffset: 300;
   animation: dash 4s   alternate infinite;
+}
+
+.back_home {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.back_home h2 {
+  color: #ff363d;
+  font-size: 1rem;
 }
 
 @keyframes dash{
