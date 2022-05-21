@@ -8,7 +8,7 @@ import { HomeComponent } from './view/home/home.component';
 import { LoginComponent } from './view/login/login.component';
 import { CadastroComponent } from './view/cadastro/cadastro.component';
 import { CategoriasComponent } from './view/categorias/categorias.component';
-import { AdministrativoComponent } from './view/administrativo/administrativo.component';
+import { ListaProdutosComponent } from './view/lista-produtos/lista-produtos.component';
 
 import { ProdutoComponent } from './view/produto/produto.component';
 import { PagamentoComponent } from './view/pagamento/pagamento.component';
@@ -22,6 +22,7 @@ import { QrCodeComponent } from './shared/components/qr-code/qr-code.component';
 import { PagamentoDeliveryComponent } from './view/pagamento-delivery/pagamento-delivery.component';
 import { PedidosComponent } from './view/pedidos/pedidos.component';
 import { ErrorComponent } from './view/error/error.component';
+import { AdminGuard } from './core/guards/admin.guard';
 
 
 
@@ -38,7 +39,11 @@ const routes: Routes = [
       { path: 'porcoes', component: CategoriasComponent  },
       { path: 'bebidas', component: CategoriasComponent },
       { path: 'bebidasalcolicas', component: CategoriasComponent  },
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'editar/cadastro/:id', component: CadastroComponent },
+      { path: 'pagamento', component: PagamentoComponent },
+      { path: 'pedido', component: PedidoComponent },
+      { path: 'pagamento-delivery', component: PagamentoDeliveryComponent },
+      { path: '', redirectTo: 'hamburgers', pathMatch: 'full' },
     ],
     // canActivate: [AuthGuard]
   },
@@ -46,24 +51,20 @@ const routes: Routes = [
     path: 'admin',
     component: AdminComponent,
     children: [
+      { path: 'lista/produtos', component: ListaProdutosComponent },
       { path: 'cadastro/produtos', component: CadastroProdutoComponent },
       { path: 'editar/produtos/:id', component: CadastroProdutoComponent },
       { path: 'acompanhar/produtos', component: ProgressBarComponent },
       { path: 'qrcode', component: QrCodeComponent },
       { path: 'pedidos', component: PedidosComponent },
-    ]
+    ],
+    canActivate: [AdminGuard]
   },
   { path: 'login', component: LoginComponent },
   { path: 'cadastro', component: CadastroComponent },
-  { path: 'editar/cadastro/:id', component: CadastroComponent },
-  { path: 'dados-pessoais', component: CadastroComponent },
   { path: 'esqueceu-senha', component: EsqueceuSenhaComponent },
   { path: 'redefinir-senha', component: RedefinirSenhaComponent },
-  { path: 'pagamento', component: PagamentoComponent },
-  { path: 'pedido', component: PedidoComponent },
-  { path: 'pagamento-delivery', component: PagamentoDeliveryComponent },
-  { path: 'error', component: ErrorComponent },
-  { path: 'administrativo', component: AdministrativoComponent }
+  { path: '**', pathMatch: 'full', component: ErrorComponent },
 ];
 
 @NgModule({

@@ -23,7 +23,7 @@ import { CadastroProdutoComponent } from './view/cadastro-produto/cadastro-produ
 import { ToastrModule } from 'ngx-toastr';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { AdministrativoComponent } from './view/administrativo/administrativo.component';
+import { ListaProdutosComponent } from './view/lista-produtos/lista-produtos.component';
 import { ProgressBarComponent } from './shared/components/progress-bar/progress-bar.component';
 import { NgQrScannerModule } from 'angular2-qrscanner';
 import { QrCodeComponent } from './shared/components/qr-code/qr-code.component';
@@ -32,6 +32,7 @@ import { PagamentoDeliveryComponent } from './view/pagamento-delivery/pagamento-
 import { PedidosComponent } from './view/pedidos/pedidos.component';
 import { ErrorComponent } from './view/error/error.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { AdminGuard } from './core/guards/admin.guard';
 
 
 
@@ -49,7 +50,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     RedefinirSenhaComponent,
     CadastroProdutoComponent,
     AdminComponent,
-    AdministrativoComponent,
+    ListaProdutosComponent,
     ProgressBarComponent,
     QrCodeComponent,
     PagamentoComponent,
@@ -75,7 +76,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     NgQrScannerModule,
     ModalModule.forRoot(),
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, AdminGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
