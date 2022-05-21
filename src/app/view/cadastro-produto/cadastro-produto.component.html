@@ -41,7 +41,7 @@
                   </div>
                   <div class="col-md-6 mb-3">
                     <label>Categoria</label><br>
-                    <select
+                    <select 
                     [(ngModel)]="produto.categoria"
                      class="form-control is-invalid"
                      [ngClass]="{'is-invalid': f.categoria.errors && f.categoria.touched }"
@@ -51,10 +51,7 @@
                      (change)="changeValue($event)"
                      style="width: 100%; height: 36px;">
                       <option value="">Selecione</option>
-                      <option value="HAMBURGERS">Hamburgers</option>
-                      <option value="BEBIDAS">Bebidas</option>
-                      <option value="BEBIDASALCOLICAS">Bebidas alcolicas</option>
-                      <option value="PORCOES">Porções</option>
+                      <option *ngFor="let categoria of categotias" value="{{categoria}}">{{categoria}}</option>
                     </select>
 
                      <div *ngIf="f.categoria.errors?.required" class="invalid-feedback">

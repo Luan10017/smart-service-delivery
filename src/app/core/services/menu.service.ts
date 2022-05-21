@@ -28,6 +28,10 @@ export class MenuService {
     return this.http.get<ObjetoPayload>(baseUrl, {})
   }
 
+  getCategorias(baseUrl: string): Observable<any> {
+    return this.http.get<any>(baseUrl)
+  }
+
   deleteProduct(baseUrl: string): Observable<any> {
     return this.http.delete<any>(baseUrl)
   }
