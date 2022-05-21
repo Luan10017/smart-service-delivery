@@ -10,39 +10,11 @@
                     <div class="text-center col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align: center;">
                         <div class="card-center">
 
-                              <carousel  [interval]="myInterval" [(activeSlide)]="activeSlideIndex" >
-                                <slide *ngFor="let slide of slides; let index=index">
-                                  <img [src]="slide.image" id="slides" alt="image slide" style="display: block; width: 100%;">
-
-                                  <div class="carousel-caption">
-                                    <h4>Confira Nossas Promoções!</h4>
-                                    <p>{{slide.text}}</p>
-                                  </div>
-                                </slide>
-                              </carousel>
 
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
-    </div>
-
-    <div class="row my-5" >
-        <h3 class="fs-4 mb-3">Promoções do dia!</h3>
-        <div class="col">
-            <div class="container">
-
-                <div class="row" style="display: inline-block;" >
-                <!--
-                    <app-product-card *ngFor="let product of products" [products]="product"></app-product-card>
-                -->
-                </div>
-            </div>
-        </div>
-
-
     </div>
 

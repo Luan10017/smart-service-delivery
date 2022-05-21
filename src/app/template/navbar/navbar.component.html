@@ -23,14 +23,14 @@
       </div> <!-- navbar-collapse .// -->
       <!-- container // -->
   </nav> <!-- header-top-light.// -->
-  <section class="header-main border-bottom bg-white">
+  <section class="header-main border-bottom bg-white d-none d-lg-block">
       <div class="container-fluid">
           <div class="row p-2 pt-3 pb-3 d-flex align-items-center">
               <div class="col-md-2 col-xs-2">
                  <img class="d-none d-md-flex" src="/assets/logo.png" width="100">
               </div>
               <div class="col-md-8 col-xs-8">
-                  <div class="d-flex form-inputs"> <input class="form-control" type="text" placeholder="Pesquisar..."> <i class="bx bx-search"></i> </div>
+
               </div>
               <div class="col-md-2 col-xs-2">
                   <div class="d-flex d-none d-md-flex flex-row align-items-center">
@@ -87,10 +87,7 @@
 
   <div class="collapse navbar-collapse" [collapse]="isCollapsed" [isAnimated]="true" id="categorias">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a routerLink="home" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-            class="icon fas fa-search-dollar me-2"></i>Promoções</a>
-      </li>
+
       <li class="nav-item active">
         <a routerLink="hamburgers" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
             class="icon fas fa-hamburger me-2"></i>Sanchuíches</a>
@@ -126,10 +123,6 @@
 
   <div class="collapse navbar-collapse" [collapse]="isCollapsed" [isAnimated]="true" id="categorias">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a routerLink="home" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" (click)="isCollapsed = !isCollapsed"><i
-            class="icon fas fa-search-dollar me-2"></i>Promoções</a>
-      </li>
       <li class="nav-item active">
         <a routerLink="hamburgers" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" (click)="isCollapsed = !isCollapsed"><i
             class="icon fas fa-hamburger me-2"></i>Sanchuíches</a>

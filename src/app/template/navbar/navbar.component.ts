@@ -13,6 +13,20 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+
+    //carrousel fotos e intervalo
+    myInterval = 1500;
+    activeSlideIndex = 0;
+    slides: {image: string; text?: string}[] = [
+      {image: 'assets/home/home.jpg'},
+      {image: 'assets/home/slide-2.jpg'},
+      {image: 'assets/home/slide-3.jpg'},
+      {image: 'assets/home/slide-4.jpg'},
+      {image: 'assets/home/slide-5.jpg'},
+      {image: 'assets/home/slide-1.jpg'}
+    ];
+
+
   isCollapsed = true;
 
 

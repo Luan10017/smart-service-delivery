@@ -29,7 +29,7 @@
         </div>
       </div>
       <div>
-        <a class="d-flex btn btn-outline-primary" href="eventos/detalhe">
+        <a class="d-flex btn btn-outline-primary" href="admin/cadastro/produtos">
           <i class="fa fa-plus-circle my-1"></i>
           <b class="ml-1 d-none d-sm-block">Novo</b>
         </a>
@@ -67,7 +67,7 @@
           <td class="d-none d-md-table-cell">R$ {{produto.preco}}</td>
           <td class="d-none d-md-table-cell">{{produto.estoque}}</td>
           <td>
-            <button type="button" class="btn btn-danger btn-lg mr-2" tooltip="Excluir" (click)="deletaProduto(produto.id)">
+            <button type="button" class="btn btn-danger btn-lg mr-2" tooltip="Excluir" (click)="openModal($event, template, produto.id)">
               <i class="fa fa-trash"></i>
             </button>
             &nbsp;
@@ -93,9 +93,9 @@
 
   <ng-template #template>
     <div class="modal-body text-center">
-      <p>Tem certeza que quer deletar o produto de Código  ?</p>
-      <button type="button" class="btn btn-default" >Sim</button>
-      <button type="button" class="btn btn-primary" >Não</button>
+      <p>Tem certeza que quer deletar o produto de Código {{this.produtoId}}  ?</p>
+      <button type="button" class="btn btn-default" (click)="confirm()">Sim</button>
+      <button type="button" class="btn btn-primary"  (click)="decline()">Não</button>
     </div>
   </ng-template>
 

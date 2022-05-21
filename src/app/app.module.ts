@@ -9,7 +9,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { TemplateModule } from './template/template.module';
-import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { ProductCardComponent } from './shared/components/product-card/product-card.component';
 import { HomeComponent } from './view/home/home.component';
 import { LoginComponent } from './view/login/login.component';
@@ -32,6 +31,8 @@ import { PagamentoComponent } from './view/pagamento/pagamento.component';
 import { PagamentoDeliveryComponent } from './view/pagamento-delivery/pagamento-delivery.component';
 import { PedidosComponent } from './view/pedidos/pedidos.component';
 import { ErrorComponent } from './view/error/error.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+
 
 
 
@@ -60,7 +61,6 @@ import { ErrorComponent } from './view/error/error.component';
     BrowserModule,
     AppRoutingModule,
     TemplateModule,
-    CarouselModule.forRoot(),
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
@@ -73,6 +73,7 @@ import { ErrorComponent } from './view/error/error.component';
     }),
     BsDropdownModule.forRoot(),
     NgQrScannerModule,
+    ModalModule.forRoot(),
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]

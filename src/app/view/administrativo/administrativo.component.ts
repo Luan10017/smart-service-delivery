@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Produto } from 'src/app/shared/models/Produto';
 import { MenuService } from 'src/app/core/services/menu.service';
 import { environment } from 'src/environments/environment';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-administrativo',
@@ -13,8 +14,13 @@ export class AdministrativoComponent implements OnInit {
 
   produtos:  Produto[] = []
   baseUrl = `${environment.API}produtos`
+  modalRef!: BsModalRef;
 
-  constructor(private productService: MenuService) { }
+  produtoId: string = "";
+
+  constructor(private productService: MenuService,
+              private modalService: BsModalService
+  ) { }
 
   ngOnInit(): void {
     this.productService.getItens(this.baseUrl).pipe(map(result => result.data[0].produtos))
@@ -29,5 +35,31 @@ export class AdministrativoComponent implements OnInit {
       console.log("é do brasil")
     })
   }
+
+
+  /*openModal(event: any, template: TemplateRef<any>) {
+    event.stopPropagation();
+
+    this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
+  }*/
+
+  openModal(event: any, template: TemplateRef<any>, produtoId: string) {
+    this.produtoId = produtoId;
+
+    this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
+  }
+
+  decline(): void {
+    this.modalRef.hide();
+  }
+
+  confirm(): void {
+
+    this.modalRef.hide();
+
+    this.deletaProduto(this.produtoId);
+
+  }
+
 
 }

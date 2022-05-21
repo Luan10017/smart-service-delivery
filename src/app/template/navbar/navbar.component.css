@@ -233,7 +233,10 @@
   .carrinho {
     width: 90vw;
   }
+ }
 
+ #slides{
+  filter: grayscale(0.2);
  }
 
 
