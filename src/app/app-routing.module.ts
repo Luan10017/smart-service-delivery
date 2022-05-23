@@ -58,7 +58,7 @@ const routes: Routes = [
       { path: 'qrcode', component: QrCodeComponent },
       { path: 'pedidos', component: PedidosComponent },
     ],
-    canActivate: [AdminGuard]
+    //canActivate: [AdminGuard]
   },
   { path: 'login', component: LoginComponent },
   { path: 'cadastro', component: CadastroComponent },

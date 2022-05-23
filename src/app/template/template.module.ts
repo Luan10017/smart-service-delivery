@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
 import { FooterComponent } from './footer/footer.component';
@@ -16,7 +15,6 @@ import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     NavbarComponent,
-    SidebarComponent,
     FooterComponent,
     LayoutComponent,
     CarrinhoComponent,
@@ -31,8 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
     CollapseModule.forRoot(),
   ],
   exports: [
-    NavbarComponent,
-    SidebarComponent
+    NavbarComponent
   ]
 })
 export class TemplateModule { }
