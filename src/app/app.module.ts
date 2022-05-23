@@ -33,6 +33,7 @@ import { PedidosComponent } from './view/pedidos/pedidos.component';
 import { ErrorComponent } from './view/error/error.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { AdminGuard } from './core/guards/admin.guard';
+import { PedidoComponent } from './view/pedido/pedido.component';
 
 
 
@@ -56,6 +57,7 @@ import { AdminGuard } from './core/guards/admin.guard';
     PagamentoComponent,
     PagamentoDeliveryComponent,
     PedidosComponent,
+    PedidoComponent,
     ErrorComponent
   ],
   imports: [
