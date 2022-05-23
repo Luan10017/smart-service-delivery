@@ -23,6 +23,10 @@ export class ListaProdutosComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.listaProdutos()
+  }
+
+  listaProdutos(): void {
     this.productService.getItens(this.baseUrl).pipe(map(result => result.data[0].produtos))
       .subscribe(res => {
         this.produtos = res
@@ -32,8 +36,11 @@ export class ListaProdutosComponent implements OnInit {
   deletaProduto(produtoId: string): void {
     const deleteUrl = `${environment.API}deleta/produto/${produtoId}`
     this.productService.deleteProduct(deleteUrl).subscribe(res => {
-      console.log("é do brasil")
-    })
+      this.listaProdutos()
+      this.toastr.success("Produto deletado com sucesso!")
+    }, error => {
+      this.toastr.error("Opa algo deu errado.")
+    });
   }
 
 
