@@ -4,6 +4,7 @@ import { Produto } from 'src/app/shared/models/Produto';
 import { MenuService } from 'src/app/core/services/menu.service';
 import { environment } from 'src/environments/environment';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-lista-produtos',
@@ -18,11 +19,17 @@ export class ListaProdutosComponent implements OnInit {
 
   produtoId: string = "";
 
-  constructor(private productService: MenuService,
-              private modalService: BsModalService
+  constructor(
+    private productService: MenuService,
+    private modalService: BsModalService,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
+    this.listaProdutos()
+  }
+
+  listaProdutos(): void {
     this.productService.getItens(this.baseUrl).pipe(map(result => result.data[0].produtos))
       .subscribe(res => {
         this.produtos = res
@@ -32,8 +39,11 @@ export class ListaProdutosComponent implements OnInit {
   deletaProduto(produtoId: string): void {
     const deleteUrl = `${environment.API}deleta/produto/${produtoId}`
     this.productService.deleteProduct(deleteUrl).subscribe(res => {
-      console.log("é do brasil")
-    })
+      this.listaProdutos()
+      this.toastr.success("Produto deletado com sucesso!")
+    }, error => {
+      this.toastr.error("Opa algo deu errado.")
+    });
   }
 
 
