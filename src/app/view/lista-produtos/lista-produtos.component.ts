@@ -4,6 +4,7 @@ import { Produto } from 'src/app/shared/models/Produto';
 import { MenuService } from 'src/app/core/services/menu.service';
 import { environment } from 'src/environments/environment';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-lista-produtos',
@@ -18,8 +19,10 @@ export class ListaProdutosComponent implements OnInit {
 
   produtoId: string = "";
 
-  constructor(private productService: MenuService,
-              private modalService: BsModalService
+  constructor(
+    private productService: MenuService,
+    private modalService: BsModalService,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
