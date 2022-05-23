@@ -4,6 +4,17 @@
       <img class="logo" src="/assets/logo.png">
       <h2>Barra de Progresso</h2>
     </div>
-    <app-progress-bar *ngFor="let pedido of pedidos"></app-progress-bar>
+    <div class="pedidos">
+      <div class="confirmacao">
+        <app-pedido-card *ngFor="let pedido of pedidos"></app-pedido-card>
+      </div>
+      <div class="confirmacao">
+        <app-pedido-card *ngFor="let pedido of pedidos"></app-pedido-card>
+      </div>
+      <div class="confirmacao">
+        <app-pedido-card *ngFor="let pedido of pedidos"></app-pedido-card>
+      </div>
+    </div>
+    <!-- <app-progress-bar *ngFor="let pedido of pedidos"></app-progress-bar> -->
 
 </div>
