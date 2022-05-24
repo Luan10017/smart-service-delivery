@@ -87,6 +87,15 @@
               <i class="fas fa-pencil-alt"></i>
             </button>
           </td>
+
+          <ng-template #template>
+            <div class="modal-body text-center">
+              <p>Tem certeza que quer deletar o produto {{produto.nome}} ?</p>
+              <button type="button" class="btn btn-default" (click)="confirm()">Sim</button>
+              <button type="button" class="btn btn-primary"  (click)="decline()">Não</button>
+            </div>
+          </ng-template>
+
         </tr>
       </tbody>
       <tfoot>
@@ -103,12 +112,5 @@
 
   <!-- {{eventos | json}}  use isso para ver o nome de todos os campos, sempre que precisar-->
 
-  <ng-template #template>
-    <div class="modal-body text-center">
-      <p>Tem certeza que quer deletar o produto de Código {{this.produtoId}}  ?</p>
-      <button type="button" class="btn btn-default" (click)="confirm()">Sim</button>
-      <button type="button" class="btn btn-primary"  (click)="decline()">Não</button>
-    </div>
-  </ng-template>
 
 </div>

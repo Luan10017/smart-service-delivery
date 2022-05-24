@@ -21,8 +21,8 @@ export class CadastroProdutoComponent implements OnInit {
   categotias!: string[]
   formData = new FormData()
 
-  id!: number 
-  edicao: boolean = false 
+  id!: number
+  edicao: boolean = false
   cadastro: boolean = true
   isLoading: boolean = false
 
@@ -119,7 +119,7 @@ export class CadastroProdutoComponent implements OnInit {
   rediretoIntoProductList(): void {
     this.toastr.success("Produto cadastrado com sucesso!")
     setTimeout(() => {
-      this.router.navigate(['/administrativo'])
+      this.router.navigate(['/admin/lista/produtos'])
     }, 3000)
   }
 

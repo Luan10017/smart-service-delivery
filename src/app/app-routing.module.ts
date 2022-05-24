@@ -18,7 +18,6 @@ import { AuthGuard } from './core/guards/auth.guard';
 import { EsqueceuSenhaComponent } from './view/esqueceu-senha/esqueceu-senha.component';
 import { RedefinirSenhaComponent } from './view/redefinir-senha/redefinir-senha.component';
 import { ProgressBarComponent } from './shared/components/progress-bar/progress-bar.component';
-import { QrCodeComponent } from './shared/components/qr-code/qr-code.component';
 import { PagamentoDeliveryComponent } from './view/pagamento-delivery/pagamento-delivery.component';
 import { PedidosComponent } from './view/pedidos/pedidos.component';
 import { ErrorComponent } from './view/error/error.component';
@@ -55,7 +54,6 @@ const routes: Routes = [
       { path: 'cadastro/produtos', component: CadastroProdutoComponent },
       { path: 'editar/produtos/:id', component: CadastroProdutoComponent },
       { path: 'acompanhar/produtos', component: ProgressBarComponent },
-      { path: 'qrcode', component: QrCodeComponent },
       { path: 'pedidos', component: PedidosComponent },
     ],
     //canActivate: [AdminGuard]

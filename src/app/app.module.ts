@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpClientModule } from '@angular/common/http';
@@ -9,6 +9,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { AdminComponent } from './admin/admin.component';
 import { AuthGuard } from './core/guards/auth.guard';
@@ -29,7 +30,6 @@ import { RedefinirSenhaComponent } from './view/redefinir-senha/redefinir-senha.
 import { CadastroProdutoComponent } from './view/cadastro-produto/cadastro-produto.component';
 import { ListaProdutosComponent } from './view/lista-produtos/lista-produtos.component';
 import { ProgressBarComponent } from './shared/components/progress-bar/progress-bar.component';
-import { QrCodeComponent } from './shared/components/qr-code/qr-code.component';
 import { PagamentoComponent } from './view/pagamento/pagamento.component';
 import { PedidosComponent } from './view/pedidos/pedidos.component';
 import { ErrorComponent } from './view/error/error.component';
@@ -60,7 +60,6 @@ import { PedidoConcluidoCardComponent } from './shared/components/pedido-conclui
     AdminComponent,
     ListaProdutosComponent,
     ProgressBarComponent,
-    QrCodeComponent,
     PagamentoComponent,
     PedidosComponent,
     ErrorComponent
@@ -82,8 +81,10 @@ import { PedidoConcluidoCardComponent } from './shared/components/pedido-conclui
     BsDropdownModule.forRoot(),
     NgQrScannerModule,
     ModalModule.forRoot(),
+    NgxSpinnerModule
   ],
   providers: [AuthService, AuthGuard, AdminGuard],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { }
