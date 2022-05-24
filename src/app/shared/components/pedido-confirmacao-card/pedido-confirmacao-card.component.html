@@ -12,7 +12,7 @@
             <p><b>Endereço</b> Rua Av Ana Costa 79 </p>
 
             <a class="btn btn-outline-success btn-sm " (click)="patchToPreparando(pedido.codigo_pedido)">Aceitar</a>
-            <a class="btn btn-outline-danger btn-sm m-2" href="#">Cancelar</a>
+            <a class="btn btn-outline-danger btn-sm m-2" (click)="patchToCancelado(pedido.codigo_pedido)">Cancelar</a>
         </div>
     </div>
 

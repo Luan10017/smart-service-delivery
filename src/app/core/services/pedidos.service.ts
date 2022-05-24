@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
@@ -9,6 +9,8 @@ import { Carrinho } from 'src/app/shared/models/carrihno';
   providedIn: 'root'
 })
 export class PedidosService {
+
+  static emitirPedidoStatus = new EventEmitter<string>()
 
   baseUrl = `${environment.API}cadastra/pedido/delivery`
 

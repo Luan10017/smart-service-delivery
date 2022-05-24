@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PedidosService } from 'src/app/core/services/pedidos.service';
 import { environment } from 'src/environments/environment';
 import { Pedido } from '../../models/Pedido';
@@ -11,7 +11,6 @@ import { Pedido } from '../../models/Pedido';
 export class PedidoConfirmacaoCardComponent implements OnInit {
 
   @Input() pedido!: Pedido;
-  @Output() mudou = new EventEmitter()
 
   constructor(
     private pedidoService: PedidosService
@@ -25,10 +24,26 @@ export class PedidoConfirmacaoCardComponent implements OnInit {
     const body = {"status":"PREPARANDO"}
     this.pedidoService.patchStatus(baseUrl, body)
       .subscribe( res => {
-        console.log(this.mudou.emit("true"))
+        PedidosService.emitirPedidoStatus.emit("PREPARANDO")
       }, error => {
         console.log("erro")
-        console.log(this.mudou.emit("true"))
+        PedidosService.emitirPedidoStatus.emit("PREPARANDO")
+
       })
   }
+
+  patchToCancelado(idPedido: string) {
+    const baseUrl = `${environment.API}alterar/status/pedido/${idPedido}`
+    const body = {"status":"CANCELADO"}
+    this.pedidoService.patchStatus(baseUrl, body)
+      .subscribe( res => {
+        PedidosService.emitirPedidoStatus.emit("AGUARDANDO_CONFIRMACAO")
+      }, error => {
+        console.log("erro")
+        PedidosService.emitirPedidoStatus.emit("AGUARDANDO_CONFIRMACAO")
+
+      })
+  }
+
+
 }

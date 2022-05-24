@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PedidosService } from 'src/app/core/services/pedidos.service';
 import { environment } from 'src/environments/environment';
 
@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
   templateUrl: './pedidos.component.html',
   styleUrls: ['./pedidos.component.css']
 })
-export class PedidosComponent implements OnInit, OnChanges {
+export class PedidosComponent implements OnInit {
 
   confirmacoes = []
   preparacoes = []
@@ -17,19 +17,39 @@ export class PedidosComponent implements OnInit, OnChanges {
   constructor(
     private pedidoService: PedidosService
   ) { }
-  ngOnChanges(changes: SimpleChanges): void {
-
-    console.log("mudou")
-    // throw new Error('Method not implemented.');
-  }
 
   ngOnInit(): void {
     this.getConfirmados()
     this.getPreparacoes()
     this.getEntregando()
     this.getConcluidos()
+
+    PedidosService.emitirPedidoStatus
+      .subscribe(status =>{
+        switch (status) {
+          case "AGUARDANDO_CONFIRMACAO":
+            this.getConfirmados()
+            break
+          case "PREPARANDO":
+            this.getPreparacoes()
+            break
+          case "ENTREGANDO":
+            this.getEntregando()
+            break
+          case "CONCLUIDO":
+            this.getConcluidos()
+            break
+        }
+      })
+    
+    this.getNovosPedidosParaConfirmar()
   }
 
+  getNovosPedidosParaConfirmar() {
+    setInterval(()=> {
+      this.getConfirmados()
+    },100000)
+  }
 
   getConfirmados() {
     const baseUrl = `${environment.API}pedidos?status=AGUARDANDO_CONFIRMACAO`
