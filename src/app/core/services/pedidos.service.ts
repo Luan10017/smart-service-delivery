@@ -23,4 +23,12 @@ export class PedidosService {
     }
     return this.http.post<any>(this.baseUrl,pedidoPayload)
   }
+
+  getByStatus(baseUrl: string): Observable<any> {
+    return this.http.get<any>(baseUrl)
+  }
+
+  patchStatus(baseUrl: string, body: any): Observable<any> {
+    return this.http.patch<any>(baseUrl,body)
+  }
 }

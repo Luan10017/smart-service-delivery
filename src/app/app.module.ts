@@ -63,7 +63,11 @@ import { PedidoConcluidoCardComponent } from './shared/components/pedido-conclui
     QrCodeComponent,
     PagamentoComponent,
     PedidosComponent,
-    ErrorComponent
+    ErrorComponent,
+    PedidoConfirmacaoCardComponent,
+    PedidoPreparacaoCardComponent,
+    PedidoEntregandoCardComponent,
+    PedidoConcluidoCardComponent
   ],
   imports: [
     BrowserModule,

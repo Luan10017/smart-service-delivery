@@ -1,3 +1,7 @@
+.card-header {
+  height: 6rem;
+}
+
 .pedido{
     margin-left: 38%;
     width: 50px;
