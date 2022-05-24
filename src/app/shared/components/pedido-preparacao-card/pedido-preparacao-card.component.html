@@ -3,13 +3,12 @@
         <div class="float-right mr-n2">
             <label class="custom-control custom-checkbox">
                 <span class="custom-control-label"></span>
-                <h5>PEDIDO 2655</h5>
+                <h5>PEDIDO: {{pedido.codigo_pedido}}</h5>
             </label>
         </div>
         <p style="text-align: center;"><b>Produtos:</b></p>
-        <p>1 Hamburger</p>
-        <p>2 batatas-fritas</p>
-        <p>10 brejas</p>
+        <p> {{ pedido.produtos[0]?.nome }} </p>
+        <p> {{ pedido.produtos[0]?.quantidade}} </p>
 
         <a class="btn btn-outline-success btn-sm " (click)="patchToEntregando(pedido.codigo_pedido)">Aceitar</a>
         <a class="btn btn-outline-danger btn-sm m-2" href="#">Cancelar</a>

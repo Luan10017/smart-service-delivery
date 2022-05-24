@@ -3,12 +3,14 @@
         <div class="float-right mr-n2">
             <label class="custom-control custom-checkbox">
                 <span class="custom-control-label"></span>
-                <h5>PEDIDO {{pedido.codigo_pedido}}</h5>
+                <h5>PEDIDO: {{pedido.codigo_pedido}}</h5>
             </label>
         </div>
-        <p><b>Cliente</b> {{pedido.nome_cliente}}</p>
-        <p><b>Endereço</b> {{pedido.endereco.logradouro}} </p>
-        <p><b>Data</b> {{pedido.data_pedido}}</p>
+        <p><b>Cliente:</b> {{pedido.nome_cliente}}</p>
+        <p><b>Endereço:</b> {{pedido.endereco.logradouro}}, {{pedido.endereco.numero}},
+          {{pedido.endereco.bairro}}, {{pedido.endereco.complemento}}, {{pedido.endereco.cidade}}
+          {{pedido.endereco.estado}} {{pedido.endereco.cep}}</p>
+        <p><b>Data:</b> {{pedido.data_pedido}}</p>
         <p><b>Valor total: </b>{{pedido.valor_total}} </p>
 
     </div>

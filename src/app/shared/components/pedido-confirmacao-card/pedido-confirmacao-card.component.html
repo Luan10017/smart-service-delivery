@@ -5,11 +5,13 @@
             <div class="float-right mr-n2">
                 <label class="custom-control custom-checkbox">
                     <span class="custom-control-label"></span>
-                    <h5>PEDIDO 2655</h5>
+                    <h5>PEDIDO: {{pedido.codigo_pedido}}</h5>
                 </label>
             </div>
-            <p><b>Cliente</b> André Cypriano </p>
-            <p><b>Endereço</b> Rua Av Ana Costa 79 </p>
+            <p><b>Cliente: </b> {{pedido.nome_cliente}} </p>
+            <p><b>Endereço: </b>  {{pedido.endereco.logradouro}}, {{pedido.endereco.numero}},
+              {{pedido.endereco.bairro}}, {{pedido.endereco.complemento}}, {{pedido.endereco.cidade}}
+              {{pedido.endereco.estado}} {{pedido.endereco.cep}} </p>
 
             <a class="btn btn-outline-success btn-sm " (click)="patchToPreparando(pedido.codigo_pedido)">Aceitar</a>
             <a class="btn btn-outline-danger btn-sm m-2" (click)="patchToCancelado(pedido.codigo_pedido)">Cancelar</a>
