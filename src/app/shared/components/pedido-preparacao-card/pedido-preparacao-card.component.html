@@ -10,7 +10,7 @@
         <p> {{ pedido.produtos[0]?.nome }} </p>
         <p> {{ pedido.produtos[0]?.quantidade}} </p>
 
-        <a class="btn btn-outline-success btn-sm " (click)="patchToEntregando(pedido.codigo_pedido)">Aceitar</a>
+        <a class="btn btn-outline-success btn-sm " (click)="patchToEntregando(pedido.id_pedido)">Aceitar</a>
         <a class="btn btn-outline-danger btn-sm m-2" href="#">Cancelar</a>
     </div>
 </div>

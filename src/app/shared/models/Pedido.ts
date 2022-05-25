@@ -1,4 +1,5 @@
 export class Pedido {
+    id_pedido!: string
     codigo_pedido!: string
     nome_cliente!: string 
     email_cliente!: string 

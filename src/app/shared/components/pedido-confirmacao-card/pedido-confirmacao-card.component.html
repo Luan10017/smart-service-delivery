@@ -13,8 +13,8 @@
               {{pedido.endereco.bairro}}, {{pedido.endereco.complemento}}, {{pedido.endereco.cidade}}
               {{pedido.endereco.estado}} {{pedido.endereco.cep}} </p>
 
-            <a class="btn btn-outline-success btn-sm " (click)="patchToPreparando(pedido.codigo_pedido)">Aceitar</a>
-            <a class="btn btn-outline-danger btn-sm m-2" (click)="patchToCancelado(pedido.codigo_pedido)">Cancelar</a>
+            <a class="btn btn-outline-success btn-sm " (click)="patchToPreparando(pedido.id_pedido)">Aceitar</a>
+            <a class="btn btn-outline-danger btn-sm m-2" (click)="patchToCancelado(pedido.id_pedido)">Cancelar</a>
         </div>
     </div>
 
