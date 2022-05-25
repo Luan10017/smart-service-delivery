@@ -26,6 +26,9 @@ import { AdminGuard } from './core/guards/admin.guard';
 
 
 const routes: Routes = [
+
+  { path: '', redirectTo: 'promocoes',  pathMatch: 'full'},
+
   {
     path: '',
     component: LayoutComponent,
@@ -34,12 +37,14 @@ const routes: Routes = [
       { path: 'produto/:id', component: ProdutoComponent },
       { path: 'endereco', component: EnderecoComponent },
       { path: 'pedido', component: PedidoComponent },
+      { path: 'promocoes', component: CategoriasComponent },
       { path: 'hamburgers', component: CategoriasComponent },
       { path: 'porcoes', component: CategoriasComponent  },
       { path: 'bebidas', component: CategoriasComponent },
       { path: 'bebidasalcolicas', component: CategoriasComponent  },
-      { path: 'pizzas', component: CategoriasComponent  },
+      { path: 'porcoes', component: CategoriasComponent  },
       { path: 'sobremesas', component: CategoriasComponent  },
+      { path: 'pizzas', component: CategoriasComponent  },
       { path: 'editar/cadastro/:id', component: CadastroComponent },
       { path: 'pagamento', component: PagamentoComponent },
       { path: 'pedido', component: PedidoComponent },

@@ -10,18 +10,18 @@
       <h3><i class="fa fa-check-square" aria-hidden="true"></i> Painel de Pedidos</h3>
     </div>
     <div class="p-3">
-      <a href="/pedidos">
+      <a routerLink="/admin/lista/produtos">
         <button class="btn btn-outline-light">
-          Ir para Pedidos
+          Ir para Lista de Produtos
        </button>
     </a>
     </div>
     <div class="p-3">
-      <a href="/home">
+      <a routerLink="/home">
         <button class="btn btn-outline-light">
           Ir para Home
        </button>
-    </a>
+      </a>
     </div>
 
   </div>
@@ -43,8 +43,8 @@
 
                       </div>
                       <app-pedido-card *ngFor="let confirmacao of confirmacoes" [pedido]="confirmacao"></app-pedido-card>
-                      
-                      
+
+
                   </div>
               </div>
               <div class="col-12 col-lg-6 col-xl-3">
@@ -59,7 +59,7 @@
 
                       <div class="card-body">
                         <app-pedido-preparacao-card *ngFor="let preparacao of preparacoes" [pedido]="preparacao"></app-pedido-preparacao-card>
-                                        
+
                       </div>
                   </div>
               </div>
@@ -88,7 +88,7 @@
                       </div>
                       <div class="card-body">
                         <app-pedido-concluido-card *ngFor="let concluido of concluidos" [pedido]="concluido"></app-pedido-concluido-card>
-                        
+
                       </div>
                   </div>
               </div>
