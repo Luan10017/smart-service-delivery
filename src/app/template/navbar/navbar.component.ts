@@ -3,9 +3,12 @@ import { Router } from '@angular/router';
 import { Carrinho } from 'src/app/shared/models/carrihno';
 import { CarrinhoService } from 'src/app/core/services/carrinho.service';
 import { FormsModule }   from '@angular/forms';
-import { Produto } from 'src/app/shared/models/Produto';
+import { Categoria, Produto } from 'src/app/shared/models/Produto';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { MenuService } from 'src/app/core/services/menu.service';
+import { map } from 'rxjs/operators';
+import { CategoriasService } from 'src/app/core/services/categorias.service';
 
 @Component({
   selector: 'app-navbar',
@@ -28,6 +31,11 @@ export class NavbarComponent implements OnInit {
 
 
   isCollapsed = true;
+  //teste
+  categorias: Categoria[] = []
+  baseUrl = `${environment.API}categorias`
+  categotias!: string[]
+
 
 
   carrinho: Carrinho = new Carrinho();
@@ -59,9 +67,17 @@ export class NavbarComponent implements OnInit {
     private router: Router ,
     private carrinhoService: CarrinhoService,
     private http: HttpClient,
+    private categoriasService: MenuService
     ) { }
 
   ngOnInit(): void {
+
+    this.categoriasService.getCategorias(`${environment.API}categorias`)
+    .subscribe(res => {
+      this.categotias = res.data[0].categorias
+    })
+
+
     this.carrinho = this.carrinhoService.carrinho
 
     if ( localStorage.getItem("nomeUsuario")) {
@@ -92,5 +108,21 @@ export class NavbarComponent implements OnInit {
   atualizaTotal(): void {
     this.carrinhoService.atualizaTotal()
   }
+
+
+  listaCategorias(): void {
+    this.categoriasService.getCategoriasTeste(this.baseUrl).pipe(map(result => result.dataCategoria[0].categorias))
+      .subscribe({
+        next:(res) => {
+          this.categorias = res
+          console.log("terminou categorias")
+        },
+        error: (error: any) => console.log(error),
+        complete: () => console.log("terminou categorias")
+      })
+  }
+
+
+
 
 }

@@ -12,7 +12,8 @@ a:hover{
 
 
 .item-img{
-  height: 500px;
+  height: 10rem;
+
 }
 
 button{
@@ -39,3 +40,4 @@ button:hover{
 .price{
   color: #50a773 !important;
 }
+

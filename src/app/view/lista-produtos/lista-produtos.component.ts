@@ -61,13 +61,6 @@ export class ListaProdutosComponent implements OnInit {
     });
   }
 
-
-  /*openModal(event: any, template: TemplateRef<any>) {
-    event.stopPropagation();
-
-    this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
-  }*/
-
   openModal(event: any, template: TemplateRef<any>, produtoId: string) {
     this.produtoId = produtoId;
 

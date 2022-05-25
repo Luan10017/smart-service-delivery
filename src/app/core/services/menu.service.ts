@@ -2,18 +2,24 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { Produto } from '../../shared/models/Produto';
+import { Categoria, Produto } from '../../shared/models/Produto';
 
 export interface ObjetoPayload {
-  data: Array<ObjetoPayloadProduct<Produto>>;
+  data: Array<ObjetoPayloadProduct<Produto>>,
+  dataCategoria: Array<ObjetoPayloadCategoria<Categoria>>;
 }
 
 export interface ObjetoPayloadProduct<T> {
-  produtos: Array<Produto>;
+  produtos: Array<Produto>,
+}
+
+export interface ObjetoPayloadCategoria<T> {
+  categorias: Array<Categoria>;
 }
 
 export interface Result {
-  data: Produto
+  data: Produto,
+  dataCategoria: Categoria
 }
 
 @Injectable({
@@ -29,7 +35,11 @@ export class MenuService {
   }
 
   getCategorias(baseUrl: string): Observable<any> {
-    return this.http.get<any>(baseUrl)
+    return this.http.get<ObjetoPayload>(baseUrl)
+  }
+
+  getCategoriasTeste(baseUrl: string): Observable<ObjetoPayload> {
+    return this.http.get<ObjetoPayload>(baseUrl, {})
   }
 
   deleteProduct(baseUrl: string): Observable<any> {
