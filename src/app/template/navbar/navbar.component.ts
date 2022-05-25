@@ -8,7 +8,6 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { MenuService } from 'src/app/core/services/menu.service';
 import { map } from 'rxjs/operators';
-import { CategoriasService } from 'src/app/core/services/categorias.service';
 
 @Component({
   selector: 'app-navbar',
@@ -66,17 +65,10 @@ export class NavbarComponent implements OnInit {
   constructor(
     private router: Router ,
     private carrinhoService: CarrinhoService,
-    private http: HttpClient,
-    private categoriasService: MenuService
+    private http: HttpClient
     ) { }
 
   ngOnInit(): void {
-
-    this.categoriasService.getCategorias(`${environment.API}categorias`)
-    .subscribe(res => {
-      this.categotias = res.data[0].categorias
-    })
-
 
     this.carrinho = this.carrinhoService.carrinho
 
@@ -108,21 +100,6 @@ export class NavbarComponent implements OnInit {
   atualizaTotal(): void {
     this.carrinhoService.atualizaTotal()
   }
-
-
-  listaCategorias(): void {
-    this.categoriasService.getCategoriasTeste(this.baseUrl).pipe(map(result => result.dataCategoria[0].categorias))
-      .subscribe({
-        next:(res) => {
-          this.categorias = res
-          console.log("terminou categorias")
-        },
-        error: (error: any) => console.log(error),
-        complete: () => console.log("terminou categorias")
-      })
-  }
-
-
 
 
 }

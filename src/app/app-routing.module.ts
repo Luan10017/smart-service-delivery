@@ -38,6 +38,8 @@ const routes: Routes = [
       { path: 'porcoes', component: CategoriasComponent  },
       { path: 'bebidas', component: CategoriasComponent },
       { path: 'bebidasalcolicas', component: CategoriasComponent  },
+      { path: 'pizzas', component: CategoriasComponent  },
+      { path: 'sobremesas', component: CategoriasComponent  },
       { path: 'editar/cadastro/:id', component: CadastroComponent },
       { path: 'pagamento', component: PagamentoComponent },
       { path: 'pedido', component: PedidoComponent },
