@@ -11,13 +11,11 @@ import { CategoriasComponent } from './view/categorias/categorias.component';
 import { ListaProdutosComponent } from './view/lista-produtos/lista-produtos.component';
 
 import { ProdutoComponent } from './view/produto/produto.component';
-import { PagamentoComponent } from './view/pagamento/pagamento.component';
 import { EnderecoComponent } from './view/endereco/endereco.component';
 import { PedidoComponent } from './view/pedido/pedido.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { EsqueceuSenhaComponent } from './view/esqueceu-senha/esqueceu-senha.component';
 import { RedefinirSenhaComponent } from './view/redefinir-senha/redefinir-senha.component';
-import { ProgressBarComponent } from './shared/components/progress-bar/progress-bar.component';
 import { PagamentoDeliveryComponent } from './view/pagamento-delivery/pagamento-delivery.component';
 import { PedidosComponent } from './view/pedidos/pedidos.component';
 import { ErrorComponent } from './view/error/error.component';
@@ -36,7 +34,6 @@ const routes: Routes = [
       { path: 'home', component: HomeComponent  },
       { path: 'produto/:id', component: ProdutoComponent },
       { path: 'endereco', component: EnderecoComponent },
-      { path: 'pedido', component: PedidoComponent },
       { path: 'promocoes', component: CategoriasComponent },
       { path: 'hamburgers', component: CategoriasComponent },
       { path: 'porcoes', component: CategoriasComponent  },
@@ -46,7 +43,6 @@ const routes: Routes = [
       { path: 'sobremesas', component: CategoriasComponent  },
       { path: 'pizzas', component: CategoriasComponent  },
       { path: 'editar/cadastro/:id', component: CadastroComponent },
-      { path: 'pagamento', component: PagamentoComponent },
       { path: 'pedido', component: PedidoComponent },
       { path: 'pagamento-delivery', component: PagamentoDeliveryComponent },
       { path: '', redirectTo: 'hamburgers', pathMatch: 'full' },
@@ -60,7 +56,6 @@ const routes: Routes = [
       { path: 'lista/produtos', component: ListaProdutosComponent },
       { path: 'cadastro/produtos', component: CadastroProdutoComponent },
       { path: 'editar/produtos/:id', component: CadastroProdutoComponent },
-      { path: 'acompanhar/produtos', component: ProgressBarComponent },
       { path: 'pedidos', component: PedidosComponent },
     ],
     canActivate: [AdminGuard]

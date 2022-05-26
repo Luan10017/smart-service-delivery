@@ -29,8 +29,6 @@ import { EsqueceuSenhaComponent } from './view/esqueceu-senha/esqueceu-senha.com
 import { RedefinirSenhaComponent } from './view/redefinir-senha/redefinir-senha.component';
 import { CadastroProdutoComponent } from './view/cadastro-produto/cadastro-produto.component';
 import { ListaProdutosComponent } from './view/lista-produtos/lista-produtos.component';
-import { ProgressBarComponent } from './shared/components/progress-bar/progress-bar.component';
-import { PagamentoComponent } from './view/pagamento/pagamento.component';
 import { PedidosComponent } from './view/pedidos/pedidos.component';
 import { ErrorComponent } from './view/error/error.component';
 import { AdminGuard } from './core/guards/admin.guard';
@@ -59,8 +57,6 @@ import { PedidoConcluidoCardComponent } from './shared/components/pedido-conclui
     CadastroProdutoComponent,
     AdminComponent,
     ListaProdutosComponent,
-    ProgressBarComponent,
-    PagamentoComponent,
     PedidosComponent,
     ErrorComponent,
     PedidoConfirmacaoCardComponent,
