@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { CarrinhoService } from 'src/app/core/services/carrinho.service';
 import { PedidosService } from 'src/app/core/services/pedidos.service';
 
@@ -15,8 +16,8 @@ export class CarrinhoComponent implements OnInit {
 
   constructor(
     private carrinhoService: CarrinhoService,
-    private router: Router,
-    private pedidos: PedidosService
+    private pedidos: PedidosService,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -29,18 +30,18 @@ export class CarrinhoComponent implements OnInit {
     this.carrinhoService.tiraItem(produto)
   }
 
-  realizaPedidos(): void{
-    this.carrinhoService.realizaPedidos()
-  }
-
   finalizaPedido(): void {
-    // Atendimento remoto
-    this.pedidos.postPedido(this.carrinhoService.carrinho,"794078f5-db12-4a4a-9a7f-448dcf06248a").subscribe(res => {
-      console.log(res)
-    })
-
-    // Atendimento presencial
-    // this.router.navigate(['/pagamento'])
+    if ( localStorage.getItem("idUsuario") ) {
+      const idUsuario = localStorage.getItem("idUsuario") as string
+      this.pedidos.postPedido(this.carrinhoService.carrinho, idUsuario)
+        .subscribe(res => {
+          this.limpaCarrinho()
+          const whatsAppUrl = res.data[0].message
+          window.open(whatsAppUrl, '_blank')
+        })
+    } else {
+      this.toastr.error("Opa algo deu errado 😥")
+    }
   }
 
   limpaCarrinho(): void {
