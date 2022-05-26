@@ -69,4 +69,13 @@ export class AuthService {
   usuarioIsAdmin() {
     return this.usuarioAdmin
   }
+
+  fazerLogoff():void {
+    localStorage.removeItem("usuarioAutenticado")
+    localStorage.removeItem("emailUsuario")
+    localStorage.removeItem("nomeUsuario")
+    localStorage.removeItem("idUsuario")
+    localStorage.removeItem("isAdmin")
+    this.router.navigate(['/login'])
+  } 
 }

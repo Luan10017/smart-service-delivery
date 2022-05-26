@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { MenuService } from 'src/app/core/services/menu.service';
 import { map } from 'rxjs/operators';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -39,6 +40,7 @@ export class NavbarComponent implements OnInit {
 
   carrinho: Carrinho = new Carrinho();
   nomeUsuario: string = 'Anônimo'
+  idUsuario: string = ''
   isAdmin: boolean = false
 
   //@Input() products: any;
@@ -65,7 +67,8 @@ export class NavbarComponent implements OnInit {
   constructor(
     private router: Router ,
     private carrinhoService: CarrinhoService,
-    private http: HttpClient
+    private http: HttpClient,
+    private authService: AuthService
     ) { }
 
   ngOnInit(): void {
@@ -77,6 +80,10 @@ export class NavbarComponent implements OnInit {
       let handleName = this.nomeUsuario.toLowerCase()
       handleName = handleName[0].toUpperCase() + handleName.slice(1)
       this.nomeUsuario = handleName
+    }
+
+    if ( localStorage.getItem("idUsuario") ) {
+      this.idUsuario = String(localStorage.getItem("idUsuario"))
     }
 
     if ( localStorage.getItem("isAdmin") === "true" ) {
@@ -105,5 +112,11 @@ export class NavbarComponent implements OnInit {
     this.carrinhoService.atualizaTotal()
   }
 
+  vaiParaEditarCadastro(): void {
+    this.router.navigate([`/editar/cadastro/${this.idUsuario}`])
+  }
 
+  fazerLogoff(): void {
+    this.authService.fazerLogoff()
+  }
 }
