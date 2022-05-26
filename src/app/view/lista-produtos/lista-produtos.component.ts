@@ -17,7 +17,7 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 export class ListaProdutosComponent implements OnInit {
 
   produtos:  Produto[] = []
-  baseUrl = `${environment.API}produtos`
+  baseUrl = `${environment.API}produtos?page=0`
   modalRef!: BsModalRef;
 
   produtoId: string = "";
