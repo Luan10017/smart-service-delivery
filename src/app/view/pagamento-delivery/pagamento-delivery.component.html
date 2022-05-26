@@ -9,130 +9,52 @@
               <h1></h1>
 
               <div class="row">
-                  <h1 class="display-4">Finalizar a Compra</h1>
-                  <div class="col-md-4 order-md-2 mb-4">
-                      <h3>Produtos</h3>
+                  <h1 class="display-4">Finalizar Pedido <i class="fa fa-check" aria-hidden="true"></i></h1>
 
-                      <br>
-
-                      <div class="row">
-
-                          <div class="card-center" >
-                              <div class="container">
-                                  <div class="row">
-                                    <div class="col-lg-4">
-                                      <img class="card-img-top item-img" src="/assets/sushi.jpg">
-                                    </div>
-                                    <div class="col-lg-4">
-                                      <h3 class="fs-4 mb-3 text-center"><p>Sushi 500g</p></h3>
-                                    </div>
-                                    <div class="col-lg-4">
-                                      <h5 class="card-title title-post-home price"><span style="color: #000;">Preço:
-                                      </span> R$26,00</h5>
-                                    </div>
-                                  </div>
-                                </div>
-                                <br>
-                          </div>
-
-                          <div class="card-center" >
-                            <div class="container">
-                                <div class="row">
-                                  <div class="col-lg-4">
-                                    <img class="card-img-top item-img" src="/assets/porção.jpg">
-                                  </div>
-                                  <div class="col-lg-4">
-                                    <h3 class="fs-4 mb-3 text-center"><p>Porção Batata-Frita 500g</p></h3>
-                                  </div>
-                                  <div class="col-lg-4">
-                                    <h5 class="card-title title-post-home price"><span style="color: #000;">Preço:
-                                    </span> R$26,00</h5>
-                                  </div>
-                                </div>
-                              </div>
-                        </div>
-
-                      </div>
-
-                      <br>
-
-                      <div class="row">
-
-                          <div class="text-center">
-                              <h5 class="card-title title-post-home price"><span style="color: #000;">Preço Total:
-                              </span> R$52,00</h5>
-                              <br>
-                              <!--<button type="button" class="btn btn-danger">Realizar Pedido</button>-->
-                          </div>
-
-                      </div>
-
-                  </div>
-
-                  <div class="col-md-8 order-md-1">
+                  <div class="col-md-12 order-md-1">
                       <span class="endereco" data-endereco=""></span>
                       <span id="msg"></span>
                       <form name="formPagamento" action="" id="formPagamento">
                           <span id="msg"></span>
+                          <br>
+                          <h4 class="mb-3">Escolha a forma de pagamento:</h4>
 
-                          <h4 class="mb-3">Endereço de Entrega:</h4>
+                          <br><br>
 
-                          <div>
-                            <p>Rua do cliente logado</p>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                              Dinheiro <i class="fas fa-money-bill icon"></i>
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                            <label class="form-check-label" for="flexRadioDefault2">
+                              Cartão de Crédito  <i class="fas fa-credit-card icon"></i>
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                            <label class="form-check-label" for="flexRadioDefault2">
+                              Cartão de Débito <i class="fas fa-money-check icon"></i>
+                            </label>
                           </div>
 
-
-                          <div class="custom-control custom-radio">
-                              <input type="radio" name="" class="custom-control-input" id="" value="">
-                              <label class="custom-control-label" for="">Cartão de Débito</label>
-                          </div>
-
-
-                          <div class="custom-control custom-radio">
-                              <input type="radio" name="paymentMethod" class="custom-control-input" id="boleto"
-                                  value="boleto" onclick="tipoPagamento('boleto')">
-                              <label class="custom-control-label" for="boleto">Boleto</label>
-                          </div>
-
-
-
-
-                          <div class="mb-3 creditCard">
-                              <label class="creditCard">CVV do cartão</label>
-                              <input type="text" name="numCartao" class="form-control creditCard" id="cvvCartao"
-                                  maxlength="3" value="123">
-                              <small id="cvvCartao" class="form-text text-muted creditCard">
-                                  Código de 3 digitos impresso no verso do cartão
-                              </small>
-                          </div>
+                          <br><br>
 
                           <div class="row creditCard">
-                              <div class="col-md-6 mb-3 creditCard">
-                                  <label class="creditCard">CPF do dono do Cartão</label>
-                                  <input type="text" name="creditCardHolderCPF" id="creditCardHolderCPF"
-                                      placeholder="CPF sem traço" value="22111944785" class="form-control creditCard">
-                              </div>
-                              <div class="col-md-6 mb-3 creditCard">
-                                  <label class="creditCard">Data de Nascimento</label>
-                                  <input type="text" name="creditCardHolderBirthDate" id="creditCardHolderBirthDate"
-                                      placeholder="Data de Nascimento. Ex: 12/12/1912" value="27/10/1987"
-                                      class="form-control creditCard">
-                              </div>
 
-                              <h5 class="mb-3">Após a finalização do pedido você será direcionado para o whatsapp.</h5>
+                            <h5 class="mb-3">Após a finalização do pedido você será direcionado para o nosso chat do whatsapp.  <img class="logo" src="/assets/whatsapp.png" width="5%"></h5>
 
 
                               <div class="p-col-12 text-center">
 
-                                  <a href="/pedido">
-                                      <button type="button" class="btn btn-danger button-finish">
-                                          Finalizar Compra
-                                      </button>
-                                  </a>
+                                <button type="button" class="btn btn-danger button-finish">
+                                          Finalizar Pedido
+                                </button>
 
                               </div>
                           </div>
-
                       </form>
                   </div>
               </div>

@@ -7,14 +7,22 @@ a{
 }
 
 a:hover{
-  color: #d91e18;
+  color: #ff363d;
 }
 
 
+.fa-check{
+  color: #ff363d;
+}
+
+.icon{
+  color: #ff363d;
+}
+
 .button-finish{
-  background-color: #d91e18;
+  background-color: #ff363d;
   margin: 2rem;
-  border-color: #d91e18;
+  border-color: #ff363d;
 }
 
 .button-finish:focus{

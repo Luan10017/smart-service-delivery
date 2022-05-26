@@ -44,7 +44,6 @@ const routes: Routes = [
       { path: 'pizzas', component: CategoriasComponent  },
       { path: 'editar/cadastro/:id', component: CadastroComponent },
       { path: 'pedido', component: PedidoComponent },
-      { path: 'pagamento-delivery', component: PagamentoDeliveryComponent },
       { path: '', redirectTo: 'hamburgers', pathMatch: 'full' },
     ],
     canActivate: [AuthGuard]
@@ -64,6 +63,7 @@ const routes: Routes = [
   { path: 'cadastro', component: CadastroComponent },
   { path: 'esqueceu-senha', component: EsqueceuSenhaComponent },
   { path: 'redefinir-senha', component: RedefinirSenhaComponent },
+  { path: 'pagamento-delivery', component: PagamentoDeliveryComponent },
   { path: '**', pathMatch: 'full', component: ErrorComponent },
 ];
 
