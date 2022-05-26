@@ -8,7 +8,7 @@
           </ul>
           <ul class="navbar-nav d-flex align-items-center">
               <li class="nav-item">
-                <div  class="btn-group d-lg-block d-xl-nonee">
+                <div *ngIf="isAdmin" class="btn-group d-lg-block d-xl-nonee">
                   <a href="admin/lista/produtos" class="nav-link second-text fw-bold" id="" aria-expanded="false"  role="button" data-toggle="dropdown" aria-haspopup="true">
                     <i class="fa fa-lock" aria-hidden="true"></i> Área Administrativa
                   </a>

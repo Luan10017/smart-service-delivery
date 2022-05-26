@@ -38,8 +38,8 @@ export class NavbarComponent implements OnInit {
 
 
   carrinho: Carrinho = new Carrinho();
-  nomeUsuario: string = 'Cliente01'
-  // nomeUsuario: string = 'Anônimo'
+  nomeUsuario: string = 'Anônimo'
+  isAdmin: boolean = false
 
   //@Input() products: any;
   public products: any = [];
@@ -77,6 +77,10 @@ export class NavbarComponent implements OnInit {
       let handleName = this.nomeUsuario.toLowerCase()
       handleName = handleName[0].toUpperCase() + handleName.slice(1)
       this.nomeUsuario = handleName
+    }
+
+    if ( localStorage.getItem("isAdmin") === "true" ) {
+      this.isAdmin = Boolean(localStorage.getItem("isAdmin"))
     }
 
     this.getProducts();
