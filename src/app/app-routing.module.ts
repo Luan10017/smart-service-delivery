@@ -51,7 +51,7 @@ const routes: Routes = [
       { path: 'pagamento-delivery', component: PagamentoDeliveryComponent },
       { path: '', redirectTo: 'hamburgers', pathMatch: 'full' },
     ],
-    // canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'admin',
@@ -63,7 +63,7 @@ const routes: Routes = [
       { path: 'acompanhar/produtos', component: ProgressBarComponent },
       { path: 'pedidos', component: PedidosComponent },
     ],
-    //canActivate: [AdminGuard]
+    canActivate: [AdminGuard]
   },
   { path: 'login', component: LoginComponent },
   { path: 'cadastro', component: CadastroComponent },
