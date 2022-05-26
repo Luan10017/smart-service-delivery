@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs/operators';
+import { CarrinhoService } from 'src/app/core/services/carrinho.service';
 import { MenuService } from 'src/app/core/services/menu.service';
 import { Product } from 'src/app/shared/models/product.model';
 import { Produto } from 'src/app/shared/models/Produto';
@@ -17,7 +18,11 @@ export class ProdutoComponent implements OnInit {
   product!: Produto 
   id!: number 
 
-  constructor(private productService: MenuService, private route: ActivatedRoute,) { }
+  constructor(
+    private productService: MenuService,
+    private route: ActivatedRoute,
+    private carrinhoService: CarrinhoService
+  ) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(res => this.id = res.id)
@@ -26,9 +31,11 @@ export class ProdutoComponent implements OnInit {
     this.productService.getItens(baseUrl).pipe(map(result => result.data[0].produtos))
     .subscribe(res => {
       this.product = res[0]
-
-      console.log(this.product)
     })
+  }
+
+  adicionarAoCarrinho(produto: Produto) {
+    this.carrinhoService.adicionarAoCarrinho(produto)
   }
 
 
