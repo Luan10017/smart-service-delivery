@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { PedidosService } from 'src/app/core/services/pedidos.service';
 import { environment } from 'src/environments/environment';
 import { Pedido } from '../../models/Pedido';
@@ -13,7 +14,8 @@ export class PedidoConfirmacaoCardComponent implements OnInit {
   @Input() pedido!: Pedido;
 
   constructor(
-    private pedidoService: PedidosService
+    private pedidoService: PedidosService,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -26,9 +28,7 @@ export class PedidoConfirmacaoCardComponent implements OnInit {
       .subscribe( res => {
         PedidosService.emitirPedidoStatus.emit("PREPARANDO")
       }, error => {
-        console.log("erro")
-        PedidosService.emitirPedidoStatus.emit("PREPARANDO")
-
+        this.toastr.error("Opa algo deu errado 😥")
       })
   }
 
@@ -39,9 +39,7 @@ export class PedidoConfirmacaoCardComponent implements OnInit {
       .subscribe( res => {
         PedidosService.emitirPedidoStatus.emit("AGUARDANDO_CONFIRMACAO")
       }, error => {
-        console.log("erro")
-        PedidosService.emitirPedidoStatus.emit("AGUARDANDO_CONFIRMACAO")
-
+        this.toastr.error("Opa algo deu errado 😥")
       })
   }
 

@@ -31,12 +31,15 @@ export class PedidosComponent implements OnInit {
             this.getConfirmados()
             break
           case "PREPARANDO":
+            this.getConfirmados()
             this.getPreparacoes()
             break
           case "ENTREGANDO":
+            this.getPreparacoes()
             this.getEntregando()
             break
           case "CONCLUIDO":
+            this.getEntregando()
             this.getConcluidos()
             break
         }
@@ -48,7 +51,7 @@ export class PedidosComponent implements OnInit {
   getNovosPedidosParaConfirmar() {
     setInterval(()=> {
       this.getConfirmados()
-    },100000)
+    },10000)
   }
 
   getConfirmados() {
