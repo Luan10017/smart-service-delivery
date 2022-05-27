@@ -22,23 +22,30 @@
                           <br><br>
 
                           <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"  value="DINHEIRO" checked>
                             <label class="form-check-label" for="flexRadioDefault1">
                               Dinheiro <i class="fas fa-money-bill icon"></i>
                             </label>
                           </div>
                           <br>
                           <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"  value="CREDITO">
                             <label class="form-check-label" for="flexRadioDefault2">
                               Cartão de Crédito  <i class="fas fa-credit-card icon"></i>
                             </label>
                           </div>
                           <br>
                           <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"  value="DEBITO">
                             <label class="form-check-label" for="flexRadioDefault2">
                               Cartão de Débito <i class="fas fa-money-check icon"></i>
+                            </label>
+                          </div>
+                          <br>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"  value="VALE_REFEICAO">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                              Vale Refeição <i class="fas fa-money-check icon"></i>
                             </label>
                           </div>
 
@@ -51,7 +58,7 @@
 
                               <div class="p-col-12 text-center">
 
-                                <button type="button" class="btn btn-danger button-finish">
+                                <button type="button" class="btn btn-danger button-finish" (click)="finalizaPedido()">
                                           Finalizar Pedido
                                 </button>
 

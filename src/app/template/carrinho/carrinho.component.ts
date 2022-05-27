@@ -16,8 +16,6 @@ export class CarrinhoComponent implements OnInit {
 
   constructor(
     private carrinhoService: CarrinhoService,
-    private pedidos: PedidosService,
-    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -28,20 +26,6 @@ export class CarrinhoComponent implements OnInit {
   }
   removeItem(produto: any): void{
     this.carrinhoService.tiraItem(produto)
-  }
-
-  finalizaPedido(): void {
-    if ( localStorage.getItem("idUsuario") ) {
-      const idUsuario = localStorage.getItem("idUsuario") as string
-      this.pedidos.postPedido(this.carrinhoService.carrinho, idUsuario)
-        .subscribe(res => {
-          this.limpaCarrinho()
-          const whatsAppUrl = res.data[0].message
-          window.open(whatsAppUrl, '_blank')
-        })
-    } else {
-      this.toastr.error("Opa algo deu errado 😥")
-    }
   }
 
   limpaCarrinho(): void {
