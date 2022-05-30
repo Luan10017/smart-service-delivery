@@ -35,10 +35,11 @@
       <div class="flex-fill pr-3">
         <div class="input-group mb-2">
           <div class="input-group-prepend">
-            <label class="input-group-text">Filtro: {{_filtroLista}}</label>
+            <label class="input-group-text">Filtro: {{filtroLista}}</label>
           </div>
           <input type="text" class="form-control"
-          placeholder="Filtrar por Nome" [(ngModel)]="_filtroLista">
+          placeholder="Filtrar por Nome" [(ngModel)]="filtroLista"
+          >
         </div>
       </div>
       <div>
@@ -68,8 +69,7 @@
         </tr>
       </thead>
       <tbody>
-        <!-- Só vai aparecer se o tiver o objeto eventos e esse .length significa que ele existe E TEM ITENS-->
-        <tr *ngFor="let produto of produtos; let i = index"  style="cursor:pointer;">
+        <tr *ngFor="let produto of produtosFiltrados ; let i = index"  style="cursor:pointer;">
           <td class="d-none d-md-table-cell">
             <img alt="">
           </td>

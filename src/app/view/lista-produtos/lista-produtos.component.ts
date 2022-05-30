@@ -16,14 +16,14 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 })
 export class ListaProdutosComponent implements OnInit {
 
-  produtos:  Produto[] = []
+  public produtos:  Produto[] = []
   baseUrl = `${environment.API}produtos?page=0`
   modalRef!: BsModalRef;
 
   produtoId: string = "";
 
-   public produtosFiltrados: any = [];
-   _filtroLista: string = '';
+  public produtosFiltrados: any = [];
+  private _filtroLista: string = "";
 
 
   public get filtroLista(): string{
@@ -32,14 +32,13 @@ export class ListaProdutosComponent implements OnInit {
 
   public set filtroLista(value: string){
     this._filtroLista = value;
-    this.produtosFiltrados = this._filtroLista ? this.filtrarProdutos(this.filtroLista) : this.produtos;
+    this.produtosFiltrados = this.filtroLista ? this.filtrarProdutos(this.filtroLista) : this.produtos;
   }
 
   filtrarProdutos(filtrarPor: string): any{
     filtrarPor = filtrarPor.toLocaleLowerCase();
 
     return this.produtos.filter(
-
       ( produto: { nome: string; categoria: string; } ) =>
        produto.nome.toLocaleLowerCase().indexOf(filtrarPor) !== -1
        ||  produto.categoria.toLocaleLowerCase().indexOf(filtrarPor) !== -1
@@ -71,6 +70,8 @@ export class ListaProdutosComponent implements OnInit {
       .subscribe({
         next:(res) => {
           this.produtos = res
+          this.produtosFiltrados = this.produtos;
+          console.log(this.produtos)
         },
         error: (error: any) => console.log(error),
         complete: () => this.spinner.hide()
