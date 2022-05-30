@@ -35,9 +35,10 @@
       <div class="flex-fill pr-3">
         <div class="input-group mb-2">
           <div class="input-group-prepend">
-            <label class="input-group-text">Filtro:</label>
+            <label class="input-group-text">Filtro: {{_filtroLista}}</label>
           </div>
-          <input type="text" class="form-control" placeholder="Filtrar por Nome">
+          <input type="text" class="form-control"
+          placeholder="Filtrar por Nome" [(ngModel)]="_filtroLista">
         </div>
       </div>
       <div>

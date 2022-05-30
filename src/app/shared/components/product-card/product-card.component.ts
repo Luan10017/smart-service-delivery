@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { CarrinhoService } from 'src/app/core/services/carrinho.service';
 import { Produto } from 'src/app/shared/models/Produto';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-product-card',
@@ -12,7 +13,9 @@ export class ProductCardComponent implements OnInit {
 
   @Input() products: any;
 
-  constructor( private carrinhoService: CarrinhoService, private router: Router ) { }
+  constructor( private carrinhoService: CarrinhoService,
+               private router: Router,
+               private toastr: ToastrService ) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +23,7 @@ export class ProductCardComponent implements OnInit {
 
   adicionarAoCarrinho(produto: Produto) {
     this.carrinhoService.adicionarAoCarrinho(produto)
+    this.toastr.success("Produto adicionado ao carrinho! 🛒")
   }
 
   vaiParaDetalhesProduto(event: any, id: string) {

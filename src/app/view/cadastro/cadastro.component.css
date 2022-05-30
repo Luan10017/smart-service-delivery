@@ -10,6 +10,12 @@
   margin: 1rem;
 }
 
+#editar{
+  background-color:	#FFD700;
+  margin: 2rem;
+  border-color:	#FFD700;
+}
+
 .button-login {
   background-color: #ff363d;
   margin: 2rem;

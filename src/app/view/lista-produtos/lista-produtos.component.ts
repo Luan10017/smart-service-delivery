@@ -22,6 +22,32 @@ export class ListaProdutosComponent implements OnInit {
 
   produtoId: string = "";
 
+   public produtosFiltrados: any = [];
+   _filtroLista: string = '';
+
+
+  public get filtroLista(): string{
+    return this._filtroLista;
+  }
+
+  public set filtroLista(value: string){
+    this._filtroLista = value;
+    this.produtosFiltrados = this._filtroLista ? this.filtrarProdutos(this.filtroLista) : this.produtos;
+  }
+
+  filtrarProdutos(filtrarPor: string): any{
+    filtrarPor = filtrarPor.toLocaleLowerCase();
+
+    return this.produtos.filter(
+
+      ( produto: { nome: string; categoria: string; } ) =>
+       produto.nome.toLocaleLowerCase().indexOf(filtrarPor) !== -1
+       ||  produto.categoria.toLocaleLowerCase().indexOf(filtrarPor) !== -1
+    )
+  }
+
+
+
   constructor(
     private productService: MenuService,
     private modalService: BsModalService,
@@ -78,6 +104,5 @@ export class ListaProdutosComponent implements OnInit {
     this.deletaProduto(this.produtoId);
 
   }
-
 
 }
