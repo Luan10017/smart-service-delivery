@@ -91,7 +91,7 @@
 
           <ng-template #template>
             <div class="modal-body text-center">
-              <p>Tem certeza que quer deletar o produto {{produto.nome}} ?</p>
+              <p>Tem certeza que quer deletar o produto {{produto.nome}}? Pedidos associados a este produto serão deletados.</p>
               <button type="button" class="btn btn-default" (click)="confirm()">Sim</button>
               <button type="button" class="btn btn-primary"  (click)="decline()">Não</button>
             </div>
