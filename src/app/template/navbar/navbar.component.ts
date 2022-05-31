@@ -17,25 +17,10 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class NavbarComponent implements OnInit {
 
-    //carrousel fotos e intervalo
-    myInterval = 1500;
-    activeSlideIndex = 0;
-    slides: {image: string; text?: string}[] = [
-      {image: 'assets/home/home.jpg'},
-      {image: 'assets/home/slide-2.jpg'},
-      {image: 'assets/home/slide-3.jpg'},
-      {image: 'assets/home/slide-4.jpg'},
-      {image: 'assets/home/slide-5.jpg'},
-      {image: 'assets/home/slide-1.jpg'}
-    ];
-
-
   isCollapsed = true;
-  //teste
   categorias: Categoria[] = []
   baseUrl = `${environment.API}categorias`
   categotias!: string[]
-
 
 
   carrinho: Carrinho = new Carrinho();
@@ -47,21 +32,6 @@ export class NavbarComponent implements OnInit {
   public products: any = [];
   _filtroProdutos: string = '';
 
-  public get filtroProdutos(): string{
-    return this._filtroProdutos;
-  }
-
-  public set filtroProdutos(value: string){
-    this._filtroProdutos = value;
-    this.products = this._filtroProdutos ? this.filtrarProdutos(this._filtroProdutos) : this.products
-  }
-
-  public filtrarProdutos(filtrarPor: string): any{
-    filtrarPor = filtrarPor.toLocaleLowerCase();
-    return this.products.filter(
-       //product => product.tema.toLocaleLowerCase().indexOf(filtrarPor) !==
-    );
-  }
 
 
   constructor(

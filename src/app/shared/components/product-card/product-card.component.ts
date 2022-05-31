@@ -23,7 +23,7 @@ export class ProductCardComponent implements OnInit {
 
   adicionarAoCarrinho(produto: Produto) {
     this.carrinhoService.adicionarAoCarrinho(produto)
-    this.toastr.success("Produto adicionado ao carrinho! 🛒")
+    this.toastr.success("Produto adicionado ao carrinho!")
   }
 
   vaiParaDetalhesProduto(event: any, id: string) {

@@ -1,103 +1,104 @@
 <div class="container">
   <div class="d-flex  p-3 my-3 text-white bg-secondary rounded shadow-sm" id="nav">
     <div class="d-flex align-itens-center mr-auto">
-      <img class="logo" src="/assets/smart-service-branco.png" width="50%"> <span
-      class="logo"></span>
+      <img class="logo" src="/assets/smart-service-branco.png" width="50%"> <span class="logo"></span>
+      <div class="lh-1">
+        <h1 class="mb-0"></h1>
 
+        <small></small>
+      </div>
     </div>
 
-    <div class="p-3">
+    <div class="eira p-3">
       <h3><i class="fa fa-check-square" aria-hidden="true"></i> Painel de Pedidos</h3>
     </div>
     <div class="p-3">
       <a routerLink="/admin/lista/produtos">
         <button class="btn btn-outline-light">
           Ir para Lista de Produtos
-       </button>
-    </a>
+        </button>
+      </a>
     </div>
     <div class="p-3">
       <a routerLink="/home">
         <button class="btn btn-outline-light">
           Ir para Home
-       </button>
+        </button>
       </a>
     </div>
 
   </div>
 
   <div class="card rounded shadow-sm p-3">
-
-
     <main class="content">
       <div class="container p-0">
+        <div class="row">
+          <div class="col-12 col-lg-6 col-xl-3">
+            <div class="card card-border-primary">
+              <div class="card-header">
+                <div class="align-itens-center">
+                  <img class="pedido" src="/assets/pedidos/aguardando-confirmacao.png" width="50%"
+                    style="text-align: center;">
+                </div>
+                <h5 class="card-title">Aguardando Confirmação</h5>
 
-          <div class="row">
-              <div class="col-12 col-lg-6 col-xl-3">
-                  <div class="card card-border-primary">
-                      <div class="card-header">
-                          <div class="align-itens-center">
-                            <img class="pedido" src="/assets/pedidos/aguardando-confirmacao.png" width="50%" style="text-align: center;">
-                          </div>
-                          <h5 class="card-title" >Aguardando Confirmação</h5>
-
-                      </div>
-                      <app-pedido-card *ngFor="let confirmacao of confirmacoes" [pedido]="confirmacao"></app-pedido-card>
-
-
-                  </div>
               </div>
-              <div class="col-12 col-lg-6 col-xl-3">
-                  <div class="card card-border-warning">
-                      <div class="card-header">
-                          <div class="card-actions float-right">
-                            <img class="pedido" src="/assets/pedidos/preparando.png" width="50%" style="text-align: center;">
-                          </div>
-                          <h5 class="card-title">Preparando</h5>
+              <app-pedido-card *ngFor="let confirmacao of confirmacoes" [pedido]="confirmacao"></app-pedido-card>
 
-                      </div>
 
-                      <div class="card-body">
-                        <app-pedido-preparacao-card *ngFor="let preparacao of preparacoes" [pedido]="preparacao"></app-pedido-preparacao-card>
-
-                      </div>
-                  </div>
-              </div>
-              <div class="col-12 col-lg-6 col-xl-3">
-                  <div class="card card-border-danger">
-                      <div class="card-header">
-                          <div class="card-actions float-right">
-                            <img class="pedido" src="/assets/pedidos/entregando.png" width="50%" style="text-align: center;">
-                          </div>
-                          <h5 class="card-title">Entregando</h5>
-
-                      </div>
-                      <div class="card-body">
-                        <app-pedido-entregando-card *ngFor="let entrega of entregas" [pedido]="entrega"></app-pedido-entregando-card>
-
-                      </div>
-                  </div>
-              </div>
-              <div class="col-12 col-lg-6 col-xl-3">
-                  <div class="card card-border-success">
-                      <div class="card-header">
-                          <div class="card-actions float-right">
-                            <img class="pedido" src="/assets/pedidos/concluido.png" width="50%" style="text-align: center;">
-                          </div>
-                          <h5 class="card-title">Concluído</h5>
-                      </div>
-                      <div class="card-body">
-                        <app-pedido-concluido-card *ngFor="let concluido of concluidos" [pedido]="concluido"></app-pedido-concluido-card>
-
-                      </div>
-                  </div>
-              </div>
+            </div>
           </div>
+          <div class="col-12 col-lg-6 col-xl-3">
+            <div class="card card-border-warning">
+              <div class="card-header">
+                <div class="card-actions float-right">
+                  <img class="pedido" src="/assets/pedidos/preparando.png" width="50%" style="text-align: center;">
+                </div>
+                <h5 class="card-title">Preparando</h5>
 
+              </div>
+
+              <div class="card-body">
+                <app-pedido-preparacao-card *ngFor="let preparacao of preparacoes" [pedido]="preparacao">
+                </app-pedido-preparacao-card>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 col-xl-3">
+            <div class="card card-border-danger">
+              <div class="card-header">
+                <div class="card-actions float-right">
+                  <img class="pedido" src="/assets/pedidos/entregando.png" width="50%" style="text-align: center;">
+                </div>
+                <h5 class="card-title">Entregando</h5>
+
+              </div>
+              <div class="card-body">
+                <app-pedido-entregando-card *ngFor="let entrega of entregas" [pedido]="entrega">
+                </app-pedido-entregando-card>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 col-xl-3">
+            <div class="card card-border-success">
+              <div class="card-header">
+                <div class="card-actions float-right">
+                  <img class="pedido" src="/assets/pedidos/concluido.png" width="50%" style="text-align: center;">
+                </div>
+                <h5 class="card-title">Concluído</h5>
+              </div>
+              <div class="card-body">
+                <app-pedido-concluido-card *ngFor="let concluido of concluidos" [pedido]="concluido">
+                </app-pedido-concluido-card>
+
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-  </main>
-
+    </main>
   </div>
-
 
 </div>
