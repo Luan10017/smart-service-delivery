@@ -29,6 +29,7 @@ export class CategoriasComponent implements OnInit {
 
     setTimeout(() => {
       /** spinner ends after 5 seconds */
+      this.spinner.hide()
     }, 5000);
 
     this.categoriaURL = this.route.snapshot.url[0].path.toUpperCase()
