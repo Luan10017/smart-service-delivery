@@ -11,11 +11,11 @@
             <p>{{item.preco | currency : 'BRL'}}</p>
             <div class="quantidade_controle">
                 <i (click)="removeItem(item)">
-                    <img src="/assets/remove_circle.png" alt="">
+                    <img src="/assets/remove_circle.png" alt="" *ngIf="!item.realizado">
                 </i>
                 <p>{{item.quantidade}}</p>
                 <i (click)="adicionaItem(item)">
-                    <img src="/assets/add_circle.png" alt="">
+                    <img src="/assets/add_circle.png" alt="" *ngIf="!item.realizado">
                 </i>
             </div>
         </div>
