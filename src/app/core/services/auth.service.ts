@@ -28,6 +28,7 @@ export class AuthService {
 
 
   fazerLogin(usuario: Usuario){
+      localStorage.clear()
       this.autentica(usuario).subscribe(
       response => {
         const nomeUsuario = response.data[0].usuario
