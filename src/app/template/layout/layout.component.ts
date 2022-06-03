@@ -11,7 +11,7 @@ export class LayoutComponent implements OnInit {
   constructor( private carrinhoService: CarrinhoService ) { }
 
   ngOnInit(): void {
-    if (localStorage.getItem("carrinho")) {
+    if (localStorage.getItem("carrinho") && this.carrinhoService.carrinho.length === 0) {
       const itensCarrinho = JSON.parse(localStorage.getItem("carrinho")!) 
       this.carrinhoService.carregaCarrinhoLocalStorage(itensCarrinho)
     }
