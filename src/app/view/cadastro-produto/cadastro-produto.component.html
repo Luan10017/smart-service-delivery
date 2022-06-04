@@ -1,4 +1,7 @@
-<div class="p-justify-center" style="background-color: #f2f1ef;">
+<div class="p-justify-center" style="background-color: #f2f1ef;
+ width: 100%;
+height: 100%;
+margin: 0 auto;">
 
     <div class="row">
       <div class="p-col-10 p-sm-6 p-md-4">
@@ -41,7 +44,7 @@
                   </div>
                   <div class="col-md-6 mb-3">
                     <label>Categoria</label><br>
-                    <select 
+                    <select
                     [(ngModel)]="produto.categoria"
                      class="form-control is-invalid"
                      [ngClass]="{'is-invalid': f.categoria.errors && f.categoria.touched }"
@@ -122,12 +125,12 @@
                      type="file"
                      name=""
                      id=""
-                     [ngClass]="{'is-invalid': f.preco.errors && f.preco.touched }"
+                     [ngClass]="{'is-invalid': f.arquivo.errors && f.arquivo.touched }"
                      formControlName="arquivo"
                      (change)="inputFileChange($event)"
                      >
                   </div>
-                  <div *ngIf="f.categoria.errors?.required" class="invalid-feedback">
+                  <div *ngIf="f.arquivo.errors?.required" class="invalid-feedback">
                     Foto é obrigatória
                   </div>
 
@@ -136,8 +139,7 @@
                 <div class="p-col-12 text-center">
 
                   <a>
-                    <button type="button" class="btn btn-primary button-cadastro" *ngIf="cadastro" (click)="fazerCadastro()" [disabled]="cadastroForm.invalid" [disabled]="isLoading">
-                      <img *ngIf="isLoading" src="/assets/loading-buffering.gif" alt="loading" style="width: 20%;">
+                    <button  [disabled]="cadastroForm.invalid" *ngIf="cadastro" type="button" class="btn btn-primary button-cadastro" (click)="fazerCadastro()">
                       Cadastrar
                     </button>
                   </a>
@@ -151,7 +153,7 @@
                       Editar
                     </button>
                   </a>
-                
+
                   <a (click)="voltaParaLista()">
                     <button type="button" class="btn btn-danger button-login"  [disabled]="isLoading">
                       Voltar
