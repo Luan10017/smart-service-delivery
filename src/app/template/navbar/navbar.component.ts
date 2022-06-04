@@ -60,19 +60,20 @@ export class NavbarComponent implements OnInit {
       this.isAdmin = Boolean(localStorage.getItem("isAdmin"))
     }
 
-    this.getProducts();
+    // this.getProducts();
   }
-
-  public getProducts(): void {
-    this.http.get(`${environment.API}produtos`).subscribe(
-      response => {
-        this.products = response;
-        this._filtroProdutos= this.products;
-        console.log("teste" + this._filtroProdutos);
-      },
-      error => console.log(error)
-    );
-  }
+  
+  // IMPLEMENTAÇÃO ANDRE BARRA DE PESQUISA
+  // public getProducts(): void {
+  //   this.http.get(`${environment.API}produtos`).subscribe(
+  //     response => {
+  //       this.products = response;
+  //       this._filtroProdutos= this.products;
+  //       console.log("teste" + this._filtroProdutos);
+  //     },
+  //     error => console.log(error)
+  //   );
+  // }
 
   showMenu(): boolean{
     return this.router.url !== '/user/login';
