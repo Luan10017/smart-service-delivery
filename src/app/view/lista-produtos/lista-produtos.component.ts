@@ -71,7 +71,6 @@ export class ListaProdutosComponent implements OnInit {
         next:(res) => {
           this.produtos = res
           this.produtosFiltrados = this.produtos;
-          console.log(this.produtos)
         },
         error: (error: any) => console.log(error),
         complete: () => this.spinner.hide()

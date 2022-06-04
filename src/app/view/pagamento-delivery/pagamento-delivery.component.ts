@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CarrinhoService } from 'src/app/core/services/carrinho.service';
 import { PedidosService } from 'src/app/core/services/pedidos.service';
@@ -13,7 +14,8 @@ export class PagamentoDeliveryComponent implements OnInit {
   constructor(
     private carrinhoService: CarrinhoService,
     private pedidos: PedidosService,
-    private toastr: ToastrService
+    private toastr: ToastrService, 
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -33,6 +35,7 @@ export class PagamentoDeliveryComponent implements OnInit {
           this.carrinhoService.limpaCarrinho()
           const whatsAppUrl = res.data[0].message
           window.open(whatsAppUrl, '_blank')
+          this.router.navigate(['/'])
         })
     } else {
       this.toastr.error("Opa algo deu errado 😥")

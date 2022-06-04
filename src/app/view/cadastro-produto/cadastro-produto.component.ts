@@ -127,6 +127,10 @@ export class CadastroProdutoComponent implements OnInit {
     this.produto.categoria = event.target.value
   }
 
+  voltaParaLista() {
+    this.router.navigate(['/admin/lista/produtos'])
+  }
+
   public validation(): void {
 
     this.form = this.fb.group({
