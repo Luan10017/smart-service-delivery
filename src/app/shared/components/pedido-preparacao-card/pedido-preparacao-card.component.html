@@ -7,8 +7,9 @@
             </label>
         </div>
         <p style="text-align: center;"><b>Produtos:</b></p>
-        <p> {{ pedido.produtos[0]?.nome }} </p>
-        <p> {{ pedido.produtos[0]?.quantidade}} </p>
+        <div *ngFor="let iten of pedido.produtos">
+            <p> {{ iten.quantidade}} {{ iten.nome | slice:0:30}}{{iten.nome.length > 30? ' ...':''}} </p>
+        </div>
 
         <a class="btn btn-outline-success btn-sm " (click)="patchToEntregando(pedido.id_pedido)">Aceitar</a>
         <a class="btn btn-outline-danger btn-sm m-2" (click)="patchToCancelado(pedido.id_pedido)">Cancelar</a>
