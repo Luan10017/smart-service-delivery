@@ -38,6 +38,7 @@ export class PedidoEntregandoCardComponent implements OnInit {
     this.pedidoService.patchStatus(baseUrl, body)
       .subscribe( res => {
         PedidosService.emitirPedidoStatus.emit("ENTREGANDO")
+        this.toastr.success("Cancelado com sucesso")
       }, error => {
         this.toastr.error("Opa algo deu errado 😥")
       })
