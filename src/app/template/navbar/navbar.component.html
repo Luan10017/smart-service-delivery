@@ -1,68 +1,73 @@
 <header class="section-header">
   <nav class="navbar navbar-dark navbar-expand p-0 bg-dark">
-      <div class="container-fluid">
-          <ul class="navbar-nav d-none d-md-flex mr-auto">
-              <li class="nav-item"><a class="nav-link" href="#" data-abc="true">Delivery</a></li>
-              <li class="nav-item"><a class="nav-link" href="#" data-abc="true">Ótimos Preços</a></li>
-              <li class="nav-item"><a class="nav-link" href="#" data-abc="true">Pratos Todos os Dias</a></li>
-          </ul>
-          <ul class="navbar-nav d-flex align-items-center">
-              <li class="nav-item">
-                <div *ngIf="isAdmin" class="btn-group d-lg-block d-xl-nonee">
-                  <a href="admin/lista/produtos" class="nav-link second-text fw-bold" id="" aria-expanded="false"  role="button" data-toggle="dropdown" aria-haspopup="true">
-                    <i class="fa fa-lock" aria-hidden="true"></i> Área Administrativa
-                  </a>
-                </div>
-              </li>
-              <li class="nav-item">
+    <div class="container-fluid">
+      <ul class="navbar-nav d-none d-md-flex mr-auto">
+        <li class="nav-item"><a class="nav-link" href="#" data-abc="true">Delivery</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-abc="true">Ótimos Preços</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-abc="true">Pratos Todos os Dias</a></li>
+      </ul>
+      <ul class="navbar-nav d-flex align-items-center">
+        <li class="nav-item">
+          <div *ngIf="isAdmin" class="btn-group d-lg-block d-xl-nonee">
+            <a href="admin/lista/produtos" class="nav-link second-text fw-bold" id="" aria-expanded="false"
+              role="button" data-toggle="dropdown" aria-haspopup="true">
+              <i class="fa fa-lock" aria-hidden="true"></i> Área Administrativa
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
 
-                  <div ngbDropdown class="dropdown btn-group d-lg-block d-xl-nonee">
-                    <a ngbDropdownToggle class="nav-link dropdown-toggle second-text fw-bold" id="navbarDropdown" aria-expanded="false"  role="button" data-toggle="dropdown" aria-haspopup="true">
-                      <i class="fas fa-user me-2"></i>{{nomeUsuario}}
-                    </a>
-                    <ul ngbDropdownMenu aria-labelledby="dropdownMenuButton1">
-                      <li><a ngbDropdownItem (click)="vaiParaEditarCadastro()">Dados Pessoais</a></li>
-                      <li><a ngbDropdownItem (click)="fazerLogoff()">Sair <i class="fa fa-power-off" aria-hidden="true" id="sair"></i></a></li>
-                    </ul>
-                  </div>
-              </li>
-          </ul> <!-- list-inline // -->
-      </div> <!-- navbar-collapse .// -->
-      <!-- container // -->
+          <div ngbDropdown class="dropdown btn-group d-lg-block d-xl-nonee">
+            <a ngbDropdownToggle class="nav-link dropdown-toggle second-text fw-bold" id="navbarDropdown"
+              aria-expanded="false" role="button" data-toggle="dropdown" aria-haspopup="true">
+              <i class="fas fa-user me-2"></i>{{nomeUsuario}}
+            </a>
+            <ul ngbDropdownMenu aria-labelledby="dropdownMenuButton1">
+              <li><a ngbDropdownItem (click)="vaiParaEditarCadastro()">Dados Pessoais</a></li>
+              <li><a ngbDropdownItem (click)="fazerLogoff()">Sair <i class="fa fa-power-off" aria-hidden="true"
+                    id="sair"></i></a></li>
+            </ul>
+          </div>
+        </li>
+      </ul> <!-- list-inline // -->
+    </div> <!-- navbar-collapse .// -->
+    <!-- container // -->
   </nav> <!-- header-top-light.// -->
   <section class="header-main border-bottom bg-white d-none d-lg-block">
-      <div class="container-fluid">
-          <div class="row p-2 pt-3 pb-3 d-flex align-items-center">
-              <div class="col-md-2 col-xs-2">
-                 <img class="d-none d-md-flex" src="/assets/logo.png" width="100">
-              </div>
-              <div class="col-md-8 col-xs-8">
+    <div class="container-fluid">
+      <div class="row p-2 pt-3 pb-3 d-flex align-items-center">
+        <div class="col-md-2 col-xs-2">
+          <img class="d-none d-md-flex" src="/assets/logo.png" width="100">
+        </div>
+        <div class="col-md-8 col-xs-8">
 
-              </div>
-              <div class="col-md-2 col-xs-2">
-                  <div class="d-flex d-none d-md-flex flex-row align-items-center">
-                      <div class="d-flex flex-column ms-2">
-                        <div ngbDropdown (click)="atualizaTotal()">
-                          <a ngbDropdownToggle target="_blank" [ngClass]="carrinho.length > 0  ? 'carrinho_cheio' : ''" class="nav-link second-text fw-bold">
-                            <i class="fas fa fa-shopping-cart second-text fw-bold"></i>
-                          </a> <span class="vl"></span>
+        </div>
+        <div class="col-md-2 col-xs-2">
+          <div class="d-flex d-none d-md-flex flex-row align-items-center">
+            <div class="d-flex flex-column ms-2">
+              <div ngbDropdown (click)="atualizaTotal()">
+                <a ngbDropdownToggle target="_blank" [ngClass]="carrinho.length > 0  ? 'carrinho_cheio' : ''"
+                  class="nav-link second-text fw-bold">
+                  <i class="fas fa fa-shopping-cart second-text fw-bold"></i>
+                </a> <span class="vl"></span>
 
-                          <div class="carrinho" ngbDropdownMenu>
-                            <app-carrinho [carrinho]="carrinho" *ngIf="carrinho.length > 0"></app-carrinho>
-                            <h1 *ngIf="carrinho.length == 0" class="carrinho-vazio">O carrinho está vazio 😔</h1>
-                          </div>
-                        </div>
-                       </div>
-                  </div>
+                <div class="carrinho" ngbDropdownMenu>
+                  <app-carrinho [carrinho]="carrinho" *ngIf="carrinho.length > 0"></app-carrinho>
+                  <h1 *ngIf="carrinho.length == 0" class="carrinho-vazio">O carrinho está vazio 😔</h1>
+                </div>
               </div>
+            </div>
           </div>
+        </div>
       </div>
+    </div>
   </section>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="dropdown btn-group d-lg-none">
       <div ngbDropdown (click)="atualizaTotal()">
-        <a ngbDropdownToggle target="_blank" [ngClass]="carrinho.length > 0  ? 'carrinho_cheio' : ''" class="nav-link second-text fw-bold">
+        <a ngbDropdownToggle target="_blank" [ngClass]="carrinho.length > 0  ? 'carrinho_cheio' : ''"
+          class="nav-link second-text fw-bold">
           <i class="fas fa fa-shopping-cart second-text fw-bold"></i>
         </a> <span class="vl"></span>
 
@@ -78,7 +83,8 @@
       <nav class="navbar navbar-expand-lg" *ngIf="showMenu()">
         <div class="container-fluid">
           MENU<a class="navbar-brand" routerLink="dashboard"></a>
-          <button class="navbar-toggler" (click)="isCollapsed = !isCollapsed" type="button" data-bs-toggle="collapse" data-bs-target="#categorias" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" (click)="isCollapsed = !isCollapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#categorias" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
         </div>
@@ -126,7 +132,8 @@
             class="icon fas fa-cocktail me-2"></i>Bebidas</a>
       </li>
       <li class="nav-item">
-        <a routerLink="bebidasalcolicas" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+        <a routerLink="bebidasalcolicas"
+          class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
             class="icon fas fa-beer me-2"></i>Bebidas Alcoólicas</a>
       </li>
       <li class="nav-item">
@@ -150,31 +157,31 @@
   <div class="collapse navbar-collapse" [collapse]="isCollapsed" [isAnimated]="true" id="categorias">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a routerLink="hamburgers" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" (click)="isCollapsed = !isCollapsed"><i
-            class="icon fas fa-hamburger me-2"></i>Sanchuíches</a>
+        <a routerLink="hamburgers" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+          (click)="isCollapsed = !isCollapsed"><i class="icon fas fa-hamburger me-2"></i>Sanchuíches</a>
       </li>
       <li class="nav-item">
-        <a routerLink="porcoes" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" (click)="isCollapsed = !isCollapsed"><i
-            class="icon fas fa-drumstick-bite me-2"></i>Porções</a>
+        <a routerLink="porcoes" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+          (click)="isCollapsed = !isCollapsed"><i class="icon fas fa-drumstick-bite me-2"></i>Porções</a>
       </li>
       <li class="nav-item">
-        <a routerLink="bebidas" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" (click)="isCollapsed = !isCollapsed"><i
-            class="icon fas fa-cocktail me-2"></i>Bebidas</a>
+        <a routerLink="bebidas" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+          (click)="isCollapsed = !isCollapsed"><i class="icon fas fa-cocktail me-2"></i>Bebidas</a>
       </li>
       <li class="nav-item">
-        <a routerLink="bebidasalcolicas" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" (click)="isCollapsed = !isCollapsed"><i
-            class="icon fas fa-beer me-2"></i>Bebidas Alcoólicas</a>
+        <a routerLink="bebidasalcolicas"
+          class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+          (click)="isCollapsed = !isCollapsed"><i class="icon fas fa-beer me-2"></i>Bebidas Alcoólicas</a>
       </li>
       <li class="nav-item">
-        <a routerLink="porcoes" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" (click)="isCollapsed = !isCollapsed"><i
-            class="icon fas fa-ice-cream me-2"></i>Sobremesas</a>
+        <a routerLink="porcoes" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+          (click)="isCollapsed = !isCollapsed"><i class="icon fas fa-ice-cream me-2"></i>Sobremesas</a>
       </li>
       <li class="nav-item">
-        <a routerLink="porcoes" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"  (click)="isCollapsed = !isCollapsed"><i
-            class="icon fas fa-pizza-slice me-2"></i>Pizza</a>
+        <a routerLink="porcoes" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+          (click)="isCollapsed = !isCollapsed"><i class="icon fas fa-pizza-slice me-2"></i>Pizza</a>
       </li>
     </ul>
 
   </div>
 </nav>
-
