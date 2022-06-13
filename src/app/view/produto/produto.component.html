@@ -14,7 +14,8 @@
           <div class="card-body">
             <h5 class="card-title">{{product.nome}}</h5>
             <div class="card text-center">
-                <img class="card-img-top item-img" src="data:image/jpeg;base64,{{ product.imgUrl }}" height="50">
+              <img class="card-img-top item-img" *ngIf="product.imgUrl !== null" src="data:image/jpeg;base64,{{ product.imgUrl }}" height="50">
+              <img class="card-img-top item-img" *ngIf="product.imgUrl == null" src="/assets/img_template.png" height="50">
             </div>
             <br>
             <p class="card-text">{{product.descricao}}</p>
@@ -22,7 +23,7 @@
             <div class="row">
 
               <h5 class="card-title title-post-home price"><span style="color: #000;">Preço: </span>
-                {{product.preco}}</h5>
+                {{product.preco | currency : 'BRL'}}</h5>
 
             </div>
 

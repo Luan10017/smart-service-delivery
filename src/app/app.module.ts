@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpClientModule } from '@angular/common/http';
@@ -40,13 +40,18 @@ import { PedidoEntregandoCardComponent } from './shared/components/pedido-entreg
 import { PedidoConcluidoCardComponent } from './shared/components/pedido-concluido-card/pedido-concluido-card.component';
 
 
+import ptBr from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+import { ProdutoComponent } from './view/produto/produto.component';
 
+registerLocaleData(ptBr);
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    ProdutoComponent,
     ProductCardComponent,
     HomeComponent,
     LoginComponent,
@@ -83,7 +88,7 @@ import { PedidoConcluidoCardComponent } from './shared/components/pedido-conclui
     ModalModule.forRoot(),
     NgxSpinnerModule
   ],
-  providers: [AuthService, AuthGuard, AdminGuard],
+  providers: [AuthService, AuthGuard, AdminGuard, { provide: LOCALE_ID, useValue: 'pt' }],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

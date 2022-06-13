@@ -3,7 +3,7 @@
     <img class="card-img-top item-img img-responsive" *ngIf="products.imgUrl == null" src="/assets/img_template.png">
     <h3>{{products.nome}}</h3>
     <p>{{products.descricao | slice:0:30}}{{products.descricao.length > 30? ' ...':''}}</p>
-    <h5 class="price">R$ {{ products.preco }}</h5>
+    <h5 class="price">{{ products.preco | currency : 'BRL'}}</h5>
   <div>
     <button type="button" class="btn btn-primary" (click)="adicionarAoCarrinho(products)">
       Adicionar ao Carrinho

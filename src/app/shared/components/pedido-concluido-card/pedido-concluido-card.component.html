@@ -11,7 +11,7 @@
           {{pedido.endereco.bairro}}, {{pedido.endereco.complemento}}, {{pedido.endereco.cidade}}
           {{pedido.endereco.estado}} {{pedido.endereco.cep}}</p>
         <p><b>Data:</b> {{pedido.data_pedido}}</p>
-        <p><b>Valor total: </b>{{pedido.valor_total}} </p>
+        <p><b>Valor total: </b>{{pedido.valor_total | currency : 'BRL'}} </p>
 
     </div>
 </div>

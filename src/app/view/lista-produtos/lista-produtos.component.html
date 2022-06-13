@@ -77,7 +77,7 @@
           <td>{{produto.nome}}</td>
           <td class="d-none d-md-table-cell">{{produto.categoria}}</td>
           <td>{{produto.descricao}}</td>
-          <td class="d-none d-md-table-cell">R$ {{produto.preco}}</td>
+          <td class="d-none d-md-table-cell">{{produto.preco | currency : 'BRL'}}</td>
           <td class="d-none d-md-table-cell">{{produto.estoque}}</td>
           <td>
             <button type="button" class="btn btn-danger btn-lg mr-2" tooltip="Excluir" (click)="openModal($event, template, produto.id)">
