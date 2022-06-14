@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API: "http://mupedriparus.ddns.net:8080"
+  API: process.env.BACKEND || "http://52.0.30.216:8080/"
 };
 
 /*
