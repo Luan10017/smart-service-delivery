@@ -25,7 +25,7 @@ import { AdminGuard } from './core/guards/admin.guard';
 
 const routes: Routes = [
 
-  { path: '', redirectTo: 'promocoes',  pathMatch: 'full'},
+  { path: '', redirectTo: 'hamburgers',  pathMatch: 'full'},
 
   {
     path: '',
