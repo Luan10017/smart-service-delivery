@@ -16,6 +16,7 @@ export class CategoriasComponent implements OnInit {
 
   products: Produto[] = [];
   categoriaURL!: string
+  categoriaName!: string
 
 
   constructor(private productService: MenuService,
@@ -33,6 +34,7 @@ export class CategoriasComponent implements OnInit {
     }, 5000);
 
     this.categoriaURL = this.route.snapshot.url[0].path.toUpperCase()
+    this.categoriaName = this.categoriaURL[0] + this.categoriaURL.slice(1).toLowerCase()
     const baseUrl =  `${environment.API}produtos/categoria/${this.categoriaURL}`
 
      this.productService.getItens(baseUrl).pipe(map(result => result.data[0].produtos))
